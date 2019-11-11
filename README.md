@@ -215,7 +215,7 @@
 
 |Column|Type|Option|
 |------|----|------|
-|prefecture|string|null: false|
+|prefecture|string||
 
 
 ### Association
