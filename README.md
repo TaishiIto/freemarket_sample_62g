@@ -60,7 +60,6 @@
 |Column|Type|Option|
 |------|----|------|
 |user_id|references|null: false, foreign_key: true|
-|prefecture_id|references|foreign_key: true|
 |c_city|string||
 |c_house_number|string||
 |c_building_name|string||
@@ -79,7 +78,6 @@
 |Column|Type|Option|
 |------|----|------|
 |user_id|references|null: false, foreign_key: true|
-|prefecture_id|references|foreign_key: true|
 |zip_code|integer|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
@@ -89,7 +87,6 @@
 
 ### Association
 - belongs_to :user
-- belongs_to :prefecture
 
 
 
@@ -98,7 +95,6 @@
 |Column|Type|Option|
 |------|----|------|
 |item_id|references|null: false, foreign_key: true|
-|prefecture_id|references|foreign_key: true|
 |delivery_cost|integer|null: false|
 |shipper_days|integer|null: false|
 |delivery_way|integer|null: false|
@@ -106,7 +102,7 @@
 
 ### Association
 - belongs_to :item
-- belongs_to :prefecture
+
 
 
 
@@ -209,19 +205,6 @@
 ### Association
 - has_many :items
 
-
-
-## prefecturesテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|prefecture|string||
-
-
-### Association
-- has_many :c_addresses
-- has_many :provider_addresses
-- has_many :delivery_ways
 
 
 
