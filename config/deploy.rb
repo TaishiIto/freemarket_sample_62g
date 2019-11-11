@@ -2,7 +2,7 @@
 lock "3.11.2"
 
 set :application, "freemarket_sample_62g"
-set :repo_url, "git@github.com:iwonder/freemarket_sample_62g.git"
+set :repo_url, "git@github.com:iWonder118/freemarket_sample_62g.git"
 
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
