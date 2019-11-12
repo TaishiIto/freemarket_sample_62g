@@ -69,3 +69,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data'
+gem 'haml-rails'
+gem 'erb2haml'
+gem 'jquery-rails'
+gem "font-awesome-sass"
