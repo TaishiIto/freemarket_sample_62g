@@ -16,6 +16,10 @@
         text-align: center;
         vertical-align: top;
 
+        &:hover{
+          opacity: 0.7;
+        }
+
         &--active{
           border-bottom: none;
           border-top: 2px solid red;
@@ -35,9 +39,6 @@
           }
         }
       }
-      &__list:hover{
-        opacity: 0.7;
-      }
     }
     .contents{
       height: 81px;
@@ -55,6 +56,10 @@
             text-decoration: none;
             color: rgb(136,136,136);
             position: relative;
+            
+            &:hover{
+              background-color: rgb(246,246,246);
+            }
             
             &__image{
               float: left;
@@ -98,9 +103,6 @@
               
             }
           }
-        }
-        &__list:hover{
-          background-color: rgb(246,246,246);
         }
       }
     }
