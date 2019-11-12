@@ -1,3 +1,18 @@
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
 ## DB設計
 
 ## usersテーブル
@@ -55,21 +70,22 @@
 
 
 
-## c_addressesテーブル
+## confirmed_addressesテーブル
 
 |Column|Type|Option|
 |------|----|------|
 |user_id|references|null: false, foreign_key: true|
-|c_city|string||
-|c_house_number|string||
-|c_building_name|string||
-|c_zip_code|integer||
+|zip_code|integer||
+|prefecture|string||
+|city|string||
+|house_number|string||
+|building_name|string||
+
 
 
 
 ### Association
 - belongs_to :user
-- belongs_to :category
 
 
 
@@ -79,6 +95,7 @@
 |------|----|------|
 |user_id|references|null: false, foreign_key: true|
 |zip_code|integer|null: false|
+|prefecture|string|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string||
@@ -217,3 +234,15 @@
 
 ### Association
 - has_many :items
+
+
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
