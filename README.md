@@ -34,7 +34,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :items
-- has_many :c_addresses dependent: :destroy
+- has_many :confirmed_addresses dependent: :destroy
 - has_many :provider_addresses dependent: :destroy
 - has_many :likes dependent: :destroy
 - has_many :reviews dependent: :destroy
@@ -129,7 +129,7 @@ Things you may want to cover:
 |------|----|------|
 |user_id|references|null: false, foreign_key: true|
 |item_id|references|null: false, foreign_key: true|
-|like|integer||
+|like|integer|null: false|
 
 
 
@@ -159,7 +159,7 @@ Things you may want to cover:
 |------|----|------|
 |user_id|references|null: false, foreign_key: true|
 |item_id|references|null: false, foreign_key: true|
-|comment|text||
+|comment|text|null: false|
 
 
 
@@ -174,7 +174,7 @@ Things you may want to cover:
 |Column|Type|Option|
 |------|----|------|
 |item_id|references|null: false, foreign_key: true|
-|image|text||
+|image|text|null: false|
 
 
 
@@ -216,7 +216,7 @@ Things you may want to cover:
 
 |Column|Type|Option|
 |------|----|------|
-|category|string||
+|category|string|null: false|
 
 
 ### Association
@@ -229,7 +229,7 @@ Things you may want to cover:
 
 |Column|Type|Option|
 |------|----|------|
-|size|string||
+|size|string|null: false|
 
 
 ### Association
