@@ -1,0 +1,245 @@
+.header {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  position: relative;
+  z-index: 3;
+  display: block;
+  .header__main {
+    width: 1020px;
+    margin: 0px auto;
+    padding: 8px 0px 0px;
+    .header__top {
+      display: flex;
+      justify-content: space-between;
+      .logo {
+        align-items: center;
+        display: flex;
+        height: 40px;
+        margin-right: 45px;
+        a.image_link {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+      form.search__form {
+        position: relative;
+        width: 100%;
+        input.search {
+          background-color: rgb(245, 245, 245);
+          font-size: 16px;
+          height: 40px;
+          line-height: 1.4em;
+          position: relative;
+          width: 100%;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(204, 204, 204);
+          border-image: initial;
+          border-radius: 4px;
+          outline: none;
+          padding: 0px 50px 0px 10px;
+          transition: all 0.3s ease-out 0s;
+          font-family: inherit;
+          text-rendering: auto;
+          color: initial;
+          letter-spacing: normal;
+          word-spacing: normal;
+          text-transform: none;
+          text-indent: 0px;
+          text-shadow: none;
+          display: inline-block;
+          text-align: start;
+          cursor: text;
+          margin: 0em;
+        }
+        button.search__button {
+          background-color: transparent;
+          cursor: pointer;
+          height: 40px;
+          position: absolute;
+          right: 0px;
+          top: 0px;
+          width: 40px;
+          border-width: initial;
+          border-style: none;
+          border-color: initial;
+          border-image: initial;
+          border-radius: 0px 4px 4px 0px;
+          padding: 0px;
+          svg.svg__one {
+            max-width: 100%;
+            max-height: 100%;
+            color: rgb(34, 34, 34);
+            height: 14px;
+            margin-top: 2px;
+            width: 14px;
+          }
+        }
+      }
+    }
+    .header__bottom {
+      display: flex;
+      justify-content: space-between;
+      vertical-align: baseline;
+      padding: 0px;
+      margin-top: 8px;
+      border-width: 0px;
+      border-style: initial;
+      border-color: initial;
+      border-image: initial;
+      .header__bottom__left {
+        display: flex;
+        margin-left: -3px;
+        .category {
+          cursor: pointer;
+          height: 44px;
+          float: left;
+          position: relative;
+          z-index: 3;
+          padding: 0px 10px;
+          a.category__inside {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 36px;
+            white-space: nowrap;
+            color: inherit;
+            text-decoration: none;
+            svg.svg__two {
+              max-width: 100%;
+              max-height: 100%;
+              color: rgb(234, 53, 45);
+              height: 12px;
+              margin-right: 4px;
+            }
+          }
+        }
+        .brand {
+          cursor: pointer;
+          height: 44px;
+          float: left;
+          position: relative;
+          z-index: 3;
+          padding: 0px 10px;
+          a.brand__inside {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 36px;
+            white-space: nowrap;
+            color: inherit;
+            text-decoration: none;
+            svg.svg__three {
+              max-width: 100%;
+              max-height: 100%;
+              color: rgb(234, 53, 45);
+              height: 12px;
+              margin-right: 4px;
+            }
+          }
+        }
+      }
+      
+      ul.header__bottom__right {
+        list-style: none;
+        display: flex;
+        position: relative;
+        li.like {
+          padding: 0px 14px;
+          height: 44px;
+          position: relative;
+          margin: 0px;
+          a.like__link {
+            align-items: center;
+            display: flex;
+            font-size: 14px;
+            height: 32px;
+            transform: scale(1);
+            color: black;
+            transition: all 0.3s ease-out 0s;
+            svg.svg__four {
+              max-width: 100%;
+              height: auto;
+              max-height: 100%;
+              color: rgb(204, 204, 204);
+              margin-right: 10px;
+              width: 19px;
+            }
+          }
+        }
+        li.information {
+          padding: 0px 14px;
+          height: 44px;
+          position: relative;
+          margin: 0px;
+          a.information__link {
+            align-items: center;
+            display: flex;
+            font-size: 14px;
+            height: 32px;
+            transform: scale(1);
+            transition: all 0.3s ease-out 0s;
+            color: inherit;
+            text-decoration: none;
+            svg.svg__five {
+              max-width: 100%;
+              height: auto;
+              max-height: 100%;
+              color: rgb(204, 204, 204);
+              margin-right: 10px;
+              width: 17px;
+            }
+          }
+        }
+        li.todo {
+          padding: 0px 14px;
+          height: 44px;
+          position: relative;
+          margin: 0px;
+          a.todo__link {
+            align-items: center;
+            display: flex;
+            font-size: 14px;
+            height: 32px;
+            transform: scale(1);
+            color: black;
+            transition: all 0.3s ease-out 0s;
+            color: inherit;
+            text-decoration: none;
+            svg.svg__six {
+              max-width: 100%;
+              height: auto;
+              max-height: 100%;
+              color: rgb(204, 204, 204);
+              margin-right: 10px;
+              width: 21px;
+            }
+          }
+        }
+        li.mypage {
+          height: 44px;
+          position: relative;
+          padding: 0px 14px;
+          margin: 0px;
+          a.mypage__link {
+            align-items: center;
+            display: flex;
+            font-size: 14px;
+            height: 32px;
+            transform: scale(1);
+            transition: all 0.3s ease-out 0s;
+            color: inherit;
+            text-decoration: none;
+            img.mypage__image {
+              margin-right: 10px;
+              width: 32px;
+              border-radius: 50%;
+              overflow: hidden;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+}
