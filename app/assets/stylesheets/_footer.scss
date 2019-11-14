@@ -1,174 +1,189 @@
 .footer-top {
-  background: black;
+  background-image: url(dog_tree.jpg);
   background-position: center;
   background-size: cover;
+
   .banner {
-    overflow: hidden;
-    position: relative;
-    display: block;
     height: 260px;
     width: 750px;
     margin: 0 auto;
-    color: #fff;
+    color: white;
     display: flex;
-    .banner-inner {
+
+    &__body {
       box-sizing: border-box;
-      flex-direction: column;
-      color: rgb(255, 255, 255);
-      .kantan {
+
+      &__kantan {
         font-size: 24px;
-        font-weight: 600;
+        font-weight: bold;
         margin-top: 35px;
       }
-      .download {
+
+      &__download {
         font-size: 35px;
         margin-bottom: 20px;
       }
-      .download-icon{
+      
+      &__download-icon{
         display: flex;
+
         img {
-          height: 68px;
           margin-right: 20px;
-          width: 68px;
         }
+
         a {
-          color: inherit;
           text-decoration: none;
           margin-top: 14px;
+
           img {
-            height: 40px;
             margin-right: 8px;
-            width: 144px;
           }
         }
       }
     }
+
     figure {
       margin: 0;
       padding-left: 30px;
-      img {
-        height: 260px;
-        width: 300px;
-      }
     }
   }
 }
 
-.footer-middle {
+.footer-text{
   background-color: rgb(34, 34, 34);
-  color: rgb(255, 255, 255);
-  font-size: 12px;
-  padding: 0px 20px 10px;
-  .upper-side {
-    margin: 0 auto;
+  height: 381px;
+  width: 100vw;
+  padding: 0 20px 20px 10px;
+  .footer-middle {
+    background-color: rgb(34, 34, 34);
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    padding: 0px 20px 10px;
+
+    .upper-side {
+      margin: 0 auto;
+      width: 75%;
+
+      .about {
+        display: flex;
+        flex-wrap: wrap;
+        
+        &__fremake {
+          padding-right: 40px;
+          margin-top: 18px;
+          font-weight: bold;
+          line-height: 1.4em;
+
+          &__heading {
+            font-size: 16px;
+
+          }
+        }
+      }
+
+        .help-guide {
+          padding-right: 40px;
+          margin-top: 18px;
+          font-weight: bold;
+          line-height: 1.4em;
+
+          &__heading {
+            font-size: 16px;
+          }
+        }
+
+        .privacy {
+          padding-right: 40px;
+          margin-top: 18px;
+          font-weight: bold;
+          line-height: 1.4em;
+          padding-left: 10px;
+          vertical-align: top;
+
+          &__heading {
+            font-size: 16px;
+
+            .footer-details-all {
+              display: flex;
+
+              .-left {
+                width: 180px;
+                padding-right: 10px;
+              }
+
+              .-right {
+                width: 180px;
+                padding-left: 10px;
+              }
+            }
+          }
+        }
+
+        .country {
+          padding-right: 40px;
+          margin-top: 18px;
+          font-weight: bold;
+          line-height: 1.4em;
+          
+          &__heading {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    
+  .footer-bottom {
+    display: flex;
+    margin: 50px auto 10px;
     width: 75%;
-    .about {
-      display: flex;
-      flex-wrap: wrap;
-      .about-mercari {
-        padding-right: 40px;
-        margin-top: 18px;
-        font-family: YuGothic;
-        font-weight: 600;
-        line-height: 1.4em;
-        &__heading {
-          font-size: 16px;
-          .details {
-            &__twitter-link {
-              float: left;
-              margin-top: 30px;
-              margin-right: 20px;
-              .icon {
-                font-size: 25px;
-                color: white;
-              }
-            }
-            &__facebook-link {
-              margin-top: 30px;
-              .icon {
-                font-size: 25px;
-                color: white;
-              }
-            }
-          }
-        }
+    a {
+      width: 50%;
+      &:hover {
+        opacity: 0.7;
       }
-      .help-guide {
-        padding: 0px 40px 0px 0px;
-        margin-top: 18px;
-        font-family: YuGothic;
-        font-weight: 600;
-        line-height: 1.4em;
-        &__heading {
-          font-size: 16px;
-        }
-      }
-      .privacy {
-        padding: 0px 40px 0px 0px;
-        margin-top: 18px;
-        font-family: YuGothic;
-        font-weight: 600;
-        line-height: 1.4em;
-        padding-left: 10px;
-        vertical-align: top;
-        &__heading {
-          font-size: 16px;
-          .heading-details {
-            display: flex;
-            .details-left {
-              width: 180px;
-              padding-right: 10px;
-            }
-            .details-right {
-              width: 180px;
-              padding-left: 10px;
-            }
-          }
-        }
-      }
-      .country {
-        padding: 0px 40px 0px 0px;
-        margin-top: 18px;
-        font-family: YuGothic;
-        font-weight: 600;
-        line-height: 1.4em;
-        &__heading {
-          font-size: 16px;
-        }
-      }
+    }
+    span {
+      color: white;
+      line-height: 33px;
+      font-size: 12px;
     }
   }
 }
 
-ul {
-  li {
+.footer-details {
+
+  &__detail {
     font-size: 12px;
     margin: 16px 0 0;
     opacity: 0.7;
-    a {
+    
+    a{
+      font-weight: 500;
+      color: inherit;
       text-decoration: none;
-      color: rgb(255, 255, 255);
-      font-weight: normal;
       display: block;
+
       &:hover {
         text-decoration: underline;
       }
     }
   }
-}
-
-.footer-bottom {
-  display: flex;
-  margin: 50px auto 10px;
-  width: 75%;
-  a {
-    width: 50%;
-    &:hover {
-      opacity: 0.7;
+  
+  &__twitter {
+    float: left;
+    margin-top: 30px;
+    margin-right: 20px;
+    .icon {
+      font-size: 25px;
+      color: white;
     }
   }
-  span {
-    line-height: 33px;
-    font-size: 12px;
+
+  &__facebook {
+    margin-top: 30px;
+    .icon {
+      font-size: 25px;
+      color: white;
+    }
   }
 }
