@@ -7,7 +7,7 @@
     height: 260px;
     width: 750px;
     margin: 0 auto;
-    color: white;
+    color: $color-white;
     display: flex;
 
     &__body {
@@ -54,9 +54,9 @@
   height: 381px;
   width: calc(100% - 40px);
   padding: 0 20px 10px 20px;
+  
   .footer-middle {
-    background-color: rgb(34, 34, 34);
-    color: rgb(255, 255, 255);
+    color: $color-white;
     font-size: 12px;
     padding: 0px 20px 10px;
 
@@ -143,7 +143,7 @@
       }
     }
     span {
-      color: white;
+      color: $color-white;
       line-height: 33px;
       font-size: 12px;
     }
@@ -158,11 +158,10 @@
     opacity: 0.7;
     
     a{
+      @include link-reset;
       font-weight: 500;
       color: inherit;
-      text-decoration: none;
-      display: block;
-
+      
       &:hover {
         text-decoration: underline;
       }
@@ -175,7 +174,7 @@
     margin-right: 20px;
     .icon {
       font-size: 25px;
-      color: white;
+      color: $color-white;
     }
   }
 
@@ -183,7 +182,7 @@
     margin-top: 30px;
     .icon {
       font-size: 25px;
-      color: white;
+      color: $color-white;
     }
   }
 }
