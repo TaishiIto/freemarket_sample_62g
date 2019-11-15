@@ -1,0 +1,23 @@
+.create-item-btn{
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background-color: rgb(234,54,45);
+  color: $color-white;
+  font-size: 22px;
+  text-align: center;
+  z-index: 1000;
+  text-decoration: none;
+
+  &__text{
+    margin: 28px 0 0;
+  }
+  
+  .fa-camera{
+    margin: 84x 0 0;
+    font-size: 60px;
+  }
+}

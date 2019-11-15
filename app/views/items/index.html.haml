@@ -1,1 +1,149 @@
-%h2 Hello Mercari
+= render "shared/header"
+.main
+  .contents
+    .images
+      = image_tag "dog_tree_full.jpg",height: "390", width: "100%"
+      .back
+        %i.fas.fa-chevron-left
+      .next
+        %i.fas.fa-chevron-right
+      .image-points
+        .image-points__pointer
+          %span.fas.fa-circle
+          %span.fas.fa-circle.fa-circle--active
+    .category-pickup
+      %h2.category-pickup__title
+        人気のカテゴリー
+      .pickup-popular
+        %ul.pickup-popular__list
+          %li.pickup-popular__list__body
+            = link_to "レディース"
+          %li.pickup-popular__list__body
+            = link_to "メンズ"
+          %li.pickup-popular__list__body
+            = link_to "家電・スマホ・カメラ"
+          %li.pickup-popular__list__body
+            = link_to "おもちゃ・ホビー・グッズ"
+
+    .category-popular
+      .popular-items.popular-items--most
+        .items-header
+          %h3.items-header__title
+            レディース新着アイテム
+          = link_to "#" do
+            もっと見る
+            %i.fas.fa-chevron-right.fa-fw
+        .items-newer
+          .newer-container
+            %ul.item-list
+              - (0..9).each do
+                =render "shared/item"
+
+      .popular-items
+        .items-header
+          %h3.items-header__title
+            メンズ新着アイテム
+          = link_to "#" do
+            もっと見る
+            %i.fas.fa-chevron-right.fa-fw
+        .items-newer
+          .newer-container
+            %ul.item-list
+              - (0..9).each do
+                =render "shared/item"
+
+      .popular-items
+        .items-header
+          %h3.items-header__title
+            家電・スマホ・カメラ新着アイテム
+          = link_to "#" do
+            もっと見る
+            %i.fas.fa-chevron-right.fa-fw
+        .items-newer
+          .newer-container
+            %ul.item-list
+              - (0..9).each do
+                =render "shared/item"
+
+      .popular-items
+        .items-header
+          %h3.items-header__title
+            おもちゃ・ホビー・グッズ新着アイテム
+          = link_to "#" do
+            もっと見る
+            %i.fas.fa-chevron-right.fa-fw
+        .items-newer
+          .newer-container
+            %ul.item-list
+              - (0..9).each do
+                =render "shared/item"
+
+    .category-pickup
+      %h2.category-pickup__title
+        人気のブランド
+      .pickup-popular
+        %ul.pickup-popular__list
+          %li.pickup-popular__list__body
+            = link_to "シャネル"
+          %li.pickup-popular__list__body
+            = link_to "ルイヴィトン"
+          %li.pickup-popular__list__body
+            = link_to "シュプリーム"
+          %li.pickup-popular__list__body
+            = link_to "ナイキ"
+
+    .category-popular
+      .popular-items.popular-items--most
+        .items-header
+          %h3.items-header__title
+            シャネル新着アイテム
+          = link_to "#" do
+            もっと見る
+            %i.fas.fa-chevron-right.fa-fw
+        .items-newer
+          .newer-container
+            %ul.item-list
+              - (0..9).each do
+                =render "shared/item"
+
+      .popular-items
+        .items-header
+          %h3.items-header__title
+            ルイヴィトン新着アイテム
+          = link_to "#" do
+            もっと見る
+            %i.fas.fa-chevron-right.fa-fw
+        .items-newer
+          .newer-container
+            %ul.item-list
+              - (0..9).each do
+                =render "shared/item"
+
+      .popular-items
+        .items-header
+          %h3.items-header__title
+            シュプリーム新着アイテム
+          = link_to "#" do
+            もっと見る
+            %i.fas.fa-chevron-right.fa-fw
+        .items-newer
+          .newer-container
+            %ul.item-list
+              - (0..9).each do
+                =render "shared/item"
+
+      .popular-items
+        .items-header
+          %h3.items-header__title
+            ナイキ新着アイテム
+          = link_to "#" do
+            もっと見る
+            %i.fas.fa-chevron-right.fa-fw
+        .items-newer
+          .newer-container
+            %ul.item-list
+              - (0..9).each do
+                =render "shared/item"
+
+= render "shared/footer"
+= render "shared/item-creater"

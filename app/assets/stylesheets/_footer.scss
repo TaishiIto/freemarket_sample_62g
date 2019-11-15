@@ -1,0 +1,188 @@
+.footer-top {
+  background-image: url(dog_tree.jpg);
+  background-position: center;
+  background-size: cover;
+
+  .banner {
+    height: 260px;
+    width: 750px;
+    margin: 0 auto;
+    color: $color-white;
+    display: flex;
+
+    &__body {
+      box-sizing: border-box;
+
+      &__kantan {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 35px;
+      }
+
+      &__download {
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+      
+      &__download-icon{
+        display: flex;
+
+        img {
+          margin-right: 20px;
+        }
+
+        a {
+          text-decoration: none;
+          margin-top: 14px;
+
+          img {
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+
+    figure {
+      margin: 0;
+      padding-left: 30px;
+    }
+  }
+}
+
+.footer-text{
+  background-color: rgb(34, 34, 34);
+  height: 381px;
+  width: calc(100% - 40px);
+  padding: 0 20px 10px 20px;
+  
+  .footer-middle {
+    color: $color-white;
+    font-size: 12px;
+    padding: 0px 20px 10px;
+
+    .upper-side {
+      margin: 0 auto;
+      width: 75%;
+
+      .about {
+        display: flex;
+        flex-wrap: wrap;
+        
+        &__fremake {
+          padding-right: 40px;
+          margin-top: 18px;
+          font-weight: bold;
+          line-height: 1.4em;
+
+          &__heading {
+            font-size: 16px;
+
+          }
+        }
+      }
+
+        .help-guide {
+          padding-right: 40px;
+          margin-top: 18px;
+          font-weight: bold;
+          line-height: 1.4em;
+
+          &__heading {
+            font-size: 16px;
+          }
+        }
+
+        .privacy {
+          padding-right: 40px;
+          margin-top: 18px;
+          font-weight: bold;
+          line-height: 1.4em;
+          padding-left: 10px;
+          vertical-align: top;
+
+          &__heading {
+            font-size: 16px;
+
+            .footer-details-all {
+              display: flex;
+
+              .-left {
+                width: 180px;
+                padding-right: 10px;
+              }
+
+              .-right {
+                width: 180px;
+                padding-left: 10px;
+              }
+            }
+          }
+        }
+
+        .country {
+          padding-right: 40px;
+          margin-top: 18px;
+          font-weight: bold;
+          line-height: 1.4em;
+          
+          &__heading {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    
+  .footer-bottom {
+    display: flex;
+    margin: 50px auto 10px;
+    width: 75%;
+    a {
+      width: 50%;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    span {
+      color: $color-white;
+      line-height: 33px;
+      font-size: 12px;
+    }
+  }
+}
+
+.footer-details {
+
+  &__detail {
+    font-size: 12px;
+    margin: 16px 0 0;
+    opacity: 0.7;
+    
+    a{
+      @include link-reset;
+      font-weight: 500;
+      color: inherit;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  &__twitter {
+    float: left;
+    margin-top: 30px;
+    margin-right: 20px;
+    .icon {
+      font-size: 25px;
+      color: $color-white;
+    }
+  }
+
+  &__facebook {
+    margin-top: 30px;
+    .icon {
+      font-size: 25px;
+      color: $color-white;
+    }
+  }
+}

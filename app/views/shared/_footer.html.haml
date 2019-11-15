@@ -1,0 +1,98 @@
+
+.footer-top
+  .banner
+    .banner__body
+      .banner__body__kantan
+        スマホでかんたんフリマアプリ
+      .banner__body__download
+        今すぐ無料ダウンロード！
+      .banner__body__download-icon
+        = image_tag "logo_red.svg", height: "68", width: "68"
+        = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", target: "_blank" do
+          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2651893653", height: "40", width: "144"
+        = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", target: "_blank" do
+          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2651893653", height: "40", width: "144"
+    %figure
+      = image_tag  "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?2651893653", height: "260", width: "300"
+.footer-text
+  .footer-middle
+    .upper-side
+      .about
+        .about__fremake
+          .about__fremake__heading
+            フリマケについて
+            %ul.footer-details
+              %li.footer-details__detail
+                = link_to "会社概要（運営会社）", class: "footer-details__detail__link"
+              %li.footer-details__detail
+                = link_to "採用情報", class: "footer-details__detail__link"
+              %li.footer-details__detail
+                = link_to "プレスリリース", class: "footer-details__detail__link"
+              %li.footer-details__detail
+                = link_to "公式ブログ", class: "footer-details__detail__link"
+              %li.footer-details__detail
+                = link_to "フリマケロゴ利用ガイドライン", class: "footer-details__detail__link"
+              .footer-details__twitter
+                = link_to "https://twitter.com/" do
+                  = icon 'fab', 'twitter', class: "icon"
+              .footer-details__facebook
+                = link_to "https://www.facebook.com/" do
+                  = icon 'fab', 'facebook-square', class: "icon"
+
+        .help-guide
+          .help-guide__heading
+            ヘルプ＆ガイド
+            %ul.footer-details
+              %li.footer-details__detail
+                = link_to "フリマケガイド", class: "footer-details__detail__link"
+              %li.footer-details__detail
+                = link_to "らくらくフリマケ便", class: "footer-details__detail__link"
+              %li.footer-details__detail
+                = link_to "ゆうゆうフリマケ便", class: "footer-details__detail__link"
+              %li.footer-details__detail
+                = link_to "大型フリマケ便", class: "footer-details__detail__link"
+              %li.footer-details__detail
+                = link_to "車体取引ガイド", class: "footer-details__detail__link"
+              %li.footer-details__detail
+                = link_to "フリマケあんしん・あんぜん宣言！", class: "footer-details__detail__link"
+              %li.footer-details__detail
+                = link_to "偽ブランド品撲滅への取り組み", class: "footer-details__detail__link"
+              %li.footer-details__detail
+                = link_to "フリマケボックス", class: "footer-details__detail__link"
+
+        .privacy
+          .privacy__heading
+            プライバシーと利用規約
+            .footer-details-all
+              %ul.footer-details.-left
+                %li.footer-details__detail
+                  = link_to "プライバシーポリシー", class: "footer-details__detail__link"
+                %li.footer-details__detail
+                  = link_to "フリマケ利用規約", class: "footer-details__detail__link"
+                %li.footer-details__detail
+                  = link_to "あんしんスマホサポート制度に関する利用特約", class: "footer-details__detail__link"
+                %li.footer-details__detail
+                  = link_to "コンプライアンスポリシー", class: "footer-details__detail__link"
+              %ul.footer-details.-right
+                %li.footer-details__detail
+                  = link_to "個人データの安全管理に係る基本方針", class: "footer-details__detail__link"
+                %li.footer-details__detail
+                  = link_to "特定商取引に関する表記", class: "footer-details__detail__link"
+                %li.footer-details__detail
+                  = link_to "資金決済法に基づく表示", class: "footer-details__detail__link"
+                %li.footer-details__detail
+                  = link_to "法令順守と犯罪抑止のために", class: "footer-details__detail__link"
+
+        .country
+          .country__heading
+            国
+            %ul.footer-details
+              %li.footer-details__detail
+                = link_to "日本", class: "footer-details__detail__link"
+              %li.footer-details__detail
+                = link_to "United States", class: "footer-details__detail__link"
+
+  .footer-bottom
+    = link_to root_path do
+      = image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?3135490372", width: "120px")
+    %span © 2019 Fremake
