@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_13_074125) do
+ActiveRecord::Schema.define(version: 2019_11_13_102904) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "zip_code", null: false
+    t.string "city", null: false
+    t.string "house_number", null: false
+    t.string "building_name"
+    t.integer "user_id"
+    t.integer "prefecture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -19,8 +30,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_074125) do
     t.string "family_name_kanji", null: false
     t.string "first_name_kana", null: false
     t.string "family_name_kana", null: false
-    t.integer "birthday", null: false
-    t.integer "phone_number"
+    t.string "phone_number"
     t.text "profile"
     t.text "image"
     t.string "uid"
