@@ -6,6 +6,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :price, null:false
       t.integer :condition, null: false
       t.string :brand, default: ""
+      t.integer :size_id
       t.timestamps
     end
   end
