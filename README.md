@@ -204,31 +204,6 @@ Things you may want to cover:
 
 
 
-## categoriesテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|category|string|null: false|
-
-
-### Association
-- has_many :items
-
-
-
-
-## sizesテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|size|string|null: false|
-
-
-### Association
-- has_many :items
-
-
-
 * Database initialization
 
 * How to run the test suite
