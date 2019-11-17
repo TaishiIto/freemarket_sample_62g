@@ -1,0 +1,2 @@
+class ItemsStatus < ApplicationRecord
+end
