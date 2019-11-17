@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_11_17_083134) do
     t.integer "condition", null: false
     t.string "brand", default: ""
     t.integer "size_id"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_items_on_name"
