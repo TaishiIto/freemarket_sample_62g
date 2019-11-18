@@ -1,1 +1,9 @@
-%h2 Itemcreate
+= form_with model:@item, url: "/item", method: :post do |f|
+  = f.file_field :images, multiple: true
+  = f.text_field :name, placeholder: "商品名（必須40文字まで）"
+  = f.text_area :description, placeholder: "商品の説明（必須1000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+  = f.collection_select :category_id, Category.all, :id, :name
+  = f.collection_select :size_id, Size.all, :id, :name
+  = f.select :condition, [['---', 0], ['新品、未使用', 1], ['未使用に近い', 2], ['目立った傷や汚れなし', 3], ['やや傷や汚れあり', 4], ['傷や汚れあり', 5], ['全体的に状態が悪い', 6]]
+  = f.text_field :price, placeholder: "例）300"
+  = f.submit '出品する'
