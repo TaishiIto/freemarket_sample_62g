@@ -1,4 +1,8 @@
 class Item < ApplicationRecord
+
+  serialize :images, JSON
+  mount_uploaders :images, ImageUploader
+  
   has_many :items_statuses
   has_many :users, through: :items_statuses
   

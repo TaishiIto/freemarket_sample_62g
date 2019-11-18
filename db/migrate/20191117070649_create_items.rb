@@ -1,6 +1,7 @@
 class CreateItems < ActiveRecord::Migration[5.2]
   def change
     create_table :items do |t|
+      t.text :images, null: false
       t.string  :name , null: false, index: true
       t.text :description, null: false
       t.integer :price, null:false
