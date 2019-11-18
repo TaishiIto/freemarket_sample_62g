@@ -26,7 +26,6 @@ class SignupController < ApplicationController
     session[:city] = params[:user][:address_attributes][:city]
     session[:house_number] = params[:user][:address_attributes][:house_number]
     session[:building_name] = params[:user][:address_attributes][:building_name]
-    binding.pry
     @user = User.new
     @user.build_address
   end

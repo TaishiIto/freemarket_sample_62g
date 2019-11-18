@@ -33,7 +33,8 @@ Things you may want to cover:
 
 
 ### Association
-- has_many :items
+- has_many :items ,through: :items_status dependent: :destroy
+- has_many :items_status dependent: :destroy
 - has_many :confirmed_addresses dependent: :destroy
 - has_many :provider_addresses dependent: :destroy
 - has_many :likes dependent: :destroy
@@ -48,7 +49,7 @@ Things you may want to cover:
 
 |Column|Type|Option|
 |------|----|------|
-|user_id|references|null: false, foreign_key: true|
+|user_id|references|foreign_key: true|
 |size_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
 |name|string|null: false|
@@ -60,13 +61,32 @@ Things you may want to cover:
 
 
 ### Association
-- belongs_to :user
 - belongs_to :category
 - belongs_to :size
 - has_many :delivery_ways
-- has_many :images
+- has_many :user ,through: :items_status
+- has_many :items_status
 - has_many :likes
 - has_many :reviews
+
+
+
+## items_statusesテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|user_id|references|foreign_key: true|
+|item_id|references|foreign_key: true|
+|buyer_id|integer||
+|item_status|integer|default: 1|
+|rate|integer|null: false, default: 3|
+|review|text|null: false|
+
+
+
+### Association
+- belongs_to :user
+- belongs_to :item
 
 
 
@@ -138,20 +158,6 @@ Things you may want to cover:
 - belongs_to :item
 
 
-## reviewsテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|user_id|references|null: false, foreign_key: true|
-|rate|string|null: false|
-|comment|text||
-
-
-
-### Association
-- belongs_to :user
-
-
 
 ## item_commentsテーブル
 
@@ -165,20 +171,6 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- belongs_to :item
-
-
-
-## imagesテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|item_id|references|null: false, foreign_key: true|
-|image|text|null: false|
-
-
-
-### Association
 - belongs_to :item
 
 
@@ -209,31 +201,6 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-
-
-
-## categoriesテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|category|string|null: false|
-
-
-### Association
-- has_many :items
-
-
-
-
-## sizesテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|size|string|null: false|
-
-
-### Association
-- has_many :items
 
 
 

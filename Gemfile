@@ -78,3 +78,5 @@ gem "font-awesome-sass"
 gem 'devise'
 gem 'active_hash'
 gem 'pry-rails'
+gem 'carrierwave'
+gem 'mini_magick'

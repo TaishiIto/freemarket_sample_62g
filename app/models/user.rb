@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :address
+  has_many :items_statuses
+  has_many :items, through: :items_statuses
   accepts_nested_attributes_for :address
 
 end
