@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_one :address
   has_many :items_statuses
-  has_many :items, throuth: :items_statuses
+  has_many :items, through: :items_statuses
   accepts_nested_attributes_for :address
 
 end
