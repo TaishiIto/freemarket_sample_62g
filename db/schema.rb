@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2019_11_17_083134) do
     t.integer "buyer_id"
     t.integer "item_status", default: 1
     t.integer "rate", default: 3, null: false
-    t.text "review", null: false
+    t.text "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_items_statuses_on_item_id"
