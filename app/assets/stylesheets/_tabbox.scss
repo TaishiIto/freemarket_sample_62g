@@ -1,0 +1,110 @@
+
+.tab-box{
+  width: 700px;
+
+  &__container{
+    .tabs{
+      height: 74px;
+      list-style: none;
+
+      &__list{
+        width: 50%;
+        background-color: #eee;
+        border-bottom: 2px solid #eee;
+        float: left;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+
+        &:hover{
+          opacity: 0.7;
+        }
+
+        &--active{
+          border-bottom: none;
+          border-top: 2px solid red;
+          background-color: white;
+
+        }
+        &__body{
+          
+          &__link{
+            font-size: 16px;
+              height: 72px;
+              display: block;
+              color: rgb(51,51,51);
+              line-height: 72px;
+              font-weight: bold;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .contents{
+      height: 81px;
+      width: 100%;
+
+      &__lists{
+        
+        &__list{
+          border-bottom: 1px solid #eee;
+          
+          &__link{
+            display: block;
+            height: 48px;
+            padding: 16px;
+            text-decoration: none;
+            color: rgb(136,136,136);
+            position: relative;
+            
+            &:hover{
+              background-color: rgb(246,246,246);
+            }
+            
+            &__image{
+              float: left;
+              height: 48px;
+              width: 48px;
+              margin: 0;
+              background-color: #eee;
+              position: relative;
+
+              img{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+              }
+            }
+            &__body{
+              margin-left: 60px;
+              margin-right: 48px;
+              font-size: 14px;
+
+              &__text{
+                color: rgb(51,51,51);
+                
+              }
+              time{
+                .far.fa-clock{
+                  font-size: 16px;
+                  margin-right: 4px;
+                }
+              }
+            }
+            .fa-chevron-right{
+              color: rgb(51,51,51);
+              float: right;
+              position: absolute;
+              right: 16px;
+              bottom: 30px;
+              
+            }
+          }
+        }
+      }
+    }
+  }
+}
