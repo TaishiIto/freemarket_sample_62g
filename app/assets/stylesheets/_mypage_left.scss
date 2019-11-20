@@ -1,0 +1,40 @@
+.left__side__list {
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+  position: relative;
+  .list__contents {
+    
+    .contents__list {
+      border-bottom: 1px solid #eee;
+      .list__item--active {
+        padding: 16px;
+        font-size: 14px;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        color: black;
+      }
+      .list__item--active:hover {
+        background-color:rgba(243, 240, 240,0.5);
+      }
+      
+      .list__item {
+        display: block;
+        padding: 16px;
+        font-size: 14px;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        color: black;
+      }
+      .list__item:hover {
+        background-color:rgba(243, 240, 240,0.5);
+      }
+    }
+  }
+  .midle__title {
+    margin:40px 0px 0px;
+    font: 16px;
+  }
+}

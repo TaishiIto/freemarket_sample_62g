@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     } #SNS認証
   root 'items#index'
   resources :items
+  resources :users,only: :show
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :signup do
     collection do
