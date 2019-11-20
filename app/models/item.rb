@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   has_many :items_statuses
   has_many :users, through: :items_statuses
   has_one  :delivery
-  accepts_nested_attributes_fo :delivery
+  accepts_nested_attributes_for :delivery
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :size

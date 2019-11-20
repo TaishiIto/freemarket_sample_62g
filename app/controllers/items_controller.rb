@@ -32,6 +32,6 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit({images: []}, :name, :description, :category_id, :size_id, :condition, :price,
-                                  delivery_attributes:[:delivery_cost, :delivery_days, :delivery_ways])
+                                  delivery_attributes:[:id, :delivery_cost, :delivery_days, :delivery_ways])
   end
 end
