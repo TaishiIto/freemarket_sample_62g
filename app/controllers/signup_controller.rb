@@ -45,7 +45,9 @@ class SignupController < ApplicationController
     family_name_kanji: session[:family_name_kanji],
     first_name_kanji: session[:first_name_kanji],
     family_name_kana: session[:family_name_kana],
-    first_name_kana: session[:first_name_kana]
+    first_name_kana: session[:first_name_kana],
+    uid: session[:uid],
+    provider: session[:provider],
   )
 
     user = User.find_by(email: session[:email])

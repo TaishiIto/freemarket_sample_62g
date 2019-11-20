@@ -11,19 +11,19 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def callback_from(provider)
+    callback = request.env['omniauth.auth']
     provider = provider.to_s
-    @user = User.from_omniauth(request.env['omniauth.auth'])
-
-    if @user.persisted?
-      sign_in_and_redirect @user, event: :authentication #this will throw if @user is not activated
-      set_flash_message(:notice, :success, kind: "google") if is_navigational_format?
+    user = User.where(uid: callback.uid, provider: provider).first
+    unless user
+      @user = User.new
+      @user.build_address
+      @user.name = callback.info.name
+      @user.email = callback.info.email
+      session[:uid] = callback.uid
+      session[:provider] = provider
+      render template: "signup/step1"
     else
-      session[:name] = @user.name
-      session[:email] = @user.email
-      session[:password] = @user.password
-      session[:provider] = @user.provider
-      session[:uid] = @user.uid
-      redirect_to new_user_registration_path
+      sign_in_and_redirect user, event: :authentication
     end
   end
 end
