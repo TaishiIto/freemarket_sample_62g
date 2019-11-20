@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
   resources :items
+  resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :signup do
     collection do
@@ -11,5 +12,4 @@ Rails.application.routes.draw do
       get 'done' # 登録完了後のページ
     end
   end
-  get 'user/show' => 'items#user_mypage'
 end
