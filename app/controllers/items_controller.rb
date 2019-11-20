@@ -27,6 +27,10 @@ class ItemsController < ApplicationController
 
   end
 
+  def user_mypage
+
+  end
+
   private
 
   def item_params
