@@ -1,4 +1,3 @@
-
 .tab-box{
   width: 700px;
 
@@ -30,11 +29,11 @@
           
           &__link{
             font-size: 16px;
-              height: 72px;
-              display: block;
-              color: rgb(51,51,51);
-              line-height: 72px;
-              font-weight: bold;
+            height: 72px;
+            display: block;
+            color: rgb(51,51,51);
+            line-height: 72px;
+            font-weight: bold;
             text-decoration: none;
           }
         }
@@ -43,7 +42,7 @@
     .contents{
       height: 81px;
       width: 100%;
-
+      position: relative;
       &__lists{
         
         &__list{
@@ -101,6 +100,27 @@
               right: 16px;
               bottom: 30px;
               
+            }
+          }
+        }
+        .show__index {
+          display: block;
+          height: 48px;
+          padding: 16px;
+          text-decoration: none;
+          color: rgb(136,136,136);
+          position: relative;
+          &__text {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            height: 56px;
+            background-color: #EEEEEE;
+            line-height: 56px;
+            font-size: 14px;
+            &:hover{
+              background-color: rgb(246,246,246);
             }
           }
         }

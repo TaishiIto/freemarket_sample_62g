@@ -1,0 +1,94 @@
+= render "shared/header"
+.top
+  .main
+    = render "shared/mypage_left"
+    .main__mypage
+      .user
+        = link_to "items/mypage", class:"user__link" do
+          = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", height: "60", width: "60", class: "user__img"
+          %h2.user__name
+            current_user
+          .user__status
+            .user__likes
+              評価
+              %span.user__likes__counts
+                0
+            .user__items
+              出品数
+              %span.user__items__counts
+                1
+      .tab-box
+        %section.tab-box__container
+          %ul.tabs
+            %li.tabs__list.tabs__list--active
+              %h3.tabs__list__body
+                = link_to "おしらせ", "#", class: "tabs__list__body__link" 
+            %li.tabs__list.tabs__list
+              %h3.tabs__list__body
+                = link_to "やることリスト", "#", class: "tabs__list__body__link" 
+          .contents
+            %ul.contents__lists
+              %li.contents__lists__list
+                = link_to  "#", class: "contents__lists__list__link" do
+                  %figure.contents__lists__list__link__image
+                    = image_tag 'logo_red.svg', height: '40', width: '40'
+                  .contents__lists__list__link__body
+                    .contents__lists__list__link__body__text
+                      メールが届いていない状態です。設定しているメールアドレスをご確認ください
+                    %time
+                      %i.far.fa-clock
+                      %span 2日前
+                  %i.fas.fa-chevron-right
+              %li.contents__lists__list
+                = link_to  "#", class: "contents__lists__list__link" do
+                  %figure.contents__lists__list__link__image
+                    = image_tag 'logo_red.svg', height: '40', width: '40'
+                  .contents__lists__list__link__body
+                    .contents__lists__list__link__body__text
+                      メールが届いていない状態です。設定しているメールアドレスをご確認ください
+                    %time
+                      %i.far.fa-clock
+                      %span 2日前
+                  %i.fas.fa-chevron-right
+              %li.contents__lists__list
+                = link_to  "#", class: "contents__lists__list__link" do
+                  %figure.contents__lists__list__link__image
+                    = image_tag 'logo_red.svg', height: '40', width: '40'
+                  .contents__lists__list__link__body
+                    .contents__lists__list__link__body__text
+                      メールが届いていない状態です。設定しているメールアドレスをご確認ください
+                    %time
+                      %i.far.fa-clock
+                      %span 2日前
+                  %i.fas.fa-chevron-right
+              %li.contents__lists__list
+                = link_to  "#", class: "contents__lists__list__link" do
+                  %figure.contents__lists__list__link__image
+                    = image_tag 'logo_red.svg', height: '40', width: '40'
+                  .contents__lists__list__link__body
+                    .contents__lists__list__link__body__text
+                      メールが届いていない状態です。設定しているメールアドレスをご確認ください
+                    %time
+                      %i.far.fa-clock
+                      %span 2日前
+                  %i.fas.fa-chevron-right
+              %li.show__index
+                = link_to "#", class:"show__index__text" do
+                  一覧を見る
+    .bottom
+      %h2.bottom__head__text
+        購入した商品          
+      %ul.bottom__tab
+        %li.bottom__tab__left
+          %h3
+            = link_to "取引中", "#", class: "left__link" 
+        %li.bottom__tab__right
+          %h3
+            = link_to "過去の取引", "#", class: "right__link"
+      .bottom__content
+        %ul.content__list
+          = image_tag 'logo_gray.svg', height: '110', width: '110',class:"list__image"
+          %li.content__list__text
+            取引中の商品がありません
+= render "shared/footer"
+    
