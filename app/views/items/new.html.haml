@@ -1,10 +1,16 @@
 = form_with model:@item, url: "/items", method: :post do |f|
-  = f.file_field :images, multiple: true
-  = f.text_field :name, placeholder: "商品名（必須40文字まで）"
-  = f.text_area :description, placeholder: "商品の説明（必須1000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
-  = f.collection_select :category_id, Category.all, :id, :name
-  = f.collection_select :size_id, Size.all, :id, :name
-  = f.text_field :bland,  placeholder: "例）シャネル"
-  = f.select :condition, [['---', 0], ['新品、未使用', 1], ['未使用に近い', 2], ['目立った傷や汚れなし', 3], ['やや傷や汚れあり', 4], ['傷や汚れあり', 5], ['全体的に状態が悪い', 6]]
-  = f.text_field :price, placeholder: "例）300"
-  = f.submit '出品する', onclick: "submit();", type: "button"
+  .form-item
+    = f.file_field :images, multiple: true
+    = f.text_field :name, placeholder: "商品名（必須40文字まで）"
+    = f.text_area :description, placeholder: "商品の説明（必須1000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+    = f.collection_select :category_id, Category.all, :id, :name
+    = f.collection_select :size_id, Size.all, :id, :name
+    = f.text_field :bland,  placeholder: "例）シャネル"
+    = f.select :condition, [['---', 0], ['新品、未使用', 1], ['未使用に近い', 2], ['目立った傷や汚れなし', 3], ['やや傷や汚れあり', 4], ['傷や汚れあり', 5], ['全体的に状態が悪い', 6]]
+  = f.fields_for :delivery do |fin|
+    .form-delivery
+      = fin.select :delivery_cost, [['---', 0], ['送料込み(出品者負担)', 1], ['着払い(購入者負担)', 2]]
+      = fin.collection_select :delivery_ways, Prefecture.all, :id, :name
+      = fin.select :delivery_days, [['---', 0], ['1〜2日で発送', 1], ['3〜4日で発送', 2], ['4〜7日で発送', 3]]
+    = f.text_field :price, placeholder: "例）300"
+    = f.submit '出品する', onclick: "submit();", type: "button"
