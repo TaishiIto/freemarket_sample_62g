@@ -27,9 +27,6 @@ class ItemsController < ApplicationController
 
   end
 
-  def user_mypage #あとで消す
-  end
-
   private
 
   def item_params

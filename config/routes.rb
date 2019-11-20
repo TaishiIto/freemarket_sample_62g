@@ -11,5 +11,4 @@ Rails.application.routes.draw do
       get 'done' # 登録完了後のページ
     end
   end
-  get "index" => "items#user_mypage" #あとで消す
 end
