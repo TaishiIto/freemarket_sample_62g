@@ -241,6 +241,40 @@
           }
         }
       }
+      .signup__login__btn {
+        display: flex;
+        .signup {
+          text-align: center;
+          .signup__btn {
+            font-size: 14px;
+            text-decoration: none;
+            display: block;
+            padding: 8px 10px;
+            background-color:red;
+            color: white;
+            border-radius: 4px;
+          }
+        }
+        .login {
+          text-align: center;
+          margin-left: 11px;
+          .login__btn {
+            font-size: 14px;
+            text-decoration: none;
+            display: block;
+            padding: 8px 10px;
+            background-color: white;
+            border-radius: 4px;
+            color: blue;
+            border: 1px solid blue;
+          }
+          .login__btn:hover {
+            background-color: skyblue;
+            color: white;
+            border-color:skyblue;
+          }
+        }
+      }
     }
   }
 }
