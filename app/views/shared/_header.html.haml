@@ -44,4 +44,8 @@
                 %img.mypage__image{alt: "", src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}/
                 マイページ
         - else
-          
+          .signup__login__btn
+            .signup
+              = link_to "新規会員登録", step1_signup_index_path, class:"signup__btn"
+            .login
+              = link_to "ログイン", new_user_session_path, class:"login__btn"
