@@ -1,0 +1,21 @@
+
+.main {
+  margin: 40px 210px 0px;
+  height: 1410px;
+  .logout {
+    width: 700px;
+    float: right;
+    &__content__form {
+      padding: 64px;
+      text-align: center;
+      .logout__link {
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+        line-height: 48px;
+        color: white;
+        background-color:red
+      }
+    }
+  }
+}
