@@ -28,4 +28,5 @@
 
 public/uploads/*
 
+.DS_store
 /.env
