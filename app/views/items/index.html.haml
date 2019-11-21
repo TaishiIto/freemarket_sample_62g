@@ -36,8 +36,7 @@
         .items-newer
           .newer-container
             %ul.item-list
-              - (0..9).each do
-                =render "shared/item"
+              = render partial:"shared/item", collection: @items
 
       .popular-items
         .items-header
@@ -49,8 +48,7 @@
         .items-newer
           .newer-container
             %ul.item-list
-              - (0..9).each do
-                =render "shared/item"
+              = render partial:"shared/item", collection: @items
 
       .popular-items
         .items-header
@@ -62,8 +60,7 @@
         .items-newer
           .newer-container
             %ul.item-list
-              - (0..9).each do
-                =render "shared/item"
+              = render partial:"shared/item", collection: @items
 
       .popular-items
         .items-header
@@ -75,8 +72,7 @@
         .items-newer
           .newer-container
             %ul.item-list
-              - (0..9).each do
-                =render "shared/item"
+              = render partial:"shared/item", collection: @items
 
     .category-pickup
       %h2.category-pickup__title
@@ -103,8 +99,7 @@
         .items-newer
           .newer-container
             %ul.item-list
-              - (0..9).each do
-                =render "shared/item"
+              = render partial:"shared/item", collection: @items
 
       .popular-items
         .items-header
@@ -116,8 +111,7 @@
         .items-newer
           .newer-container
             %ul.item-list
-              - (0..9).each do
-                =render "shared/item"
+              = render partial:"shared/item", collection: @items
 
       .popular-items
         .items-header
@@ -129,8 +123,7 @@
         .items-newer
           .newer-container
             %ul.item-list
-              - (0..9).each do
-                =render "shared/item"
+              = render partial:"shared/item", collection: @items
 
       .popular-items
         .items-header
@@ -142,8 +135,7 @@
         .items-newer
           .newer-container
             %ul.item-list
-              - (0..9).each do
-                =render "shared/item"
+              = render partial:"shared/item", collection: @items
 
 = render "shared/footer"
 = render "shared/item-creater"
