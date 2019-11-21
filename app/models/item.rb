@@ -8,11 +8,12 @@ class Item < ApplicationRecord
   has_one  :delivery
   accepts_nested_attributes_for :delivery
 
-  validates :images, :name, :description, presence: true
+  validates :images, presence: true
+  validates :name, :description, presence: true
   validates :price,       presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
-  validates :condition,   presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 6}
-  validates :size_id,     presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 10}
-  validates :category_id, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 13}
+  validates :condition,   numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 6}
+  validates :size_id,     numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 10}
+  validates :category_id, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 13}
 
 
   extend ActiveHash::Associations::ActiveRecordExtensions
