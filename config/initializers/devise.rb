@@ -173,6 +173,9 @@ Devise.setup do |config|
   # to give user feedback and not to assert the e-mail validity.
   config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
 
+  config.omniauth :facebook, Rails.application.credentials.facebook[:facebook_key], Rails.application.credentials.facebook[:facebook_secret], scope: 'email', info_fields: 'email,name,first_name, last_name'
+  config.omniauth :google_oauth2, Rails.application.credentials.google[:client_id], Rails.application.credentials.google[:client_secret]
+  OmniAuth.config.logger = Rails.logger if Rails.env.development? # debug用
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
