@@ -20,6 +20,7 @@ class SignupController < ApplicationController
     session[:first_name_kanji] = user_params[:first_name_kanji]
     session[:family_name_kana] = user_params[:family_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
+    session[:birthday] = Date.new(user_params["birthday(1i)"]&.to_i, user_params["birthday(2i)"]&.to_i, user_params["birthday(3i)"]&.to_i)
     session[:phone_number] = user_params[:phone_number]
     session[:zip_code] = params[:user][:address_attributes][:zip_code]
     session[:prefecture_id] = params[:user][:address_attributes][:prefecture_id]
@@ -46,6 +47,7 @@ class SignupController < ApplicationController
     first_name_kanji: session[:first_name_kanji],
     family_name_kana: session[:family_name_kana],
     first_name_kana: session[:first_name_kana],
+    birthday: session[:birthday],
     uid: session[:uid],
     provider: session[:provider],
   )
@@ -86,6 +88,7 @@ class SignupController < ApplicationController
       :first_name_kanji,
       :family_name_kana,
       :first_name_kana,
+      :birthday,
       :phone_number,
       :profile,
       :image,
