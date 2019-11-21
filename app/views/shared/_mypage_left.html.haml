@@ -95,7 +95,7 @@
         電話番号の確認
         %i.fas.fa-chevron-right
     %li.contents__list
-      = link_to "/users/#{current_user.id}",method: :delete ,class:"list__item" do
+      = link_to user_path(current_user.id),method: :delete ,class:"list__item" do
         ログアウト
         %i.fas.fa-chevron-right
 
