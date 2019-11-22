@@ -30,6 +30,18 @@ RSpec.describe Address, type: :model do
       expect(address.errors[:prefecture_id]).to include("can't be blank")
     end
 
+    it "prefecture_idが0の場合無効である" do
+      address = build(:address, prefecture_id: 0)
+      address.valid?
+      expect(address.errors[:prefecture_id]).to include("must be greater than or equal to 1")
+    end
+
+    it "prefecture_idが48以上の場合無効である" do
+      address = build(:address, prefecture_id: 48)
+      address.valid?
+      expect(address.errors[:prefecture_id]).to include("must be less than or equal to 47")
+    end
+
     # user_id
     it "user_idがない場合無効である" do
       address = build(:address, user_id: nil)
