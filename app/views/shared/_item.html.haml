@@ -1,6 +1,6 @@
 %li.item-list__details
   .details
-    = link_to "#" do
+    = link_to item_path(item.id) do
       %figure.details__body
         %figcaption
           = tag.span item.name, class: "details__body__title"
