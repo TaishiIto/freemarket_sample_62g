@@ -3,7 +3,7 @@
     .header__main
       .header__top
         .logo
-          = link_to "#",class:"image__link" do
+          = link_to root_path,class:"image__link" do
             = image_tag 'fmarket_logo_red.svg', height:'36',weidth:'134'
         %form.search__form
           %input.search{name: "keyword", placeholder: "何かお探しですか？", type: "search"}/
