@@ -75,20 +75,20 @@
               %li.show__index
                 = link_to "#", class:"show__index__text" do
                   一覧を見る
-    .bottom
-      %h2.bottom__head__text
-        購入した商品          
-      %ul.bottom__tab
-        %li.bottom__tab__left
-          %h3
-            = link_to "取引中", "#", class: "left__link" 
-        %li.bottom__tab__right
-          %h3
-            = link_to "過去の取引", "#", class: "right__link"
-      .bottom__content
-        %ul.content__list
-          = image_tag 'logo_gray.svg', height: '110', width: '110',class:"list__image"
-          %li.content__list__text
-            取引中の商品がありません
+      .bottom
+        %h2.bottom__head__text
+          購入した商品          
+        %ul.bottom__tab
+          %li.bottom__tab__left
+            %h3
+              = link_to "取引中", "#", class: "left__link" 
+          %li.bottom__tab__right
+            %h3
+              = link_to "過去の取引", "#", class: "right__link"
+        .bottom__content
+          %ul.content__list
+            = image_tag 'logo_gray.svg', height: '110', width: '110',class:"list__image"
+            %li.content__list__text
+              取引中の商品がありません
 = render "shared/footer"
     
