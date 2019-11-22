@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
+
   def index
-    @items = Item.all
+    @items = Item.includes(:items_statuses).limit(10).order("created_at DESC")
   end
 
   def new
