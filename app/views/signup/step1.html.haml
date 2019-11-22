@@ -1,6 +1,9 @@
 = form_for @user, url: step2_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
   = f.text_field :name, placeholder: '例) フリマ太郎',value: @user.name
   = f.email_field :email, placeholder: 'PC・携帯どちらでも可',value: @user.email
-  = f.password_field :password, placeholder: '6文字以上'
-  = f.password_field :password_confirmation, placeholder: '6文字以上'
+  - if  (session[:uid] &&  session[:provider])
+    = f.password_field :password, placeholder: '7文字以上',style: "display:none;",value: @user.password
+  - else
+    = f.password_field :password, placeholder: '7文字以上'
+
   = f.submit '次へ進む', class: 'signup-main__btn-default signup-main__btn-red'

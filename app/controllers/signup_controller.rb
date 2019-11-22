@@ -9,10 +9,9 @@ class SignupController < ApplicationController
     session[:name] = user_params[:name]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
-    session[:password_confirmation] = user_params[:password_confirmation]
+    session[:password_confirmation] = user_params[:password]
     @user = User.new
     @user.build_address
-
   end
   
   def step3 # 前のページの情報をsessionメソッドで保持
@@ -36,7 +35,6 @@ class SignupController < ApplicationController
 
 
   def create #createアクション内で、今まで保管したsessionのデータを渡し、DBに保存する
-
     User.create!(
     name: session[:name],
     email: session[:email],
@@ -51,7 +49,6 @@ class SignupController < ApplicationController
     uid: session[:uid],
     provider: session[:provider],
   )
-
     user = User.find_by(email: session[:email])
     Address.create(
       zip_code: session[:zip_code],
