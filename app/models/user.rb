@@ -10,4 +10,16 @@ class User < ApplicationRecord
   has_many :items, through: :items_statuses
   accepts_nested_attributes_for :address
 
+  validates :name, presence: true, length: { maximum: 20 }
+  validates :email, uniqueness: true, format: { with: /\A\S+@\S+\.\S+\z/ }
+
+  validates :first_name_kanji, presence: true, length: { maximum: 20 }, format: { with: /\A[一-龥]+\z/ }
+  validates :family_name_kanji, presence: true, length: { maximum: 20 }, format: { with: /\A[一-龥]+\z/ }
+  validates :first_name_kana, presence: true, length: { maximum: 20 }, format: { with: /\A([ァ-ン]|ー)+\z/ }
+  validates :family_name_kana, presence: true, length: { maximum: 20 }, format: { with: /\A([ァ-ン]|ー)+\z/ }
+
+  validates :birthday, presence: true
+  validates :phone_number, presence: true
+  validates :password, presence: true,format: { with: /\A[a-z\d]{7,128}+\z/i} # 7文字以上128文字以内
+
 end
