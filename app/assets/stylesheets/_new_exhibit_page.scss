@@ -1,0 +1,187 @@
+.exhibit__page {
+  width: 100%;
+  background-color: #EEEEEE;
+  &__header {
+    height: 128px;
+    text-align: center;
+    .exhibit__logo__link {
+      display: block;
+      width: 13%;
+      margin: 0 auto;
+      padding-top: 32px;
+      .exhibit__logo__img {
+
+        }
+    }
+  }
+
+  &__main {
+    background-color: #EEEEEE;	
+    &__contents {
+      background-color:white;
+      width: 49%;
+      margin: 0 auto;
+      &__message {
+        font-size: 22px;
+        display: block;
+        padding: 32px 16px;
+        text-align: center;
+        font-weight: bold;
+      }
+      .form-content {
+        border-top: 1px solid #EEEEEE;
+        .img-form {
+          height: 200px;
+          width:88%;
+          padding:40px;
+          border-bottom: 1px solid #EEEEEE;
+          &__text {
+
+            .form-caution {
+              display: inline-block;
+              background-color:red;
+              color: white;
+            }
+          }
+          &__comment {
+            
+          }
+          .file_field {
+              
+            
+          }
+        }
+        .sell-content {
+          height: 200px;
+          width:88%;
+          padding:40px;
+          border-bottom: 1px solid #EEEEEE;
+          &__name {
+
+            &__name {
+
+            }
+            .text_field {
+
+              
+            }
+          }
+          &__description {
+
+            &__description {
+
+            }
+            .text_area {
+
+              
+            }
+          }
+        }
+        .item-details {
+          height: 200px;
+          width:88%;
+          padding:40px;
+          border-bottom: 1px solid #EEEEEE;
+          &__name {
+
+          }
+          &__form {
+            float: right;
+            &__category {
+
+              &__name {
+
+              }
+            }
+            &__status {
+
+              &__name {
+
+
+              }
+            }
+          }
+        }
+        .delivery-form {
+          height: 200px;
+          width:88%;
+          padding:40px;
+          border-bottom: 1px solid #EEEEEE;
+          &__about__delivery {
+
+          }
+          &__box {
+            float: right;
+            &__top {
+
+              &__name {
+
+              }
+            }
+            &__middle {
+
+              &__name {
+
+              }
+            }
+            &__bottom {
+
+              &__name {
+
+              }
+            }
+          }
+        }
+        .item-price {
+          height: 200px;
+          width:88%;
+          padding:40px;
+          border-bottom: 1px solid #EEEEEE;
+          &__name {
+
+          }
+          &__form {
+
+          }
+        }
+        .submit-button {
+          // height: 200px;
+          width:88%;
+          padding:40px;
+          &__text {
+            font-size: 14px;
+            .submit-button__text1 {
+        
+            }
+            .submit-button__text2 {
+            
+            }
+            .submit-button__text3 {
+              
+            }
+          }
+          .exhibit-btn {
+            margin: 40px 0px 0px;
+            width: 100%;
+            color: white;
+            background-color:red;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid red;
+          }
+          .back-btn {
+            display: block;
+            line-height: 48px;
+            font-size: 14px;
+            width: 60%;
+            text-align: center;
+            text-decoration: none;
+            margin: 24px auto 0px;
+            color: white;
+            background-color:#AAAAAA;
+          }
+        }
+      }
+    }
+  }
+}
