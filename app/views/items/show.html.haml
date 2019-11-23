@@ -1,0 +1,13 @@
+= @detail.name
+- @detail.images.each do |image|
+  = image_tag image.url
+= @detail.description
+= @detail.users.first.name
+= @detail.category_id
+= @detail.brand
+= @detail.size_id
+= @detail.condition
+= @detail.delivery.delivery_cost
+= @detail.delivery.delivery_ways
+= @detail.delivery.delivery_days
+= @detail.price

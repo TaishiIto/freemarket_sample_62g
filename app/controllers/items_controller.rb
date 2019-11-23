@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @detail = Item.find(params[:id])
+    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
   end
 
   def new
