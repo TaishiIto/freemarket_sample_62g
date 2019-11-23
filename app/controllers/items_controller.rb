@@ -4,6 +4,10 @@ class ItemsController < ApplicationController
     @items = Item.includes(:items_statuses).limit(10).order("created_at DESC")
   end
 
+  def show
+    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
+  end
+
   def new
     @item = Item.new
     @item.build_delivery
