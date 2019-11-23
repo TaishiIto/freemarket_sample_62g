@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-
+    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
   end
 
   def update
