@@ -1,13 +1,75 @@
-= @detail.name
-- @detail.images.each do |image|
-  = image_tag image.url
-= @detail.description
-= @detail.users.first.name
-= @detail.category_id
-= @detail.brand
-= @detail.size_id
-= @detail.condition
-= @detail.delivery.delivery_cost
-= @detail.delivery.delivery_ways
-= @detail.delivery.delivery_days
-= @detail.price
+= render "shared/header"
+
+.product-details__page
+  .product-details__page__main
+    %h1.product-name
+      = @detail.name
+    .product-details__page__main__content
+      .product-details__page__main__content__img
+        - @detail.images.each do |image|
+          = image_tag image.url
+      .product-details__page__main__content__right
+        .main-content__name
+          .main-content__name__left
+            出品者
+          .main-content__name__right
+            = @detail.users.first.name
+        
+        .main-content__category
+          .main-content__category__left
+            カテゴリー
+          .main-content__category__right
+            = @detail.category_id
+        
+        .main-content__brand
+          .main-content__brand__left
+            ブランド
+          .main-content__brand__right
+            = @detail.brand
+        
+        .main-content__size
+          .main-content__size__left
+            商品のサイズ
+          .main-content__size__right
+            = @detail.size_id
+        
+        .main-content__condition
+          .main-content__condition__left
+            商品の状態  
+          .main-content__condition__right
+            = @detail.condition
+        
+        .main-content__cost
+          .main-content__cost__left
+            配送料の負担
+          .main-content__cost__right
+            = @detail.delivery.delivery_cost
+        
+        .main-content__ways
+          .main-content__ways__left
+            配送の方法
+          .main-content__ways__right
+            = @detail.delivery.delivery_ways
+        
+        .main-content__area
+          .main-content__area__left
+            配送元地域
+          .main-content__area__right
+
+        .main-content__days
+          .main-content__days__left
+            発送日の目安
+          .main-content__days__right
+            = @detail.delivery.delivery_days
+
+
+        = @detail.description
+        
+        
+      
+    = @detail.price
+
+
+
+= render "shared/footer"
+= render "shared/item-creater"
