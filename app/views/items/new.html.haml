@@ -1,16 +1,111 @@
-= form_with model:@item, url: "/items", method: :post do |f|
-  .form-item
-    = f.file_field :images, multiple: true
-    = f.text_field :name, placeholder: "商品名（必須40文字まで）"
-    = f.text_area :description, placeholder: "商品の説明（必須1000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
-    = f.collection_select :category_id, Category.all, :id, :name
-    = f.collection_select :size_id, Size.all, :id, :name
-    = f.text_field :brand,  placeholder: "例）シャネル"
-    = f.select :condition, [['---', 0], ['新品、未使用', 1], ['未使用に近い', 2], ['目立った傷や汚れなし', 3], ['やや傷や汚れあり', 4], ['傷や汚れあり', 5], ['全体的に状態が悪い', 6]]
-  = f.fields_for :delivery do |fin|
-    .form-delivery
-      = fin.select :delivery_cost, [['---', 0], ['送料込み(出品者負担)', 1], ['着払い(購入者負担)', 2]]
-      = fin.collection_select :delivery_ways, Prefecture.all, :id, :name
-      = fin.select :delivery_days, [['---', 0], ['1〜2日で発送', 1], ['3〜4日で発送', 2], ['4〜7日で発送', 3]]
-    = f.text_field :price, placeholder: "例）300"
-    = f.submit '出品する', onclick: "submit();", type: "button"
+.exhibit__page
+  .exhibit__page__header
+    = link_to root_path, class:"exhibit__logo__link" do
+      = image_tag "fmarket_logo_red.svg",height: "49px", width: "185px", class:"exhibit__logo__img"
+  .exhibit__page__main
+    .exhibit__page__main__contents
+      %h3.exhibit__page__main__contents__message
+        商品の情報を入力
+      = form_with model:@item,class: "form-content", url: items_path, method: :post do |f|
+        .img-form
+          %h3.img__upload__text
+            出品画像
+            %span.form-caution
+              必須
+          %p.img__upload__comment
+            最大10枚までアップロードできます
+          = f.file_field :images, multiple: true,class:"img-upload__field"
+        
+        .sell-content
+          .sell-content__name
+            %h3.sell-content__name__name
+              商品名
+              %span.form-caution
+                必須
+            = f.text_field :name, placeholder: "商品名（必須40文字まで）",class:"item-name__text__field"
+          .sell-content__description
+            %h3.sell-content__description__description
+              商品の説明
+              %span.form-caution
+                必須
+            = f.text_area :description, placeholder: "商品の説明（必須1000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",class:"sell-content__text__area"
+            
+        .item-details
+          %h3.item-details__name
+            商品の詳細
+          .item-details__form
+            .item-details__form__category
+              %h3.item-details__form__category__name
+                カテゴリー
+                %span.form-caution
+                  必須
+              = f.collection_select :category_id, Category.all, :id, :name
+              -# = f.collection_select :size_id, Size.all, :id, :name
+              -# = f.text_field :brand,  placeholder: "例）シャネル"
+            .item-details__form__status
+              %h3.item-details__form__status__name
+                商品の状態
+                %span.form-caution
+                  必須
+              = f.select :condition, [['---', 0], ['新品、未使用', 1], ['未使用に近い', 2], ['目立った傷や汚れなし', 3], ['やや傷や汚れあり', 4], ['傷や汚れあり', 5], ['全体的に状態が悪い', 6]],class:"condition__text__box"
+        
+        = f.fields_for :delivery do |fin|
+          .delivery-form
+            %h3.delivery-form__about__delivery
+              配送について
+            .delivery-form__box
+              .delivery-form__box__top
+                %h3.delivery-form__box__top__name
+                  配送料の負担
+                  %span.form-caution
+                    必須
+                = fin.select :delivery_cost, [['---', 0], ['送料込み(出品者負担)', 1], ['着払い(購入者負担)', 2]]
+                
+              .delivery-form__box__middle
+                %h3.delivery-form__box__top__name
+                  配送元の地域
+                  %span.form-caution
+                    必須
+                = fin.collection_select :delivery_ways, Prefecture.all, :id, :name
+
+              .delivery-form__box__bottom
+                %h3.delivery-form__box__top__name
+                  配送までの日数
+                  %span.form-caution
+                    必須
+                = fin.select :delivery_days, [['---', 0], ['1〜2日で発送', 1], ['3〜4日で発送', 2], ['4〜7日で発送', 3]]
+        .item-price
+          %h3.item-price__name
+            販売価格(300~9,999,999)
+          .item-price__form
+            .item-price__form__left
+              %h3.item-price__form__name
+                価格
+                %span.form-caution
+                  必須
+            .item-price__form__right
+              = f.text_field :price, placeholder: "例）300",class:"right__form"
+        .submit-button
+          .submit-button__text
+            %p.submit-button__text1
+              禁止されている出品、行為を必ずご確認ください。
+            %p.submit-button__text2
+              またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+            %p.submit-button__text3
+              また、出品をもちまして加盟店規約に同意したことになります。
+          = f.submit '出品する', onclick: "submit();", type: "button",class:"exhibit-btn"
+          =link_to "もどる",root_path,class:"back-btn"
+.exhibit-page__footer
+  .exhibit-page__footer__content
+    .exhibit-page__footer__content__main
+      %ul.exhibit-page__footer__lists
+        %li.exhibit-page__footer__list
+          プライバシーポリシー
+        %li.exhibit-page__footer__list
+          メルカリ利用規約
+        %li.exhibit-page__footer__list
+          特定商取引に関する表記
+    = link_to root_path,class:"exhibit-page__footer__link" do
+      = image_tag "logo_gray.svg",height: "90px", width: "90px"
+    %p.exhibit-page__footer__copyright
+      ©︎ 2019 Mercari
