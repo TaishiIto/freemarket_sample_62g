@@ -54,6 +54,10 @@
             font-size: 12px;
             margin:8px 0 0;
           }
+          .img-upload__field {
+            
+            
+          }
         }
         .sell-content {
           height: 300px;
@@ -116,9 +120,11 @@
           &__name {
             font-size: 14px;
             color: #888;
+            display:inline;
           }
           &__form {
             float: right;
+            width: 65%;
             &__category {
 
               &__name {
@@ -135,8 +141,10 @@
                   font-weight: bold;
                 }
               }
-              .category-form {
-              
+              #item_category_id{
+                height:50px;
+                width:100%;
+                background-color:white;
               }
             }
             &__status {
@@ -155,23 +163,27 @@
                   font-weight: bold;
                 }
               }
-              .condition__text__box {
-                margin-top:40px;
+              #item_condition {
+                height:50px;
+                width:100%;
+                background-color:white;
               }
             }
           }
         }
         .delivery-form {
-          height: 200px;
+          height: 300px;
           width:88%;
           padding:40px;
           border-bottom: 1px solid #EEEEEE;
           &__about__delivery {
             font-size: 14px;
             color: #888;
+            display:inline;
           }
           &__box {
             float: right;
+            width: 65%;
             &__top {
 
               .delivery-form__box__top__name {
@@ -187,6 +199,11 @@
                   vertical-align: top;
                   font-weight: bold;
                 }
+              }
+              #item_delivery_attributes_delivery_cost {
+                height:50px;
+                width:100%;
+                background-color:white;
               }
             }
             &__middle {
@@ -205,6 +222,11 @@
                   font-weight: bold;
                 }
               }
+              #item_delivery_attributes_delivery_ways {
+                height:50px;
+                width:100%;
+                background-color:white;
+              }
             }
             &__bottom {
 
@@ -221,6 +243,11 @@
                   vertical-align: top;
                   font-weight: bold;
                 }
+              }
+              #item_delivery_attributes_delivery_days {
+                height:50px;
+                width:100%;
+                background-color:white;
               }
             }
           }
@@ -326,7 +353,7 @@
           display:inline-block;
           text-align: center;
           width: 32%;
-          color:#000080;
+          color:black;
         }
       }
     }
@@ -340,7 +367,7 @@
     .exhibit-page__footer__copyright {
       font-size: 12px;
       text-align: center;
-      color:#000080;
+      color:black;
     }
   }
 }

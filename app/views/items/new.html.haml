@@ -39,9 +39,9 @@
                 カテゴリー
                 %span.form-caution
                   必須
-              = f.collection_select :category_id, Category.all, :id, :name, class:"category-form"
-              = f.collection_select :size_id, Size.all, :id, :name
-              = f.text_field :bland,  placeholder: "例）シャネル"
+              = f.collection_select :category_id, Category.all, :id, :name
+              -# = f.collection_select :size_id, Size.all, :id, :name
+              -# = f.text_field :bland,  placeholder: "例）シャネル"
             .item-details__form__status
               %h3.item-details__form__status__name
                 商品の状態
