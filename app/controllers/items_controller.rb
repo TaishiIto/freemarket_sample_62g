@@ -22,11 +22,15 @@ class ItemsController < ApplicationController
   end
 
   def edit
-
+    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
   end
 
   def update
-
+    if @detail.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
