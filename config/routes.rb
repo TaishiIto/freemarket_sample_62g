@@ -15,4 +15,5 @@ Rails.application.routes.draw do
       get 'done' # 登録完了後のページ
     end
   end
+  delete "items/:id" => "items#destroy"
 end
