@@ -1,7 +1,7 @@
 .product-details__page {
   width: 100%;
   background-color: #F5F5F5;
-  .product-details__page__head {
+  &__head {
     background-color: #F5F5F5;
     height:40px;
   }
@@ -28,13 +28,13 @@
         .main-content__name {
           display: flex;
           border:1px solid #F8F8FF;
-          .main-content__name__left {
+          &__left {
             width:39%;
             line-height:60px;
             background-color:#F5F5F5;
             padding-left:5px;
           }
-          .main-content__name__right {
+          &__right {
             width:61%;
             padding:5px 0 0 5px;
           }
@@ -42,13 +42,13 @@
         .main-content__category {
           display: flex;
           border:1px solid #F8F8FF;
-          .main-content__category__left {
+          &__left {
             width:39%;
             line-height:60px;
             background-color:#F5F5F5;
             padding-left:5px;
           }
-          .main-content__category__right {
+          &__right {
             width:61%;
             padding:5px 0 0 5px;
           }
@@ -56,13 +56,13 @@
         .main-content__brand {
           display: flex;
           border:1px solid #F8F8FF;
-          .main-content__brand__left {
+          &__left {
             width:39%;
             line-height:35px;
             background-color:#F5F5F5;
             padding-left:5px;
           }
-          .main-content__brand__right {
+          &__right {
             width:61%;
             padding:5px 0 0 5px;
           }
@@ -70,13 +70,13 @@
         .main-content__size {
           display: flex;
           border:1px solid #F8F8FF;
-          .main-content__size__left {
+          &__left {
             width:39%;
             line-height:35px;
             background-color:#F5F5F5;
             padding-left:5px;
           }
-          .main-content__size__right {
+          &__right {
             width:61%;
             padding:5px 0 0 5px;
           }
@@ -84,13 +84,13 @@
         .main-content__condition {
           display: flex;
           border:1px solid #F8F8FF;
-          .main-content__condition__left {
+          &__left {
             width:39%;
             line-height:35px;
             background-color:#F5F5F5;
             padding-left:5px;
           }
-          .main-content__condition__right {
+          &__right {
             width:61%;
             padding:5px 0 0 5px;
           }
@@ -98,13 +98,13 @@
         .main-content__cost {
           display: flex;
           border:1px solid #F8F8FF;
-          .main-content__cost__left {
+          &__left {
             width:39%;
             line-height:35px;
             background-color:#F5F5F5;
             padding-left:5px;
           }
-          .main-content__cost__right {
+          &__right {
             width:61%;
             padding:5px 0 0 5px;
           }
@@ -112,13 +112,13 @@
         .main-content__ways {
           display: flex;
           border:1px solid #F8F8FF;
-          .main-content__ways__left {
+          &__left {
             width:39%;
             line-height:35px;
             background-color:#F5F5F5;
             padding-left:5px;
           }
-          .main-content__ways__right {
+          &__right {
             width:61%;
             padding:5px 0 0 5px;
           }
@@ -126,13 +126,13 @@
         .main-content__area {
           display: flex;
           border:1px solid #F8F8FF;
-          .main-content__area__left {
+          &__left {
             width:39%;
             line-height:35px;
             background-color:#F5F5F5;
             padding-left:5px;
           }
-          .main-content__area__right {
+          &__right {
             width:61%;
             padding:5px 0 0 5px;
           }
@@ -140,13 +140,13 @@
         .main-content__days {
           display: flex;
           border:1px solid #F8F8FF;
-          .main-content__days__left {
+          &__left {
             width:39%;
             line-height:35px;
             background-color:#F5F5F5;
             padding-left:5px;
           }
-          .main-content__days__right {
+          &__right {
             width:61%;
             padding:5px 0 0 5px;
           }
@@ -156,14 +156,14 @@
     .item-details-page__price {
       text-align: center;
       margin: 24px 0 0;
-      .item-details-page__price__price {
+      &__price {
         font-size:50px;
         margin:0 16px 0 0;
       }
-      .item-details-page__price__tax {
+      &__tax {
         font-size:10px;
       }
-      .item-details-page__price__add {
+      &__add {
         font-size:16px;
       }
     }
@@ -199,7 +199,7 @@
           text-align: center;
           display: inline-block;
           padding:1px 16px;
-          .bottom-like-icon-like {
+          &-icon-like {
             font-size:14px;
             margin:1px 0 0 8px;
             vertical-align: middle;
@@ -226,7 +226,7 @@
         font-size:14px;
         margin-left: 65px;
         display: block;
-        .bottom2-link {
+        &-link {
           color:skyblue;
           display: block;
           padding-top:10px;
@@ -240,7 +240,7 @@
   .product-details-comment-form {
     width:47.5%;
     margin:8px auto;
-    .product-details-comment-form__contents {
+    &__contents {
       background-color:white;
       .product-details-comment-form__content {
         padding:24px;
