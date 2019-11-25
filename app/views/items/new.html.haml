@@ -41,7 +41,7 @@
                   必須
               = f.collection_select :category_id, Category.all, :id, :name
               -# = f.collection_select :size_id, Size.all, :id, :name
-              -# = f.text_field :bland,  placeholder: "例）シャネル"
+              -# = f.text_field :brand,  placeholder: "例）シャネル"
             .item-details__form__status
               %h3.item-details__form__status__name
                 商品の状態
@@ -109,5 +109,3 @@
       = image_tag "logo_gray.svg",height: "90px", width: "90px"
     %p.exhibit-page__footer__copyright
       ©︎ 2019 Mercari
-
-
