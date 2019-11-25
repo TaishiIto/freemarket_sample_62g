@@ -1,0 +1,91 @@
+.login {
+  background: #f5f5f5;
+  text-align:center;
+  margin: 0 auto;
+  .new-account {
+    p {
+      font-size: 14px;
+    }
+    width: 450px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 32px 0 32px;
+  }
+  .another-account {
+    width: 450px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 32px 0 32px;
+    border-top: 1px solid #f5f5f5;
+  }
+  .login-form{
+    width: 450px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 32px 0 32px;
+    .new_user {
+      padding: 0 64px 0;
+      .field {
+        .field__form {
+          height: 30px;
+          padding: 10px 16px 8px;
+          margin-bottom: 20px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          font-size: 16px;
+          width: 90%;
+        }
+      }
+      .actions__btn--submit {
+        margin: 16px 0 0;
+        padding: 12px 130px 12px 130px;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        border-radius: 4px;
+      }
+    }
+    .forget-password {
+      margin: 40px 0 0;
+      color: #0099e8;
+      text-align: left;
+      font-size: 14px;
+    }
+  }
+  .contents {
+    padding: 0 64px 0;
+    &__btn {
+      display: block;
+      line-height: 48px;
+      padding-right: 90px;
+      text-decoration: none;
+      border-radius: 4px;
+      &--icon {
+        margin: 10px 0 0 10px;
+        font-size: 30px;
+        position: absolute;
+        display: block;
+      }
+      p {
+        text-indent: 90px;
+        font-size: 13px;
+      }
+    }
+    .contents__btn--new {
+      margin-top:8px;
+      color: #fff;
+      border: 1px solid #0099e8;
+      background: #0099e8;
+    }
+    .contents__btn--facebook {
+      background: #385185;
+      color: #fff;
+      margin: 16px 0 0;
+    }
+    .contents__btn--google {
+      border: #979797 solid 1px;
+      color: #333;
+      margin: 16px 0 0;
+    }
+  }
+}
