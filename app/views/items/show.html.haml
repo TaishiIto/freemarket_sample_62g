@@ -1,6 +1,7 @@
 = render "shared/header"
 
 .product-details__page
+  .product-details__page__head
   .product-details__page__main
     %h1.product-name
       = @detail.name
@@ -61,13 +62,41 @@
             発送日の目安
           .main-content__days__right
             = @detail.delivery.delivery_days
-
-
-        = @detail.description
+    
+    .item-details-page__price 
+      %span.item-details-page__price__price
+        = number_with_delimiter @detail.price
+      %span.item-details-page__price__tax
+        （税込）
+      %span.item-details-page__price__add
+        送料込み
+    = link_to "購入画面に進む",root_path, class:"purchace-page-link"
+    .item-details-page-description
+      = @detail.description
+    .item-details-page-bottom
+      .bottom1
+        .bottom-like
+          %i.far.fa-heart
+          %span.bottom-like-icon-like
+            いいね！
+        =link_to root_path,class:"bottom-link" do
+          %i.far.fa-flag
+          %span.bottom-link-icon-message
+            不適切な商品の報告
+      .bottom2
+        = link_to root_path,class:"bottom2-link" do
+          %span.bottom-link-icon-message2
+            あんしん・あんぜんへの取り組み
+  .product-details-comment-form
+    .product-details-comment-form__contents
+      .product-details-comment-form__content
+        = form_with url: items_path, method: :post do |f|
+          %p.details-page-form-comment
+            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。 
+          = f.text_area :description
+          = f.submit 'コメントする', onclick: "submit();", type: "button",class:"details-page-form-btn"
         
-        
-      
-    = @detail.price
+          
 
 
 
