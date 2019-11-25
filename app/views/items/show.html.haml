@@ -85,6 +85,8 @@
       %span.item-details-page__price__add
         送料込み
     = link_to "購入画面に進む",root_path, class:"purchace-page-link"
+    - if user_signed_in? && current_user.id == @detail.users.first.id
+      = link_to "削除する", item_path(@detail.id), method: :delete,class:"destroy-btn"
     .item-details-page-description
       = @detail.description
     .item-details-page-bottom
@@ -101,6 +103,7 @@
         = link_to root_path,class:"bottom2-link" do
           %span.bottom-link-icon-message2
             あんしん・あんぜんへの取り組み
+    
   .product-details-comment-form
     .product-details-comment-form__contents
       .product-details-comment-form__content
