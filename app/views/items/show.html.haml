@@ -1,17 +1,3 @@
-= @detail.name
-- @detail.images.each do |image|
-  = image_tag image.url
-= @detail.description
-= @detail.users.first.name
-= @detail.category_id
-= @detail.brand
-= @detail.size_id
-= @detail.condition
-= @detail.delivery.delivery_cost
-= @detail.delivery.delivery_ways
-= @detail.delivery.delivery_days
-= @detail.price
-= link_to "編集する", edit_item_path(@detail.id)
 = render "shared/header"
 
 .product-details__page
@@ -87,6 +73,7 @@
     = link_to "購入画面に進む",root_path, class:"purchace-page-link"
     - if user_signed_in? && current_user.id == @detail.users.first.id
       = link_to "削除する", item_path(@detail.id), method: :delete,class:"destroy-btn"
+      = link_to "編集する", edit_item_path(@detail.id),class:"detail-page-edit-btn"
     .item-details-page-description
       = @detail.description
     .item-details-page-bottom
