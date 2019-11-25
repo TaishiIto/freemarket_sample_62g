@@ -5,7 +5,7 @@
     background-color: #F5F5F5;
     height:40px;
   }
-  .product-details__page__main {
+  &__main {
     background-color: white;
     width: 42%;
     padding: 24px 40px 40px;
@@ -15,7 +15,7 @@
       text-align: center;
       line-height: 1.4;
     }
-    .product-details__page__main__content {
+    &__content {
       margin-top: 16px;
       height: 400px;
       &__img {
