@@ -28,13 +28,10 @@ class SignupController < ApplicationController
     session[:building_name] = params[:user][:address_attributes][:building_name]
     @user = User.new
     @user.build_address
+    redirect_to controller: 'cards', action: 'new'
   end
 
-  def step4 # カード支払い
-  end
-
-
-  def create #createアクション内で、今まで保管したsessionのデータを渡し、DBに保存する
+  def save #createアクション内で、今まで保管したsessionのデータを渡し、DBに保存する
     User.create!(
     name: session[:name],
     email: session[:email],
@@ -56,6 +53,12 @@ class SignupController < ApplicationController
       city: session[:city],
       house_number: session[:house_number],
       building_name: session[:building_name],
+      user_id: user.id
+  )
+    user = User.find_by(email: session[:email])
+    Card.create(
+      customer_id: session[:customer_id],
+      card_id: session[:card_id],
       user_id: user.id
   )
 
@@ -97,7 +100,10 @@ class SignupController < ApplicationController
       :prefecture_id,
       :city,
       :house_number,
-      :building_name]
+      :building_name],
+      card_attributes:
+      [:customer_id,
+      :card_id]
     )
   end
 end
