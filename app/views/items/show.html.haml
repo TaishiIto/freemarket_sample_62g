@@ -12,3 +12,103 @@
 = @detail.delivery.delivery_days
 = @detail.price
 = link_to "編集する", edit_item_path(@detail.id)
+= render "shared/header"
+
+.product-details__page
+  .product-details__page__head
+  .product-details__page__main
+    %h1.product-name
+      = @detail.name
+    .product-details__page__main__content
+      .product-details__page__main__content__img
+        - @detail.images.each do |image|
+          = image_tag image.url
+      .product-details__page__main__content__right
+        .main-content__name
+          .main-content__name__left
+            出品者
+          .main-content__name__right
+            = @detail.users.first.name
+        
+        .main-content__category
+          .main-content__category__left
+            カテゴリー
+          .main-content__category__right
+            = @detail.category_id
+        
+        .main-content__brand
+          .main-content__brand__left
+            ブランド
+          .main-content__brand__right
+            = @detail.brand
+        
+        .main-content__size
+          .main-content__size__left
+            商品のサイズ
+          .main-content__size__right
+            = @detail.size_id
+        
+        .main-content__condition
+          .main-content__condition__left
+            商品の状態  
+          .main-content__condition__right
+            = @detail.condition
+        
+        .main-content__cost
+          .main-content__cost__left
+            配送料の負担
+          .main-content__cost__right
+            = @detail.delivery.delivery_cost
+        
+        .main-content__ways
+          .main-content__ways__left
+            配送の方法
+          .main-content__ways__right
+            = @detail.delivery.delivery_ways
+        
+        .main-content__area
+          .main-content__area__left
+            配送元地域
+          .main-content__area__right
+
+        .main-content__days
+          .main-content__days__left
+            発送日の目安
+          .main-content__days__right
+            = @detail.delivery.delivery_days
+    
+    .item-details-page__price 
+      %span.item-details-page__price__price
+        = number_with_delimiter @detail.price
+      %span.item-details-page__price__tax
+        （税込）
+      %span.item-details-page__price__add
+        送料込み
+    = link_to "購入画面に進む",root_path, class:"purchace-page-link"
+    .item-details-page-description
+      = @detail.description
+    .item-details-page-bottom
+      .bottom1
+        .bottom-like
+          %i.far.fa-heart
+          %span.bottom-like-icon-like
+            いいね！
+        =link_to root_path,class:"bottom-link" do
+          %i.far.fa-flag
+          %span.bottom-link-icon-message
+            不適切な商品の報告
+      .bottom2
+        = link_to root_path,class:"bottom2-link" do
+          %span.bottom-link-icon-message2
+            あんしん・あんぜんへの取り組み
+  .product-details-comment-form
+    .product-details-comment-form__contents
+      .product-details-comment-form__content
+        = form_with url: items_path, method: :post do |f|
+          %p.details-page-form-comment
+            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。 
+          = f.text_area :description
+          = f.submit 'コメントする', onclick: "submit();", type: "button",class:"details-page-form-btn"
+
+= render "shared/footer"
+= render "shared/item-creater"
