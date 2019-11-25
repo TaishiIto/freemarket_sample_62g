@@ -1,0 +1,15 @@
+.footer
+  %nav
+    %ul
+      %li
+        = link_to "プライバシーポリシー", class: "privacy"
+      %li
+        = link_to "メルカリ利用規約", class: "privacy"
+      %li
+        = link_to "特定商取引に関する表記", class: "privacy"
+
+  .footer-logo
+    = link_to root_path do
+      = image_tag "logo_gray.svg", height: "70", width: "70"
+    .copyright
+      © 2019 Mercari
