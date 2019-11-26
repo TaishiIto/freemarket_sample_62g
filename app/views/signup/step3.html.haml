@@ -1,9 +1,39 @@
-= form_for @user, url: step4_signup_index_path, method: :get, html: {class: 'second-main-wrapper__box'} do |f|
-  = f.fields_for :address do |fin|
-    .form-group
-      = fin.text_field :zip_code, placeholder: '例) 123-4567'
-      = fin.collection_select :prefecture_id, Prefecture.all, :id, :name
-      = fin.text_field :city, placeholder: '例) 横浜市緑区'
-      = fin.text_field :house_number, placeholder: '例) 青山1-1-1'
-      = fin.text_field :building_name, placeholder: '例) 柳ビル103'
-      = f.submit '次へ進む', class: 'signup-main__btn-default signup-main__btn-red'
+= render "shared/user/signup-header"
+
+.step3-form
+  .form-block
+    .address-form-header
+      %h2 住所入力
+    .address-form-contents
+      = form_for @user, url: step4_signup_index_path, method: :get, html: {class: 'second-main-wrapper__box'} do |f|
+        = f.fields_for :address do |fin|
+          .step3-form
+            .form-group
+              %p1 郵便番号
+              %p2 必須
+              .step-zip-code
+                = fin.text_field :zip_code, placeholder: '例) 123-4567'
+            .form-group
+              %p1 都道府県
+              %p2 必須
+              .step-prefecture
+                = fin.collection_select :prefecture_id, Prefecture.all, :id, :name
+            .form-group
+              %p1 市区町村
+              %p2 必須
+              .step-city
+                = fin.text_field :city, placeholder: '例) 横浜市緑区'
+            .form-group
+              %p1 番地
+              %p2 必須
+              .step-house_number
+                = fin.text_field :house_number, placeholder: '例) 青山1-1-1'
+            .form-group
+              %p1 建物名
+              %p3 任意
+              .step-building
+                = fin.text_field :building_name, placeholder: '例) 柳ビル103'
+            .step3-submit
+              = f.submit '次へ進む', class: 'step3-submit__btn'
+
+= render "shared/user/user-footer"
