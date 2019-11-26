@@ -33,20 +33,20 @@
           text-indent: 90px;
           font-size: 13px;
         }
-      }
-      .contents__btn--mail {
-        color: #fff;
-        background-color: #ea352d;
-      }
-      .contents__btn--facebook {
-        background: #385185;
-        color: #fff;
-        margin: 16px 0 0;
-      }
-      .contents__btn--google {
-        border: #979797 solid 1px;
-        color: #333;
-        margin: 16px 0 0;
+        &--mail {
+          color: #fff;
+          background-color: #ea352d;
+        }
+        &--facebook {
+          background: #385185;
+          color: #fff;
+          margin: 16px 0 0;
+        }
+        &--google {
+          border: #979797 solid 1px;
+          color: #333;
+          margin: 16px 0 0;
+        }
       }
     }
   }

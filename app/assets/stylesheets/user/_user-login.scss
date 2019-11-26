@@ -26,7 +26,7 @@
     .new_user {
       padding: 0 64px 0;
       .field {
-        .field__form {
+        &__form {
           height: 30px;
           padding: 10px 16px 8px;
           margin-bottom: 20px;
@@ -70,22 +70,22 @@
         text-indent: 90px;
         font-size: 13px;
       }
-    }
-    .contents__btn--new {
-      margin-top:8px;
-      color: #fff;
-      border: 1px solid #0099e8;
-      background: #0099e8;
-    }
-    .contents__btn--facebook {
-      background: #385185;
-      color: #fff;
-      margin: 16px 0 0;
-    }
-    .contents__btn--google {
-      border: #979797 solid 1px;
-      color: #333;
-      margin: 16px 0 0;
+      &--new {
+        margin-top:8px;
+        color: #fff;
+        border: 1px solid #0099e8;
+        background: #0099e8;
+      }
+      &--facebook {
+        background: #385185;
+        color: #fff;
+        margin: 16px 0 0;
+      }
+      &--google {
+        border: #979797 solid 1px;
+        color: #333;
+        margin: 16px 0 0;
+      }
     }
   }
 }
