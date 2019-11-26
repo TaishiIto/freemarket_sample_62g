@@ -20,8 +20,13 @@ class SignupController < ApplicationController
     @user.build_address
   end
   
-  def step3 # 前のページの情報をsessionメソッドで保持
+  def step3
     session[:phone_number] = user_params[:phone_number]
+    @user = User.new
+    @user.build_address
+  end
+
+  def step4 # 前のページの情報をsessionメソッドで保持
     session[:zip_code] = params[:user][:address_attributes][:zip_code]
     session[:prefecture_id] = params[:user][:address_attributes][:prefecture_id]
     session[:city] = params[:user][:address_attributes][:city]
