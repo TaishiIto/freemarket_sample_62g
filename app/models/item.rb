@@ -7,6 +7,8 @@ class Item < ApplicationRecord
   has_many :users, through: :items_statuses
   has_one  :delivery,dependent: :destroy
   accepts_nested_attributes_for :delivery
+  has_many  :images, dependent: :destroy
+  accepts_nested_attributes_for :images
 
   validates :images, presence: true
   validates :name, :description, presence: true
