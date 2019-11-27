@@ -87,3 +87,4 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'fog-aws'
 gem 'payjp'
+gem "gretel"
