@@ -1,3 +1,3 @@
 class Image < ApplicationRecord
-  belogns_to :items
+  belongs_to :item
 end
