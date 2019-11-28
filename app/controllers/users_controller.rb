@@ -15,8 +15,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    confirm = ConfirmedAddress.new(address_params)
-    if confirm.save
+    confirmed_address = ConfirmedAddress.new(address_params)
+    if confirmed_address.save
       redirect_to user_path
     else
       render :edit
