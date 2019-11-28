@@ -15,20 +15,25 @@ class UsersController < ApplicationController
   end
 
   def update
-    binding.pry
-    @user = confirmed_address.new(address_params)
-      if @user.save
-          render users_path
+    @user = ConfirmedAddress.new(address_params)
+    if @user.save
+          redirect_to user_path
       else
-          render new_user_path
+          render :edit
       end
   end
 
 private
 
-def address_params
-
-end
+  def address_params
+    params.require(:user).permit(
+      :zip_code,
+      :prefecture,
+      :city,
+      :house_number,
+      :building_name
+    ).merge(user_id: current_user.id)
+  end
 
 
 end

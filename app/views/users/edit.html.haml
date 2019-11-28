@@ -34,7 +34,7 @@
           %p.main-contents-main__form__name
             = @user.birthday.strftime("%Y/%m/%d/")
 
-        = form_with(model: @user, method: :post, class:"personal-input-form" ,local: true) do |form|
+        = form_with(model: @user, method: :patch, url: user_path,class:"personal-input-form" ,local: true) do |form|
           .main-contents-main__form__in
             郵便番号
             %span.form-any
