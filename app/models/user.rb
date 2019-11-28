@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[google_oauth2 facebook]
 
   has_one :address
+  has_one :confirmed_address
+  accepts_nested_attributes_for :confirmed_address
 
   has_many :cards
   has_many :items_statuses,dependent: :destroy
