@@ -63,14 +63,6 @@ ActiveRecord::Schema.define(version: 2019_11_27_103501) do
     t.index ["item_id"], name: "index_deliveries_on_item_id"
   end
 
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id"
-    t.text "image", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_images_on_item_id"
-  end
-
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
@@ -123,7 +115,6 @@ ActiveRecord::Schema.define(version: 2019_11_27_103501) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cards", "users"
   add_foreign_key "deliveries", "items"
-  add_foreign_key "images", "items"
   add_foreign_key "items_statuses", "items"
   add_foreign_key "items_statuses", "users"
 end
