@@ -9,7 +9,7 @@
         = link_to "#", class:"user__link" do
           = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", height: "60", width: "60", class: "user__img"
           %h2.user__name
-            current_user
+            = tag.p current_user.name
           .user__status
             .user__likes
               評価

@@ -88,3 +88,4 @@ gem 'omniauth-facebook'
 gem 'fog-aws'
 gem 'payjp'
 gem "gretel"
+gem "aws-sdk-s3", require: false
