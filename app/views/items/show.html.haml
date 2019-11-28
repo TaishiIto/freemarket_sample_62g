@@ -8,8 +8,7 @@
       = @detail.name
     .product-details__page__main__content
       .product-details__page__main__content__img
-        - @detail.images.each do |image|
-          = image_tag image.url
+        = image_tag @detail.images[0]
       .product-details__page__main__content__right
         .main-content__name
           .main-content__name__left
