@@ -67,7 +67,7 @@ class SignupController < ApplicationController
       card_id: session[:card_id],
       user_id: user.id
   )
-    Confirmed_address.create(
+    ConfirmedAddress.create(
       user_id: user.id
     )
     
