@@ -16,13 +16,15 @@
       line-height: 1.4;
     }
     &__content {
+      display: flex;
       margin-top: 16px;
-      height: 400px;
       &__img {
-        display: inline;     
+        width: 48%;
+        &__img {
+          object-fit: contain;
+        }
       }
       &__right {
-        float: right;
         width: 48%;
         
         .main-content__name {
@@ -155,7 +157,7 @@
     }
     .item-details-page__price {
       text-align: center;
-      margin: 24px 0 0;
+      margin: 40px 0 0;
       &__price {
         font-size:50px;
         margin:0 16px 0 0;

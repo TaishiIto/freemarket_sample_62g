@@ -1,0 +1,122 @@
+.login-header {
+  height: 128px;
+  text-align:center;
+  background: #f5f5f5;
+  .home-link {
+    padding: 40px 0 0;
+  }
+}
+
+.signup-header {
+  height: 128px;
+  text-align:center;
+  background: #f5f5f5;
+  .home-link {
+    display:inline-block;
+    margin: 40px 0 0;
+    position: absolute;
+  }
+  .progress {
+    padding: 30px 0 0 240px;
+    display:inline-block;
+    .progress-bar {
+      list-style: none;
+      li{
+        margin: 0 30px 0 0;
+        position: relative;
+        display: inline-block;
+        min-width: 60px;
+        font-size: 12px;
+        color: gray;
+      }
+      li.done {
+        margin-right: 0;
+      }
+      .progress-status{
+        width: 12px;
+        height: 12px;
+        margin: 8px auto 0;
+        background: #ccc;
+        border-radius: 50%;
+      }
+      .progress-status:before {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        height: 2px;
+        background: #ccc;
+        right: 50%;
+      }
+      .progress-status:after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        height: 2px;
+        background: #ccc;
+      }
+      .member-information {
+        .progress-status:before {
+          content: none;
+        }
+      }
+      .done {
+        .progress-status:after {
+          content: none;
+        }
+      }
+    }
+  }
+}
+
+#step1 {
+  .progress-bar {
+    li.member-information {
+      color: red;
+      .progress-status {
+        background: red;
+      }
+    }  
+  }
+}
+#step2 {
+  .progress-bar {
+    li.member-information, li.phone-number {
+      color: red;
+      .progress-status {
+        background: red;
+      }
+    }  
+  }
+}
+#step3 {
+  .progress-bar {
+    li.member-information, li.phone-number, li.address {
+      color: red;
+      .progress-status {
+        background: red;
+      }
+    }  
+  }
+}
+#step4 {
+  .progress-bar {
+    li.member-information, li.phone-number, li.address, li.payment {
+      color: red;
+      .progress-status {
+        background: red;
+      }
+    }  
+  }
+}
+#done {
+  .progress-bar {
+    li.member-information, li.phone-number, li.address, li.payment, li.done {
+      color: red;
+      .progress-status {
+        background: red;
+      }
+    }  
+  }
+}
