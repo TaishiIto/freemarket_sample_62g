@@ -10,17 +10,17 @@ class UsersController < ApplicationController
 
   def edit
 
-    @user = User.find(current_user.id)
+    @user = User.find(params[:id])
     
   end
 
   def update
     @user = ConfirmedAddress.new(address_params)
     if @user.save
-          redirect_to user_path
-      else
-          render :edit
-      end
+      redirect_to user_path
+    else
+      render :edit
+    end
   end
 
 private
