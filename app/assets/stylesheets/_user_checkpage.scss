@@ -3,7 +3,8 @@
   width: 71%;
   &__main {
     float: right;
-    width: calc(100% - 26% - 40px);
+    width: calc(100% - 26% - 42px);
+    border:1px solid #f5f5f5;
     &__contents {
 
       .main-contents-title {
@@ -16,16 +17,84 @@
       .main-contents-main {
         padding: 64px;
         border-top: 1px solid #f5f5f5;
-        .main-contents-main__message {
+        &__message {
 
           &__message {
             margin: 8px 0 0;
             line-height: 1.5;
             font-size: 14px;
+          }
+          .main-contents-main__message__message__right {
+            text-align: right;
+            font-size: 14px;
             .about-upload {
-              text-decoration: ;
+              text-decoration: none;
+              color: #0099e8;
             }
           }
+        }
+        .main-contents-main__form {
+          margin: 40px 0 0;
+          .main-contents-main__form__name {
+            font-size:14px;
+          }
+        }
+      }
+      .personal-input-form {
+
+        .main-contents-main__form__in {
+          margin: 40px 0 0;
+          .form-any {
+            display: inline-block;
+            background-color:#CCC;
+            color: white;
+            font-size: 11px;
+            margin-left:8px;
+            padding:2px 4px;
+            border-radius: 2px;
+            vertical-align: top;
+            font-weight: bold;
+          }
+        }
+        #user_zip_code {
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+        }
+        #user_prefecture_id {
+          width: 100%;
+          margin: 8px 0 0; 
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;       
+        }
+        #user_city {
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+        }
+        #user_house_number {
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+        }
+        #user_building_name {
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
         }
       }
     }
