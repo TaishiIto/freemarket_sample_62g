@@ -1,0 +1,40 @@
+= render "shared/header"
+
+.user-check-page-main
+  .user-check-page-main__main
+    .user-check-page-main__main__contents
+      %h2.main-contents-title
+        本人情報の登録
+      .main-contents-main
+        .main-contents-main__message
+          %p.main-contents-main__message__message
+            お客さまの本人情報をご登録ください。
+            %br
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          %p.main-contents-main__message__message
+            = link_to root_path,class:"about-upload"
+        お名前
+        = @personal.family_name_kanji
+        = @personal.first_name_kanji
+        お名前カナ
+        = @personal.family_name_kana
+        = @personal.first_name_kana
+        生年月日
+        = @personal.birthday
+        = form_with(model: @personal, url:users_path ,local: true) do |form|
+          郵便番号任意
+          = form.text_field :zip_code, placeholder: '例) 123-4567'
+          都道府県任意
+          = form.collection_select :prefecture_id, Prefecture.all, :id, :name
+          市区町村任意
+          = form.text_field :city, placeholder: '例) 横浜市緑区'
+          番地任意
+          = form.text_field :house_number, placeholder: '例) 青山1-1-1'
+          建物名任意
+          = form.text_field :building_name, placeholder: '例) 柳ビル103'
+
+          = form.submit '登録する', class: 'check-user-page-btn'
+          本人情報の登録について
+
+  = render "shared/mypage_left"
+-# = render "shared/footer"

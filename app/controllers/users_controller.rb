@@ -8,4 +8,12 @@ class UsersController < ApplicationController
   
   end
 
+  def new
+    @personal = User.find(current_user.id)
+  end
+
+  def create
+
+  end
+
 end

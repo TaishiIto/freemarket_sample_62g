@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :cards
   has_many :items_statuses,dependent: :destroy
   has_many :items, through: :items_statuses,dependent: :destroy
+  has_many :confirmed_address,dependent: :destroy
   accepts_nested_attributes_for :address
 
   validates :name, presence: true, length: { maximum: 20 }

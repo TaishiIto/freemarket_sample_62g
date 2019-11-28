@@ -1,0 +1,33 @@
+.user-check-page-main {
+  margin: 40px auto 0px;
+  width: 71%;
+  &__main {
+    float: right;
+    width: calc(100% - 26% - 40px);
+    &__contents {
+
+      .main-contents-title {
+        font-size: 24px;
+        padding: 8px 24px;
+        border-bottom: 1px solid #f5f5f5;
+        text-align: center;
+        font-weight: bold;
+      }
+      .main-contents-main {
+        padding: 64px;
+        border-top: 1px solid #f5f5f5;
+        .main-contents-main__message {
+
+          &__message {
+            margin: 8px 0 0;
+            line-height: 1.5;
+            font-size: 14px;
+            .about-upload {
+              text-decoration: ;
+            }
+          }
+        }
+      }
+    }
+  }
+}
