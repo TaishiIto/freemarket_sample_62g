@@ -34,7 +34,6 @@ class SignupController < ApplicationController
     session[:building_name] = params[:user][:address_attributes][:building_name]
     @user = User.new
     @user.build_address
-    redirect_to controller: 'cards', action: 'new'
   end
 
   def save #createアクション内で、今まで保管したsessionのデータを渡し、DBに保存する

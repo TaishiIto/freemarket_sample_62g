@@ -1,6 +1,13 @@
 class CardsController < ApplicationController
   require "payjp"
 
+  def add
+    if user_signed_in?
+      card = Card.where(user_id: current_user.id)
+      redirect_to action: "show" if card.exists?
+    end
+  end
+
   def new
     if user_signed_in?
       card = Card.where(user_id: current_user.id)

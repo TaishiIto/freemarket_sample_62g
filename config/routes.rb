@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'
       post 'delete', to: 'cards#delete'
+      get 'add', to: 'cards#add'
     end
   end
   resources :users,only: [:show, :destroy]

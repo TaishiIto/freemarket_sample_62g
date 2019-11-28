@@ -1,3 +1,5 @@
+= render "shared/header"
+
 %label 登録クレジットカード情報
 %br
 = "**** **** **** " + @default_card_information.last4
@@ -8,3 +10,6 @@
 = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
   %input{ type: "hidden", name: "card_id", value: "" }
   %button 削除する
+
+= render "shared/footer"
+= render "shared/item-creater"
