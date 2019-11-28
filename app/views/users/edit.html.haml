@@ -1,6 +1,8 @@
 = render "shared/header"
 
+
 .user-check-page-main
+  = render "shared/mypage_left"
   .user-check-page-main__main
     .user-check-page-main__main__contents
       %h2.main-contents-title
@@ -18,21 +20,21 @@
         .main-contents-main__form
           お名前
           %p.main-contents-main__form__name
-            = @personal.family_name_kanji
-            = @personal.first_name_kanji
+            = @user.family_name_kanji
+            = @user.first_name_kanji
 
         .main-contents-main__form
           お名前カナ
           %p.main-contents-main__form__name
-            = @personal.family_name_kana
-            = @personal.first_name_kana
+            = @user.family_name_kana
+            = @user.first_name_kana
         
         .main-contents-main__form
           生年月日
           %p.main-contents-main__form__name
-            = @personal.birthday.strftime("%Y/%m/%d/")
+            = @user.birthday.strftime("%Y/%m/%d/")
 
-        = form_with(model: @personal, url:users_path,class:"personal-input-form" ,local: true) do |form|
+        = form_with(model: @user, method: :post, class:"personal-input-form" ,local: true) do |form|
           .main-contents-main__form__in
             郵便番号
             %span.form-any
@@ -70,7 +72,9 @@
 
           .main-contents-main__form__in
             = form.submit '登録する', class: 'check-user-page-btn'
-            本人情報の登録について
+          
+          .main-contents-main__form__in
+            %p.registration-about
+              = link_to "本人情報の登録について",root_path,class:"registration-about__yourself"
 
-  = render "shared/mypage_left"
--# = render "shared/footer"
+= render "shared/footer"

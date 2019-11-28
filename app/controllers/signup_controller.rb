@@ -55,12 +55,16 @@ class SignupController < ApplicationController
       building_name: session[:building_name],
       user_id: user.id
   )
-    user = User.find_by(email: session[:email])
+
     Card.create(
       customer_id: session[:customer_id],
       card_id: session[:card_id],
       user_id: user.id
   )
+    Confirmed_address.create(
+      user_id: user.id
+    )
+    
 
     if user
       # ログインするための情報を保管

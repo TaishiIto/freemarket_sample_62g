@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
     end
   end
-  resources :users,only: [:show, :destroy, :new, :create]
+  resources :users,only: [:show, :destroy, :edit, :update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :signup, only: :create do
     collection do
