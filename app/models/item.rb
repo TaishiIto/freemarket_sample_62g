@@ -1,14 +1,12 @@
 class Item < ApplicationRecord
-
-  serialize :images, JSON
-  mount_uploaders :images, ImageUploader
-  
-  has_many :items_statuses
+  has_many :items_statuses,dependent: :destroy
   has_many :users, through: :items_statuses
-  has_one  :delivery
+
+  has_many_attached :images
+
+  has_one  :delivery,dependent: :destroy
   accepts_nested_attributes_for :delivery
 
-  validates :images, presence: true
   validates :name, :description, presence: true
   validates :price,       presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
   validates :condition,   numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 6}
