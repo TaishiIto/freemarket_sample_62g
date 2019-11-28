@@ -6,4 +6,4 @@
           = tag.span item.name, class: "details__body__title"
         %div.details__body__info
           = tag.span "￥#{number_with_delimiter item.price}", class: "details__body__info__price"
-          = image_tag item.images[0].url,class: "details__body__info__image",height: "188", width: "188"
+          = image_tag item.images[0],class: "details__body__info__image",height: "188", width: "188"
