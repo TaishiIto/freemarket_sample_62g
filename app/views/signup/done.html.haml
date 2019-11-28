@@ -1,1 +1,17 @@
-%h2 登録完了しました！
+= render "shared/user/signup-header"
+
+.done-display
+  .done-block
+    .done-header
+      %h2 会員登録完了
+    .done-contents
+      .thanks-display
+        .thanks
+          %p1 ありがとうございます。
+          %br
+          %p1 会員登録が完了しました。
+        .start
+          = link_to user_path(current_user.id),class:"start__btn" do
+            %p2 フリマケをはじめる
+
+= render "shared/user/user-footer"
