@@ -1,0 +1,22 @@
+.footer {
+  text-align: center;
+  padding: 70px 0;
+  background: #f5f5f5;
+  li {
+    display: inline-block;
+    margin: 0;
+    a {
+      display: block;
+      color: #000;
+      font-size: 12px;
+      margin-left: 16px;
+    }
+  }
+  .footer-logo {
+    display:block;
+    margin: 40px auto 0;
+  }
+  .copyright {
+  font-size: 12px;
+  }
+}

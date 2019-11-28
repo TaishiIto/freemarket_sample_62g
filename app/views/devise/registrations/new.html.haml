@@ -1,6 +1,6 @@
-.signup-header
+.login-header
   .home-link
-    = link_to "/" do
+    = link_to root_path do
       = image_tag 'fmarket_logo_red.svg', height:'50'
 
 .signup
@@ -19,3 +19,4 @@
         = icon 'fab', 'google fa-fw', class: "contents__btn--icon"
         %p Googleで登録する
 
+= render "shared/user/user-footer"
