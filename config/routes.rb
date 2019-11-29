@@ -24,5 +24,5 @@ Rails.application.routes.draw do
       get 'done' # 登録完了後のページ
     end
   end
-  get "go" => "users#new"
+  get "go" => "items#purchase"
 end

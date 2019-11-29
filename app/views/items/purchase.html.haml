@@ -1,0 +1,27 @@
+.purchase-product-page
+  = render "shared/logo-header"
+  .purchase-product-page__contents
+    .purchase-product-page__contents__main
+      %h2.head-title-content
+        購入内容の確認
+      .purchase-product-detail
+        .purchase-product-detail__main
+          .purchase-product-detail__main__main
+            %h3.purchase-product__img
+              購入する商品の写真
+            %p.purchase-product__name
+              購入する商品の名前
+          .purchase-product-charge
+            %p.purchase-product-charge__check
+              購入する商品の値段
+              %span
+                送料込み
+            %ul.purchase-product-charge__lists
+              %li.purchase-product-charge__list
+                .purchase-product-charge__list__point
+                  ポイントはありません
+
+
+
+
+= render "shared/copyright-footer"

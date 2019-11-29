@@ -1,0 +1,57 @@
+.purchase-product-page {
+
+  .purchase-product-page__contents {
+    
+
+    &__main {
+      width: 48%;
+      margin: 0 auto;
+
+      .head-title-content {
+        font-size: 22px;
+        padding: 16px;
+        text-align: center;
+        border-bottom:1px solid #EEEEEE;
+      }
+      .purchase-product-detail {
+        text-align: center;
+
+        &__main {
+          margin: 0 auto;
+          max-width: 45%;
+          margin: 0 auto;
+
+          &__main {
+            display: flex;
+
+            .purchase-product__img {
+              font-size: 22px;
+            }
+            .purchase-product__name {
+
+            }
+          }
+
+          .purchase-product-charge {
+            margin:0 auto;
+            &__check {
+
+              span {
+
+              }
+            }
+            .purchase-product-charge__lists {
+
+              .purchase-product-charge__list {
+
+                &__point {
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
