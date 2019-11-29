@@ -1,11 +1,12 @@
 = render "shared/header"
 
-.card-new-form
-  .card-form-block
-    .card-form-header
-      %h2 クレジットカード情報入力
-    = render "cards/card-form"
-
+.main
+  = render "shared/mypage_left"
+  .card-form
+    .card-form-block
+      .card-header
+        %h2 クレジットカード情報入力
+      = render "cards/card-form"
 
 = render "shared/footer"
 = render "shared/item-creater"
