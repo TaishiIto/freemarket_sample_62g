@@ -15,7 +15,10 @@
           %p.img__upload__comment
             最大10枚までアップロードできます
           = f.file_field :images, multiple: true,class:"img-upload__field"
-        
+          .preview-area
+            .preview-container1
+              %ul.item-image-list
+
         .sell-content
           .sell-content__name
             %h3.sell-content__name__name
