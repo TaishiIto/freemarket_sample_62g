@@ -1,8 +1,10 @@
 = render "shared/header"
 
-.contents__list
-  =link_to new_card_path,class:"list__item" do
-    クレジットカードを追加する
+.main
+  = render "shared/mypage_left"
+  .content
+    =link_to new_card_path,class:"add-btn" do
+      クレジットカードを追加する
 
 = render "shared/footer"
 = render "shared/item-creater"
