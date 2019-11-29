@@ -1,0 +1,80 @@
+= render "shared/header"
+
+
+.user-check-page-main
+  = render "shared/mypage_left"
+  .user-check-page-main__main
+    .user-check-page-main__main__contents
+      %h2.main-contents-title
+        本人情報の登録
+      .main-contents-main
+        .main-contents-main__message
+          %p.main-contents-main__message__message
+            お客さまの本人情報をご登録ください。
+            %br
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          %p.main-contents-main__message__message__right
+            = link_to root_path,class:"about-upload" do
+              本人確認書類のアップロードについて
+
+        .main-contents-main__form
+          お名前
+          %p.main-contents-main__form__name
+            = @user.family_name_kanji
+            = @user.first_name_kanji
+
+        .main-contents-main__form
+          お名前カナ
+          %p.main-contents-main__form__name
+            = @user.family_name_kana
+            = @user.first_name_kana
+        
+        .main-contents-main__form
+          生年月日
+          %p.main-contents-main__form__name
+            = @user.birthday.strftime("%Y/%m/%d/")
+
+        = form_with(model: @user, method: :patch, url: user_path,class:"personal-input-form" ,local: true) do |form|
+          .main-contents-main__form__in
+            郵便番号
+            %span.form-any
+              任意
+          .main-contents-main__form__zip
+            = form.text_field :zip_code, placeholder: '例) 123-4567'
+          
+          .main-contents-main__form__in
+            都道府県
+            %span.form-any
+              任意
+          .main-contents-main__form__prefecture
+            = form.collection_select :prefecture_id, Prefecture.all, :id, :name
+          
+          .main-contents-main__form__in
+            市区町村
+            %span.form-any
+              任意
+          .main-contents-main__form__city
+            = form.text_field :city, placeholder: '例) 横浜市緑区'
+          
+          .main-contents-main__form__in
+            番地
+            %span.form-any
+              任意
+          .main-contents-main__form__house
+            = form.text_field :house_number, placeholder: '例) 青山1-1-1'
+          
+          .main-contents-main__form__in
+            建物名
+            %span.form-any
+              任意
+          .main-contents-main__form__building
+            = form.text_field :building_name, placeholder: '例) 柳ビル103'
+
+          .main-contents-main__form__in
+            = form.submit '登録する', class: 'check-user-page-btn'
+          
+          .main-contents-main__form__in
+            %p.registration-about
+              = link_to "本人情報の登録について",root_path,class:"registration-about__yourself"
+
+= render "shared/footer"

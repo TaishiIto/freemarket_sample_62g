@@ -94,7 +94,7 @@ Things you may want to cover:
 
 |Column|Type|Option|
 |------|----|------|
-|user_id|references|null: false, foreign_key: true|
+|user_id|references|foreign_key: true|
 |zip_code|integer||
 |prefecture|string||
 |city|string||

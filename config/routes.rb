@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       delete 'delete', to: 'cards#delete'
     end
   end
-  resources :users,only: [:show, :destroy]
+  resources :users,only: [:show, :destroy, :edit, :update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :signup, only: :create do
     collection do
@@ -24,4 +24,5 @@ Rails.application.routes.draw do
       get 'done' # 登録完了後のページ
     end
   end
+  get "go" => "users#new"
 end
