@@ -1,6 +1,7 @@
 .card-form-contents {
   #charge-form {
     padding: 24px 16px 40px;
+    
     p1 {
       font-weight: 600;
       font-size: 14px;
@@ -14,12 +15,15 @@
       border-radius: 2px;
       vertical-align: top;
     }
+
     .card-information-form {
       max-width: 345px;
       margin: 0 auto;
       background-color: white;
+
       .form-group {
         margin-bottom: 24px;
+
         #card_number, #cvc {
           box-sizing: border-box;
           padding: 10px 16px 8px;
@@ -31,6 +35,7 @@
           width: 100%;
           margin: 8px 0 0;
         }
+
         #exp_month, #exp_year {
           height: 48px;
           border: 1px solid #ccc;
@@ -38,17 +43,21 @@
           width:40%;
           margin: 8px 0 0;
         }
+
         span {
           text-indent: 5px;
           display:inline-block;
           margin-right : 5px;
         }
+
         .card-icons{
           margin-top:5px;
         }
       }
+
       #card_token {
         margin-top: 24px;
+
         #token_submit {
           display: block;
           height: 48px;
