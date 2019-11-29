@@ -26,6 +26,7 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
     if @detail.update(item_params)
       redirect_to root_path
     else

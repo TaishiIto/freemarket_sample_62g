@@ -13,5 +13,4 @@
       = fin.collection_select :delivery_ways, Prefecture.all, :id, :name, value: @detail.delivery.delivery_ways
       = fin.select :delivery_days, [['---', 0], ['1〜2日で発送', 1], ['3〜4日で発送', 2], ['4〜7日で発送', 3]], value: @detail.delivery.delivery_days
     = f.text_field :price, placeholder: "例）300", value: @detail.price
-    = f.hidden_field :id
     = f.submit '変更する', onclick: "submit();", type: "button"
