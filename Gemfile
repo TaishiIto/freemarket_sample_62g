@@ -89,3 +89,4 @@ gem 'fog-aws'
 gem 'payjp'
 gem "gretel"
 gem "aws-sdk-s3", require: false
+gem 'recaptcha', require: "recaptcha/rails"
