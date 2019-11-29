@@ -1,6 +1,6 @@
 = form_with model:@detail, url: item_path(@detail.id), method: :patch do |f|
   .form-detail
-    = f.file_field :images, multiple: true, value: @detail.images.object_id
+    = f.file_field :images, multiple: true
     = f.text_field :name, placeholder: "商品名（必須40文字まで）", value: @detail.name
     = f.text_area :description, value: @detail.description, placeholder: "商品の説明（必須1000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
     = f.collection_select :category_id, Category.all, :id, :name, value: @detail.category_id
@@ -13,4 +13,5 @@
       = fin.collection_select :delivery_ways, Prefecture.all, :id, :name, value: @detail.delivery.delivery_ways
       = fin.select :delivery_days, [['---', 0], ['1〜2日で発送', 1], ['3〜4日で発送', 2], ['4〜7日で発送', 3]], value: @detail.delivery.delivery_days
     = f.text_field :price, placeholder: "例）300", value: @detail.price
+    = f.hidden_field :id
     = f.submit '変更する', onclick: "submit();", type: "button"
