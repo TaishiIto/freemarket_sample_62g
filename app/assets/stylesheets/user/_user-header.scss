@@ -39,33 +39,6 @@
         background: #ccc;
         border-radius: 50%;
       }
-      .progress-status:before {
-        content: "";
-        position: absolute;
-        bottom: 5px;
-        width: 100%;
-        height: 2px;
-        background: #ccc;
-        right: 50%;
-      }
-      .progress-status:after {
-        content: "";
-        position: absolute;
-        bottom: 5px;
-        width: 100%;
-        height: 2px;
-        background: #ccc;
-      }
-      .member-information {
-        .progress-status:before {
-          content: none;
-        }
-      }
-      .done {
-        .progress-status:after {
-          content: none;
-        }
-      }
     }
   }
 }
