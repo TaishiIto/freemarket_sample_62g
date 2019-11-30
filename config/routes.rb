@@ -4,8 +4,12 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
     } #SNS認証
   root 'items#index'
-  resources :items
-
+  resources :items do
+    member do
+      get "purchase"
+      get "done"
+    end
+  end
   resources :cards, only: [:new, :show] do
     collection do
       post 'show', to: 'cards#show'
@@ -25,5 +29,4 @@ Rails.application.routes.draw do
       get 'done' # 登録完了後のページ
     end
   end
-  get "go" => "users#new"
 end

@@ -1,7 +1,5 @@
 .exhibit__page
-  .exhibit__page__header
-    = link_to root_path, class:"exhibit__logo__link" do
-      = image_tag "fmarket_logo_red.svg",height: "49px", width: "185px", class:"exhibit__logo__img"
+  = render "shared/logo-header"
   .exhibit__page__main
     .exhibit__page__main__contents
       %h3.exhibit__page__main__contents__message
@@ -104,17 +102,5 @@
               また、出品をもちまして加盟店規約に同意したことになります。
           = f.submit '出品する', onclick: "submit();", type: "button",class:"exhibit-btn"
           =link_to "もどる",root_path,class:"back-btn"
-.exhibit-page__footer
-  .exhibit-page__footer__content
-    .exhibit-page__footer__content__main
-      %ul.exhibit-page__footer__lists
-        %li.exhibit-page__footer__list
-          プライバシーポリシー
-        %li.exhibit-page__footer__list
-          メルカリ利用規約
-        %li.exhibit-page__footer__list
-          特定商取引に関する表記
-    = link_to root_path,class:"exhibit-page__footer__link" do
-      = image_tag "logo_gray.svg",height: "90px", width: "90px"
-    %p.exhibit-page__footer__copyright
-      ©︎ 2019 Mercari
+
+= render "shared/copyright-footer"
