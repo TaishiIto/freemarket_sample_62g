@@ -4,10 +4,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
     } #SNS認証
   root 'items#index'
-  resources :items do
-    collection do
-      post 'upload_image'
-    end
+  resources :items
   end
 
   resources :cards, only: [:new, :show] do
