@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     } #SNS認証
   root 'items#index'
   resources :items
+  end
+
   resources :cards, only: [:new, :show] do
     collection do
       post 'show', to: 'cards#show'
