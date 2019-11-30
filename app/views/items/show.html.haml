@@ -8,7 +8,7 @@
       = @detail.name
     .product-details__page__main__content
       .product-details__page__main__content__img
-        = image_tag @detail.images[0]
+        = image_tag @detail.images[0],height:"300",width:"250",class:"product-details__page__main__content__img__img"
       .product-details__page__main__content__right
         .main-content__name
           .main-content__name__left
@@ -70,10 +70,12 @@
         （税込）
       %span.item-details-page__price__add
         送料込み
-    = link_to "購入画面に進む",root_path, class:"purchace-page-link"
+    
     - if user_signed_in? && current_user.id == @detail.users.first.id
       = link_to "削除する", item_path(@detail.id), method: :delete,class:"destroy-btn"
       = link_to "編集する", edit_item_path(@detail.id),class:"detail-page-edit-btn"
+    - else
+      = link_to "購入画面に進む",root_path, class:"purchace-page-link"
     .item-details-page-description
       = @detail.description
     .item-details-page-bottom

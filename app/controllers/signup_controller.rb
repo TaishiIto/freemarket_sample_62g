@@ -1,6 +1,7 @@
 class SignupController < ApplicationController
 
   def step1 
+    reset_session
     @user = User.new
     @user.build_address
   end
@@ -10,17 +11,25 @@ class SignupController < ApplicationController
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
     session[:password_confirmation] = user_params[:password]
-    @user = User.new
-    @user.build_address
-  end
-  
-  def step3 # 前のページの情報をsessionメソッドで保持
     session[:family_name_kanji] = user_params[:family_name_kanji]
     session[:first_name_kanji] = user_params[:first_name_kanji]
     session[:family_name_kana] = user_params[:family_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
-    session[:birthday] = Date.new(user_params["birthday(1i)"]&.to_i, user_params["birthday(2i)"]&.to_i, user_params["birthday(3i)"]&.to_i)
+    session[:birthday] = Date.new(birthday_params["birthday(1i)"]&.to_i, birthday_params["birthday(2i)"]&.to_i, birthday_params["birthday(3i)"]&.to_i)
+    @user = User.new
+    @user.build_address
+    unless verify_recaptcha
+      render 'step1'
+    end
+  end
+  
+  def step3
     session[:phone_number] = user_params[:phone_number]
+    @user = User.new
+    @user.build_address
+  end
+
+  def step4 # 前のページの情報をsessionメソッドで保持
     session[:zip_code] = params[:user][:address_attributes][:zip_code]
     session[:prefecture_id] = params[:user][:address_attributes][:prefecture_id]
     session[:city] = params[:user][:address_attributes][:city]
@@ -28,7 +37,6 @@ class SignupController < ApplicationController
     session[:building_name] = params[:user][:address_attributes][:building_name]
     @user = User.new
     @user.build_address
-    redirect_to controller: 'cards', action: 'new'
   end
 
   def save #createアクション内で、今まで保管したsessionのデータを渡し、DBに保存する
@@ -55,12 +63,16 @@ class SignupController < ApplicationController
       building_name: session[:building_name],
       user_id: user.id
   )
-    user = User.find_by(email: session[:email])
+
     Card.create(
       customer_id: session[:customer_id],
       card_id: session[:card_id],
       user_id: user.id
   )
+    ConfirmedAddress.create(
+      user_id: user.id
+    )
+    
 
     if user
       # ログインするための情報を保管
@@ -106,4 +118,10 @@ class SignupController < ApplicationController
       :card_id]
     )
   end
+  
+  def birthday_params
+    params.require(:birthday).permit(
+      :birthday)
+  end
+
 end

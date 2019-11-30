@@ -1,0 +1,35 @@
+.card-form-block {
+  width: calc(100% - 26% - 40px);
+  float: right;
+
+  .card-show {
+    padding: 64px;
+    margin: 0 auto;
+    width: 350px;
+
+    .card-list {
+      p1 {
+        font-weight: bold;
+      }
+    }
+
+    .card-detail {
+      padding: 24px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+    }
+
+    .card-delete {
+      margin-left:140px;
+      
+      &__btn {
+        padding: 4px 6px;
+        background: #fff;
+        border-radius: 3px;
+        border: 1px solid #ea352d;
+        color: #ea352d;
+        text-decoration: none;
+      }
+    }
+  }
+}

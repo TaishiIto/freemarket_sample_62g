@@ -1,6 +1,6 @@
 = form_with model:@detail, url: item_path(@detail.id), method: :patch do |f|
   .form-detail
-    = f.file_field :images, multiple: true, value: @detail.images.object_id
+    = f.file_field :images, multiple: true
     = f.text_field :name, placeholder: "商品名（必須40文字まで）", value: @detail.name
     = f.text_area :description, value: @detail.description, placeholder: "商品の説明（必須1000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
     = f.collection_select :category_id, Category.all, :id, :name, value: @detail.category_id
