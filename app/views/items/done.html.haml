@@ -1,1 +1,65 @@
-= render "shared/logo-header"
+.transaction-done
+  = render "shared/logo-header"
+  .transaction-done__contents
+    .transaction-done__contents__content
+      .transaction-done-message
+        %i.far.fa-clock
+          %span.transaction-done-message__top__message
+            発送をお待ちください
+        .transaction-done-message__bottom
+          出品者からの発送通知をお待ちください
+      %h2.transaction-done-message__info
+        購入が完了しました
+      .transaction-done-img
+        .transaction-done-img__main
+          = image_tag 'fmarket_logo_red.svg', height:'36',weidth:'134'
+          -# 仮置き
+        .transaction-done-img__name
+          商品名
+          -# 仮置き
+      .transaction-done-charge
+        .transaction-done-charge__main
+          値段 
+          -# 仮置き
+          %span.transaction-done-charge__main__in
+            送料込み
+      .transaction-done-delivery
+        .transaction-done-delivery__content
+          %h3.transaction-done-delivery__content__for
+            配送先
+          .transaction-done-delivery__content__address
+            住所
+            -# 仮置き
+      .transaction-done-payment
+        .transaction-done-payment__main
+          %h3.transaction-done-payment__main__way
+            支払い方法
+          %p.transaction-done-payment__main__info
+            カード情報
+            -# 仮置き
+          .transaction-done-payment__main__card__img
+            カードのimg
+            -# 仮置き
+      .transaction-done-bottom
+        .transaction-done-bottom__main
+          .transaction-done-bottom__main__flow
+            発送通知後の流れ
+          .transaction-done-bottom__main__text
+            %p
+              商品を受け取ったら
+            %p
+              出品者の評価をしましょう。
+            %p
+              購入代金が出品者に振り込まれます。
+            %p
+              評価後に取引は完了です。
+          = link_to "マイページへもどる",user_path,class:"return-mypage"
+          
+
+    
+
+
+= render "shared/copyright-footer"
+
+
+
