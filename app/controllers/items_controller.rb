@@ -43,6 +43,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def purchase
+    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
+
+  end
+
 
   private
 

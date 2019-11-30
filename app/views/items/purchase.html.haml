@@ -8,7 +8,9 @@
         .purchase-product-detail__main
           .purchase-product-detail__main__main
             %h3.purchase-product__img
-              購入する商品の写真
+            
+            = image_tag 'fmarket_logo_red.svg', height:'36',weidth:'134'
+              
             %p.purchase-product__name
               購入する商品の名前
           .purchase-product-charge
@@ -20,8 +22,37 @@
               %li.purchase-product-charge__list
                 .purchase-product-charge__list__point
                   ポイントはありません
-
-
+            %ul.purchase-product-charge__lists__pay
+              %li.purchase-product-charge__list__pay
+                .purchase-product-charge__list__pay__left
+                  支払い金額
+                .purchase-product-charge__list__pay__right
+                  金額
+            %button.purchase-product-charge__button
+              購入する
+      .purchase-product-detail__delivery
+        .purchase-product-detail__delivery__content
+          %h3.shipping-address
+            配送先
+          .user-input-address
+            住所
+          %p.user-input-address-space
+          = link_to "#", class:"user-input-address-change" do
+            %span.user-input-address-change__link
+              変更する
+            %i.fas.fa-chevron-right
+      .method-of-payment
+        .method-of-payment__main
+          %h3.method-of-payment__main__way
+            支払い方法
+          %p.method-of-payment__main__info
+            カード情報
+          .method-of-payment__main__card__img
+            カードのimg
+          = link_to "#", class:"user-input-address-change" do
+            %span.user-input-address-change__link
+              変更する
+            %i.fas.fa-chevron-right
 
 
 = render "shared/copyright-footer"
