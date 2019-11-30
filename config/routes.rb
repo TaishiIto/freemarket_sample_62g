@@ -5,11 +5,13 @@ Rails.application.routes.draw do
     } #SNS認証
   root 'items#index'
   resources :items
+  end
+
   resources :cards, only: [:new, :show] do
     collection do
       post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'
-      post 'delete', to: 'cards#delete'
+      delete 'delete', to: 'cards#delete'
     end
   end
   resources :users,only: [:show, :destroy, :edit, :update]

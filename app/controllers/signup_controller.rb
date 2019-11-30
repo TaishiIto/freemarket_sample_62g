@@ -18,6 +18,9 @@ class SignupController < ApplicationController
     session[:birthday] = Date.new(birthday_params["birthday(1i)"]&.to_i, birthday_params["birthday(2i)"]&.to_i, birthday_params["birthday(3i)"]&.to_i)
     @user = User.new
     @user.build_address
+    unless verify_recaptcha
+      render 'step1'
+    end
   end
   
   def step3
@@ -34,7 +37,6 @@ class SignupController < ApplicationController
     session[:building_name] = params[:user][:address_attributes][:building_name]
     @user = User.new
     @user.build_address
-    redirect_to controller: 'cards', action: 'new'
   end
 
   def save #createアクション内で、今まで保管したsessionのデータを渡し、DBに保存する

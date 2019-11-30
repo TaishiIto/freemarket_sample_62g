@@ -34,6 +34,13 @@ class ItemsController < ApplicationController
     end
   end
 
+  def upload_image
+    @image_blob = create_blob(params[:image])
+    respond_to do |format|
+      format.json { @image_blob.id }
+    end
+  end
+
   def destroy
     item = Item.find(params[:id])
     if item.destroy
@@ -45,7 +52,7 @@ class ItemsController < ApplicationController
 
 
   private
-
+  
   def item_params
     params.require(:item).permit(:name, :description, :category_id, :size_id, :condition, :price, :brand, images: [], 
                                   delivery_attributes:[:id, :delivery_cost, :delivery_days, :delivery_ways])
