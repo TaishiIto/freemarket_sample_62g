@@ -45,7 +45,10 @@ class ItemsController < ApplicationController
 
   def purchase
     @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
+  end
 
+  def done
+  
   end
 
 

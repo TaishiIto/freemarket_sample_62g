@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get "purchase"
+      get "done"
     end
   end
   resources :cards, only: [:new, :show] do

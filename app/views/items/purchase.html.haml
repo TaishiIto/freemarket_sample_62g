@@ -10,7 +10,7 @@
             %h3.purchase-product__img
             
             = image_tag 'fmarket_logo_red.svg', height:'36',weidth:'134'
-              
+            -# 仮置き
             %p.purchase-product__name
               購入する商品の名前
           .purchase-product-charge
@@ -26,9 +26,11 @@
               %li.purchase-product-charge__list__pay
                 .purchase-product-charge__list__pay__left
                   支払い金額
+                  -# 仮置き
                 .purchase-product-charge__list__pay__right
                   金額
-            %button.purchase-product-charge__button
+                  -# 仮置き
+            = link_to done_item_path(current_user.id),class:"purchase-product-charge__button" do
               購入する
       .purchase-product-detail__delivery
         .purchase-product-detail__delivery__content
@@ -36,6 +38,7 @@
             配送先
           .user-input-address
             住所
+            -# 仮置き
           %p.user-input-address-space
           = link_to "#", class:"user-input-address-change" do
             %span.user-input-address-change__link
@@ -47,8 +50,10 @@
             支払い方法
           %p.method-of-payment__main__info
             カード情報
+            -# 仮置き
           .method-of-payment__main__card__img
             カードのimg
+            -# 仮置き
           = link_to "#", class:"user-input-address-change" do
             %span.user-input-address-change__link
               変更する
