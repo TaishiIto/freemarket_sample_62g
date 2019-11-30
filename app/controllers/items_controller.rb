@@ -34,13 +34,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def upload_image
-    @image_blob = create_blob(params[:image])
-    respond_to do |format|
-      format.json { @image_blob.id }
-    end
-  end
-
   def destroy
     item = Item.find(params[:id])
     if item.destroy

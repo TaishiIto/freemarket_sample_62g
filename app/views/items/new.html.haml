@@ -23,7 +23,7 @@
                     ドラッグアンドドロップ
                     %br
                     またはクリックしてファイルをアップロード
-                  = f.file_field :images, multiple: true,class:"img-upload__field"
+                  = f.file_field :images,class:"img-upload__field",name:"item[images][]","data-nums": "0"
           .preview-reset#allDelete すべての画像を削除
         .sell-content
           .sell-content__name
@@ -102,7 +102,7 @@
               またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
             %p.submit-button__text3
               また、出品をもちまして加盟店規約に同意したことになります。
-          = f.submit '出品する', onclick: "submit();", type: "button",class:"exhibit-btn", id: '#new-send-btn'
+          = f.submit '出品する', onclick: "submit();", type: "button",class:"exhibit-btn"
           =link_to "もどる",root_path,class:"back-btn"
 .exhibit-page__footer
   .exhibit-page__footer__content
