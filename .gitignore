@@ -30,4 +30,3 @@ public/uploads/*
 
 .DS_store
 
-/config/credentials.yml.enc
