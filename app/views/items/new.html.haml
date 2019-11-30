@@ -12,8 +12,17 @@
               必須
           %p.img__upload__comment
             最大10枚までアップロードできます
-          = f.file_field :images, multiple: true,class:"img-upload__field"
-        
+
+          .preview-area
+            %ul.item-image-list#item-image-list
+              .upload-area
+                .upload-area__dropbox
+                  %p 
+                    ドラッグアンドドロップ
+                    %br
+                    またはクリックしてファイルをアップロード
+                  = f.file_field :images,class:"img-upload__field",name:"item[images][]","data-nums": "0"
+          .preview-reset#allDelete すべての画像を削除
         .sell-content
           .sell-content__name
             %h3.sell-content__name__name
