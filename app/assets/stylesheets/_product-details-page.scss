@@ -10,6 +10,7 @@
     width: 42%;
     padding: 24px 40px 40px;
     margin: 0 auto;
+
     .product-name {
       font-size: 24px;
       text-align: center;
@@ -20,8 +21,36 @@
       margin-top: 16px;
       &__img {
         width: 48%;
+        position: relative;
+        overflow: hidden;
+        
         &__img {
           object-fit: contain;
+        }
+
+        .sold-label-large{
+          $width: 300px;
+          $top: 30px;
+      
+          width: $width;
+      
+        // 回転
+          transform: rotate(-45deg);
+          transform-origin: top center;
+      
+        // 移動
+          position: absolute;
+          top: $top;
+          left:( $width * -1 / 2 + $top );
+      
+        // はみ出さないようpaddingを設定
+          padding: 15px ( $width / 2 - $top * 1.414 );
+          box-sizing: border-box;
+          text-align: center;
+          font-size: 22px;
+          color: white;
+          font-weight: bold;
+          background-color: #ea362d;
         }
       }
       &__right {
@@ -168,6 +197,17 @@
       &__add {
         font-size:16px;
       }
+    }
+    .sold-btn{
+      font-size:24px;
+      line-height: 60px;
+      display: block;
+      margin-top: 16px;
+      background: #CCCCCC;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      pointer-events:none;
     }
     .purchace-page-link {
       font-size:24px;
