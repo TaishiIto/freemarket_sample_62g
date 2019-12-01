@@ -87,7 +87,7 @@ $(document).on('turbolinks:load', function() {
     $('.item-image-list').on('click', '.item-uploaded__delete', function(e){
       e.preventDefault();
       dNums = $(this).data("delete");
-      $(this).parent().remove();
+      $(this).parent().hide();
       $(`input[data-nums="${dNums}"]`).remove();
       afterImages = $('.item-uploaded:visible').length;
       if (afterImages < 10){

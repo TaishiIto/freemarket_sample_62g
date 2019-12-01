@@ -8,10 +8,14 @@
       = @detail.name
     .product-details__page__main__content
       .product-details__page__main__content__img
-        = image_tag @detail.images[0],height:"300",width:"250",class:"product-details__page__main__content__img__img"
+        = image_tag @detail.images[0],height:"250",width:"250",class:"product-details__page__main__content__img__img"
         - if @detail.items_statuses.first.item_status == 2
           .sold-label-large
             SOLD
+          .images-list
+            - @detail.images.each do |image|
+              .image-small
+                = image_tag image,height:"48",width:"48"
       .product-details__page__main__content__right
         .main-content__name
           .main-content__name__left
