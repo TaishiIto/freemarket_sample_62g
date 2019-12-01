@@ -1,0 +1,197 @@
+.purchase-product-page {
+  background-color:#EEEEEE;
+  
+  .purchase-product-page__contents {
+    
+
+    &__main {
+      width: 50%;
+      margin: 0 auto;
+      background-color:white;
+
+      .head-title-content {
+        font-size: 22px;
+        padding: 16px;
+        text-align: center;
+        border-bottom:1px solid #EEEEEE;
+      }
+      .purchase-product-detail {
+        text-align: center;
+        padding: 24px 12.5% 0;
+
+        &__main {
+          margin: 0 auto;
+          width: 55%;
+          
+          
+          &__main {
+            display: flex;
+
+            .purchase-product__img {
+              font-size: 22px;
+            }
+            
+            .purchase-product__name {
+              margin: 0 0 0 16px;
+              font-size: 16px;
+              line-height: 1.5;
+              width: 70%;
+            }
+          }
+
+          .purchase-product-charge {
+            margin:0 auto;
+            width: 100%;
+            
+            
+            &__check {
+              margin: 8px 0 0;
+              line-height: 1.5;
+              
+              span {
+                margin: 0 0 0 8px;
+                font-size: 14px;
+              }
+            }
+            &__lists {
+              background: #ccc;
+              margin: 16px 0 0;
+              
+              .purchase-product-charge__list {
+
+                &__point {
+                  padding: 16px;
+                  font-size: 14px;
+                }
+              }
+            }
+            &__lists__pay {
+
+              .purchase-product-charge__list__pay {
+                font-size: 18px;
+                display: flex;
+                
+                &__left {
+                  text-align: left;
+                  padding: 16px 0;
+                  width: 50%;
+
+                }
+                &__right {
+                  text-align: right;
+                  padding: 16px 0;
+                  width: 50%;
+                }
+              }
+            }
+            .purchase-product-charge__button {
+              display: block;
+              margin: 8px 0 0;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              text-decoration: none;
+            }
+            
+            .purchase-product-charge__button:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+      .purchase-product-detail__delivery {
+        margin: 40px 0 0;
+        padding: 24px 12.5% 0;
+        border-top: 1px solid #f5f5f5;
+        
+        &__content {
+          width: 50%;
+          margin: 0 auto;
+          
+          .shipping-address {
+            font-size: 14px;
+
+          }
+          .user-input-address {
+            margin: 8px 0 0;
+            font-size: 14px;
+            line-height: 1.4;
+          }
+          .user-input-address-space {
+
+          }
+
+          .user-input-address-change {
+            display: block;
+            text-decoration: none;
+            text-align: right;
+
+            &__link {
+              font-size: 14px;
+              color: #0099E8;
+              padding-right: 5px;
+            }
+
+            &__link:hover {
+              text-decoration: underline;
+              opacity: 0.7;
+            }
+
+            .fa-chevron-right {
+              color: #0099E8;
+              font-size: 12px;
+            }
+            
+          }
+        }
+      }
+      .method-of-payment {
+        padding: 24px 12.5% 40px;
+        
+        &__main {
+          width: 50%;
+          margin: 0 auto;
+
+          &__way {
+            font-size: 14px;
+          }
+
+          &__info {
+            margin: 8px 0 0;
+            font-size: 14px;
+            line-height: 1.4;
+          }
+
+          &__card__img {
+
+          }
+
+          .user-input-address-change {
+            display: block;
+            text-decoration: none;
+            text-align: right;
+
+            &__link {
+              font-size: 14px;
+              color: #0099E8;
+              padding-right: 5px;
+            }
+
+            &__link:hover {
+              text-decoration: underline;
+              opacity: 0.7;
+            }
+
+            .fa-chevron-right {
+              color: #0099E8;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

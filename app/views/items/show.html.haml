@@ -75,7 +75,7 @@
       = link_to "削除する", item_path(@detail.id), method: :delete,class:"destroy-btn"
       = link_to "編集する", edit_item_path(@detail.id),class:"detail-page-edit-btn"
     - else
-      = link_to "購入画面に進む",buy_item_path(@detail.id),method: :post, class:"purchace-page-link"
+      = link_to "購入画面に進む",purchase_item_path(@detail.id), class:"purchace-page-link"
     .item-details-page-description
       = @detail.description
     .item-details-page-bottom
