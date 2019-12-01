@@ -52,6 +52,24 @@
           font-weight: bold;
           background-color: #ea362d;
         }
+
+        .images-list{
+          display: flex;
+          flex-wrap: wrap;
+          padding-right: 20px;
+
+          &__picture{
+            border: 1px solid #CCCCCC;
+            border-radius: 2px;
+            margin-right: 2px;
+            margin-bottom: 2px;
+
+            img{
+              object-fit: contain;
+            }
+
+          }
+        }
       }
       &__right {
         width: 48%;

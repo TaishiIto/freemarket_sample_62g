@@ -12,10 +12,10 @@
         - if @detail.items_statuses.first.item_status == 2
           .sold-label-large
             SOLD
-          .images-list
-            - @detail.images.each do |image|
-              .image-small
-                = image_tag image,height:"48",width:"48"
+        .images-list
+          - @detail.images.each do |image|
+            .images-list__picture
+              = image_tag image,height:"48",width:"48"
       .product-details__page__main__content__right
         .main-content__name
           .main-content__name__left
