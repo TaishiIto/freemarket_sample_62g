@@ -50,6 +50,26 @@ class ItemsController < ApplicationController
     end
   end
 
+  def buy #クレジット購入
+    card = Card.where(user_id: current_user.id).first
+    if card.blank?
+      redirect_to controller: :cards, action: "new"
+    else
+      item = Item.find(params[:id])
+      status = item.items_statuses
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+      Payjp::Charge.create(
+      amount: item.price, #支払金額
+      customer: card.customer_id, #顧客ID
+      currency: 'jpy', #日本円
+      )# ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
+      if status.update(item_status: 2, buyer_id: current_user.id)
+        # 購入完了ページに飛ぶ
+      else
+        # 購入ページにとどまる（仮
+      end
+    end
+  end
 
   private
   
