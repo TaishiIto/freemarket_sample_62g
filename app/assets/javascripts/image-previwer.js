@@ -62,7 +62,7 @@ $(document).on('turbolinks:load', function() {
         for ( var i=0; i<files.length; i++) {
           let reader = new FileReader();
           let file = files[i];
-          console.log($("#item_images"));
+
           reader.onload = function (e) {
             let imageUrl = e.target.result;
             $('.upload-area').before(previewImage(imageUrl));
@@ -70,30 +70,24 @@ $(document).on('turbolinks:load', function() {
             let newInput = $(`<input name="item[images][]" class="img-upload__field" data-nums="${nums}" type="file" id="item_images">`);
             $('.item-uploaded__delete:last').attr('data-delete', (nums-1));
             $(`input[data-nums="${nums - 1}"]`).hide();
-            console.log(newInput)
             $(".upload-area__dropbox").append(newInput);
           }
           reader.readAsDataURL(file);
         }
+
         if (countImages == 10){
         $('.upload-area').hide(); 
         }
+
       }else {
         alert("商品画像を登録してください");
       }
     });
-    //一括削除ボタン
-    $('#allDelete').on('click', function(){
-      $('#new_item').find('input[type="file"]').val("");
-      $('.item-image-list').children('li').hide();
-      $('.upload-area').css('width', '100%');
-    });
-    
+
     $('.item-image-list').on('click', '.item-uploaded__delete', function(e){
       e.preventDefault();
       dNums = $(this).data("delete");
-      console.log($(this));
-      $(this).parent().hide();
+      $(this).parent().remove();
       $(`input[data-nums="${dNums}"]`).remove();
       afterImages = $('.item-uploaded:visible').length;
       if (afterImages < 10){
