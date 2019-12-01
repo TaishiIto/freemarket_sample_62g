@@ -4,7 +4,11 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
     } #SNS認証
   root 'items#index'
-  resources :items
+  resources :items do
+    member do
+      post 'buy'
+    end
+  end
 
   resources :cards, only: [:new, :show] do
     collection do
