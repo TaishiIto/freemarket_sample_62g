@@ -10,6 +10,7 @@
     width: 42%;
     padding: 24px 40px 40px;
     margin: 0 auto;
+
     .product-name {
       font-size: 24px;
       text-align: center;
@@ -21,8 +22,8 @@
       &__img {
         width: 48%;
         position: relative;
-        overflow: hidden
-        ;
+        overflow: hidden;
+        
         &__img {
           object-fit: contain;
         }
