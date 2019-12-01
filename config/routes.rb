@@ -18,8 +18,12 @@ Rails.application.routes.draw do
       delete 'delete', to: 'cards#delete'
     end
   end
-  resources :users,only: [:show, :destroy, :edit, :update]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users,only: [:show, :destroy, :edit, :update] do
+    member do
+      get 'profile'
+      patch 'profile_update'
+    end
+  end
   resources :signup, only: :create do
     collection do
       get 'step1'
