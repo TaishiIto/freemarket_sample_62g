@@ -171,6 +171,8 @@
                 height: 188px;
                 width: 188px;
                 position: relative;
+                overflow: hidden;
+
                 &__price{
                   height: 28px;
                   border-top-right-radius: 14px;
@@ -186,6 +188,31 @@
                 }
                 &__image{
                   object-fit: cover;
+                }
+
+                .sold-label{
+                  $width: 150px;
+                  $top: 15px;
+              
+                  width: $width;
+              
+                // 回転
+                  transform: rotate(-45deg);
+                  transform-origin: top center;
+              
+                // 移動
+                  position: absolute;
+                  top: $top;
+                  left:( $width * -1 / 2 + $top );
+              
+                // はみ出さないようpaddingを設定
+                  padding: 15px ( $width / 2 - $top * 1.414 );
+                  box-sizing: border-box;
+                  text-align: center;
+                  font-size: 15px;
+                  color: white;
+                  font-weight: bold;
+                  background-color: #ea362d;
                 }
               }
             }
