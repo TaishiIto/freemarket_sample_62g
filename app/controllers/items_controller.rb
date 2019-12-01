@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:destroy, :buy]
 
   def index
     @items = Item.includes(:items_statuses).limit(10).order("created_at DESC")
@@ -35,8 +36,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-    if item.destroy
+    if @item.destroy
       redirect_to (root_path)
     else
       render :show
@@ -47,10 +47,29 @@ class ItemsController < ApplicationController
     @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
   end
 
+  def buy #クレジット購入
+    card = Card.find_by(user_id: current_user.id)
+    if card.blank?
+      redirect_to controller: :cards, action: "new"
+    else
+      status = @item.items_statuses
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+      Payjp::Charge.create(
+        amount: @item.price, #支払金額
+        customer: card.customer_id, #顧客ID
+        currency: 'jpy', #日本円
+      )# ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
+      if status.update(item_status: 2, buyer_id: current_user.id)
+        # 購入完了ページに飛ぶ
+      else
+        # 購入ページにとどまる（仮
+      end
+    end
+  end
+  
   def done
   
   end
-
 
   private
   
@@ -58,4 +77,9 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :description, :category_id, :size_id, :condition, :price, :brand, images: [], 
                                   delivery_attributes:[:id, :delivery_cost, :delivery_days, :delivery_ways])
   end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
 end

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get "purchase"
+      post 'buy'
       get "done"
     end
   end
