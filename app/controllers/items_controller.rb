@@ -60,7 +60,7 @@ class ItemsController < ApplicationController
         currency: 'jpy', #日本円
       )# ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
       if status.update(item_status: 2, buyer_id: current_user.id)
-        # 購入完了ページに飛ぶ
+        redirect_to action: "done"
       else
         # 購入ページにとどまる（仮
       end

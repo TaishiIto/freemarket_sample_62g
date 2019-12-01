@@ -30,7 +30,7 @@
                 .purchase-product-charge__list__pay__right
                   金額
                   -# 仮置き
-            = link_to done_item_path(current_user.id),class:"purchase-product-charge__button" do
+            = link_to buy_item_path(@detail.id),method: :post,class:"purchase-product-charge__button" do
               購入する
       .purchase-product-detail__delivery
         .purchase-product-detail__delivery__content
