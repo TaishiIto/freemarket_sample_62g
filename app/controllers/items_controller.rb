@@ -34,13 +34,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def upload_image
-    @image_blob = create_blob(params[:image])
-    respond_to do |format|
-      format.json { @image_blob.id }
-    end
-  end
-
   def destroy
     item = Item.find(params[:id])
     if item.destroy
@@ -48,6 +41,10 @@ class ItemsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def purchase
+    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
   end
 
   def buy #クレジット購入
@@ -69,6 +66,10 @@ class ItemsController < ApplicationController
         # 購入ページにとどまる（仮
       end
     end
+  end
+  
+  def done
+  
   end
 
   private

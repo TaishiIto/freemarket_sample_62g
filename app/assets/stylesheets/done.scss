@@ -1,0 +1,145 @@
+.transaction-done {
+  background-color:#EEEEEE;
+  
+  &__contents {
+
+    &__content {
+      width: 50%;
+      margin: 0 auto;
+      background-color:white;
+
+      .transaction-done-message {
+        background-color:#FFFFCC;
+
+        .fa-clock {
+          font-size:20px;
+          color:red; 
+          display: block;  
+          text-align: center;
+          font-size: 22px;  
+          padding: 25px 0 15px 0 ;
+          }
+          &__message {
+            color:red;
+            
+
+          }
+        &__bottom {
+          text-align: center;
+          font-size: 14px;
+          padding-bottom: 25px;
+        }
+      }
+      .transaction-done-message__info {
+        font-size: 22px;
+        padding: 16px;
+        text-align: center;
+        border-bottom:1px solid #EEEEEE;
+        line-height: 60px;
+      }
+      .transaction-done-img {
+        text-align: center;
+        padding: 24px 12.5% 0;
+
+        &__main {
+          margin: 0 auto;
+          width: 55%;
+
+        }
+        &__name {
+          padding: 10px 0 30px;
+          border-bottom:1px solid #EEEEEE;
+        }
+      }
+      .transaction-done-charge {
+        text-align: center;
+        padding: 0 12.5%;
+
+        &__main {
+          padding:40px;
+          line-height: 30px;
+          font-size:20px;
+
+          &__in {
+            font-size: 12px;
+            margin-left:10px;
+          }
+        }
+      }
+      .transaction-done-delivery {
+        padding: 24px 12.5% 40px;
+        border-top: 1px solid #f5f5f5;
+        
+        &__content {
+          width: 50%;
+          margin: 0 auto;
+          
+          &__for {
+            font-size: 14px;
+
+          }
+          &__address {
+            margin: 8px 0 0;
+            font-size: 14px;
+            line-height: 1.4;
+          }
+        }
+      }
+      .transaction-done-payment {
+        padding: 24px 12.5% 40px;
+        border-top: 1px solid #f5f5f5;
+        
+        &__main {
+          width: 50%;
+          margin: 0 auto;
+
+          &__way {
+            font-size: 14px;
+          }
+
+          &__info {
+            margin: 8px 0 0;
+            font-size: 14px;
+            line-height: 1.4;
+          }
+
+          &__card__img {
+
+          }
+        }
+      }
+      .transaction-done-bottom {
+        padding: 24px 12.5% 40px;
+        border-top: 1px solid #f5f5f5;
+
+        .transaction-done-bottom__main {
+          width: 53%;
+          margin: 0 auto;
+
+          &__flow {
+            text-align: center;
+            font-size:22px;
+            padding:20px;
+          }
+          &__text {
+            width: 100%;
+            text-align: center;
+            line-height: 1.5;
+        
+          }
+          .return-mypage {
+            display:block;
+            text-align: center;
+            text-decoration: none;
+            color:#0099E8;
+            padding: 20px;
+          }
+          .return-mypage:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}
+
