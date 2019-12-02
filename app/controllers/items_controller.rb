@@ -1,12 +1,13 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:destroy, :buy]
+  before_action :set_detail, only: [:show, :edit, :update, :purchase]
 
   def index
     @items = Item.includes(:items_statuses).limit(10).order("created_at DESC")
   end
 
   def show
-    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
+
   end
 
   def new
@@ -23,11 +24,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
+
   end
 
   def update
-    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
     if @detail.update(item_params)
       redirect_to root_path
     else
@@ -44,7 +44,7 @@ class ItemsController < ApplicationController
   end
 
   def purchase
-    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
+
   end
 
   def buy #クレジット購入
@@ -80,6 +80,10 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_detail
+    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
   end
 
 end
