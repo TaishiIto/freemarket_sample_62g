@@ -1,4 +1,5 @@
-= link_to new_item_path, class: "create-item-btn" do
-  .create-item-btn__text
-    出品
-  %i.fas.fa-camera
+- if user_signed_in?
+  = link_to new_item_path, class: "create-item-btn" do
+    .create-item-btn__text
+      出品
+    %i.fas.fa-camera
