@@ -1,5 +1,5 @@
 $(function() {
-  $("#new_user").validate({
+  $("#userForm").validate({
     rules : {
       "user[name]": {
         required: true

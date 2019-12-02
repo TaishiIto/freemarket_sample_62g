@@ -6,7 +6,7 @@
     .registration-form-header
       %h2 会員情報入力
     .registration-form-contents
-      = form_for @user, url: step2_signup_index_path, method: :get, html: {class: 'main-box'} do |f|
+      = form_for @user, url: step2_signup_index_path, id:, "userForm" method: :get, html: {class: 'main-box'} do |f|
         .step1-form-top
           .form-group
             %p1 ニックネーム
