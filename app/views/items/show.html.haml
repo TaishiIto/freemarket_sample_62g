@@ -1,6 +1,4 @@
 = render "shared/header"
- 
-
 .product-details__page
   .product-details__page__head
   .product-details__page__main
@@ -27,7 +25,8 @@
           .main-content__category__left
             カテゴリー
           .main-content__category__right
-            = @detail.category_id
+            - category = Category.find @detail.category_id
+            = category.name
         
         .main-content__brand
           .main-content__brand__left
@@ -39,36 +38,38 @@
           .main-content__size__left
             商品のサイズ
           .main-content__size__right
-            = @detail.size_id
+            - size = Size.find @detail.size_id
+            = size.name
         
         .main-content__condition
           .main-content__condition__left
             商品の状態  
           .main-content__condition__right
-            = @detail.condition
+            = @condition
         
         .main-content__cost
           .main-content__cost__left
             配送料の負担
           .main-content__cost__right
-            = @detail.delivery.delivery_cost
+            = @delivery_cost
         
         .main-content__ways
           .main-content__ways__left
             配送の方法
           .main-content__ways__right
-            = @detail.delivery.delivery_ways
+            未定
         
         .main-content__area
           .main-content__area__left
             配送元地域
           .main-content__area__right
-
+            - prefecture = Prefecture.find @detail.delivery.delivery_ways
+            = prefecture.name
         .main-content__days
           .main-content__days__left
             発送日の目安
           .main-content__days__right
-            = @detail.delivery.delivery_days
+            = @delivery_days
     
     .item-details-page__price 
       %span.item-details-page__price__price
