@@ -7,7 +7,47 @@ class ItemsController < ApplicationController
   end
 
   def show
+    case @detail.condition
+      when 1 then
+        @condition = "新品、未使用"
 
+      when 2 then
+        @condition = "未使用に近い"
+
+      when 3 then
+        @condition = "目立った傷や汚れなし"
+
+      when 4 then
+        @condition = "やや傷や汚れあり"
+
+      when 5 then
+        @condition = "傷や汚れあり"
+
+      when 6 then
+        @condition = "全体的に状態が悪い"
+      
+    end
+
+    case @detail.delivery.delivery_cost
+      when 1 then
+        @delivery_cost = "送料込み(出品者負担)"
+
+      when 2 then
+        @delivery_cost = "着払い(購入者負担)'"
+      
+    end
+
+    case @detail.delivery.delivery_days
+      when 1 then
+        @delivery_days = "1〜2日で発送"
+
+      when 2 then
+        @delivery_days = "3〜4日で発送"
+
+      when 3 then
+        @delivery_days = "4〜7日で発送"
+
+    end
   end
 
   def new
