@@ -24,14 +24,14 @@
           %ul.tabs
             %li.tabs__list.tabs__list--active
               %h3.tabs__list__body
-                = link_to "おしらせ", ready_user_path(current_user.id), class: "tabs__list__body__link" 
+                = link_to "おしらせ", ready_users_path, class: "tabs__list__body__link" 
             %li.tabs__list.tabs__list
               %h3.tabs__list__body
-                = link_to "やることリスト", ready_user_path(current_user.id), class: "tabs__list__body__link" 
+                = link_to "やることリスト", ready_users_path, class: "tabs__list__body__link" 
           .contents
             %ul.contents__lists
               %li.contents__lists__list
-                = link_to  ready_user_path(current_user.id), class: "contents__lists__list__link" do
+                = link_to  ready_users_path, class: "contents__lists__list__link" do
                   %figure.contents__lists__list__link__image
                     = image_tag 'logo_red.svg', height: '40', width: '40'
                   .contents__lists__list__link__body
@@ -42,7 +42,7 @@
                       %span 2日前
                   %i.fas.fa-chevron-right
               %li.contents__lists__list
-                = link_to  ready_user_path(current_user.id), class: "contents__lists__list__link" do
+                = link_to  ready_users_path, class: "contents__lists__list__link" do
                   %figure.contents__lists__list__link__image
                     = image_tag 'logo_red.svg', height: '40', width: '40'
                   .contents__lists__list__link__body
@@ -53,7 +53,7 @@
                       %span 2日前
                   %i.fas.fa-chevron-right
               %li.contents__lists__list
-                = link_to  ready_user_path(current_user.id), class: "contents__lists__list__link" do
+                = link_to  ready_users_path, class: "contents__lists__list__link" do
                   %figure.contents__lists__list__link__image
                     = image_tag 'logo_red.svg', height: '40', width: '40'
                   .contents__lists__list__link__body
@@ -64,7 +64,7 @@
                       %span 2日前
                   %i.fas.fa-chevron-right
               %li.contents__lists__list
-                = link_to  ready_user_path(current_user.id), class: "contents__lists__list__link" do
+                = link_to  ready_users_path, class: "contents__lists__list__link" do
                   %figure.contents__lists__list__link__image
                     = image_tag 'logo_red.svg', height: '40', width: '40'
                   .contents__lists__list__link__body
@@ -75,7 +75,7 @@
                       %span 2日前
                   %i.fas.fa-chevron-right
               %li.show__index
-                = link_to ready_user_path(current_user.id), class:"show__index__text" do
+                = link_to ready_users_path, class:"show__index__text" do
                   一覧を見る
       .bottom
         %h2.bottom__head__text
@@ -83,10 +83,10 @@
         %ul.bottom__tab
           %li.bottom__tab__left
             %h3
-              = link_to "取引中", ready_user_path(current_user.id), class: "left__link" 
+              = link_to "取引中", ready_users_path, class: "left__link" 
           %li.bottom__tab__right
             %h3
-              = link_to "過去の取引",ready_user_path(current_user.id), class: "right__link"
+              = link_to "過去の取引",ready_users_path, class: "right__link"
         .bottom__content
           %ul.content__list
             = image_tag 'logo_gray.svg', height: '110', width: '110',class:"list__image"

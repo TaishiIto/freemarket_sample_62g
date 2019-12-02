@@ -2,11 +2,11 @@
   %nav
     %ul
       %li
-        = link_to "プライバシーポリシー", ready_user_path(current_user.id),class: "privacy"
+        = link_to "プライバシーポリシー", ready_users_path,class: "privacy"
       %li
-        = link_to "フリマケ利用規約", ready_user_path(current_user.id),class: "privacy"
+        = link_to "フリマケ利用規約", ready_users_path,class: "privacy"
       %li
-        = link_to "特定商取引に関する表記", ready_user_path(current_user.id),class: "privacy"
+        = link_to "特定商取引に関する表記", ready_users_path,class: "privacy"
 
   .footer-logo
     = link_to root_path do

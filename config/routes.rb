@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     member do
       get 'profile'
       patch 'profile_update'
+    end
+    collection do
       get 'ready'
     end
   end
