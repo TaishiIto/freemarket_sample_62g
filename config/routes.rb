@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     member do
       get 'profile'
       patch 'profile_update'
+      get 'ready'
     end
   end
   resources :signup, only: :create do

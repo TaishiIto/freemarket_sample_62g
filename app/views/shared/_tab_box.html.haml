@@ -3,14 +3,14 @@
     %ul.tabs
       %li.tabs__list.tabs__list--active
         %h3.tabs__list__body
-          = link_to "おしらせ", "#", class: "tabs__list__body__link" 
+          = link_to "おしらせ",ready_user_path(current_user.id), class: "tabs__list__body__link" 
       %li.tabs__list.tabs__list
         %h3.tabs__list__body
-          = link_to "やることリスト", "#", class: "tabs__list__body__link" 
+          = link_to "やることリスト", ready_user_path(current_user.id), class: "tabs__list__body__link" 
     .contents
       %ul.contents__lists
         %li.contents__lists__list
-          = link_to  "#", class: "contents__lists__list__link" do
+          = link_to  ready_user_path(current_user.id), class: "contents__lists__list__link" do
             %figure.contents__lists__list__link__image
               = image_tag 'logo_red.svg', height: '40', width: '40'
             .contents__lists__list__link__body

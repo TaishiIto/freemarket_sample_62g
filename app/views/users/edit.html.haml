@@ -14,7 +14,7 @@
             %br
             登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
           %p.main-contents-main__message__message__right
-            = link_to root_path,class:"about-upload" do
+            = link_to ready_user_path(current_user.id),class:"about-upload" do
               本人確認書類のアップロードについて
 
         .main-contents-main__form
@@ -75,6 +75,6 @@
           
           .main-contents-main__form__in
             %p.registration-about
-              = link_to "本人情報の登録について",root_path,class:"registration-about__yourself"
+              = link_to "本人情報の登録について",ready_user_path(current_user.id),class:"registration-about__yourself"
 
 = render "shared/footer"

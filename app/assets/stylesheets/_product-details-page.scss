@@ -1,6 +1,7 @@
 .product-details__page {
   width: 100%;
   background-color: #F5F5F5;
+  
   &__head {
     background-color: #F5F5F5;
     height:40px;
@@ -19,6 +20,7 @@
     &__content {
       display: flex;
       margin-top: 16px;
+      
       &__img {
         width: 48%;
         position: relative;
@@ -76,6 +78,7 @@
         .main-content__name {
           display: flex;
           border:1px solid #F8F8FF;
+          
           &__left {
             width:39%;
             line-height:60px;
@@ -90,6 +93,7 @@
         .main-content__category {
           display: flex;
           border:1px solid #F8F8FF;
+          
           &__left {
             width:39%;
             line-height:60px;
@@ -104,6 +108,7 @@
         .main-content__brand {
           display: flex;
           border:1px solid #F8F8FF;
+          
           &__left {
             width:39%;
             line-height:35px;
@@ -118,6 +123,7 @@
         .main-content__size {
           display: flex;
           border:1px solid #F8F8FF;
+          
           &__left {
             width:39%;
             line-height:35px;
@@ -132,6 +138,7 @@
         .main-content__condition {
           display: flex;
           border:1px solid #F8F8FF;
+          
           &__left {
             width:39%;
             line-height:35px;
@@ -146,6 +153,7 @@
         .main-content__cost {
           display: flex;
           border:1px solid #F8F8FF;
+          
           &__left {
             width:39%;
             line-height:35px;
@@ -160,6 +168,7 @@
         .main-content__ways {
           display: flex;
           border:1px solid #F8F8FF;
+          
           &__left {
             width:39%;
             line-height:35px;
@@ -174,6 +183,7 @@
         .main-content__area {
           display: flex;
           border:1px solid #F8F8FF;
+          
           &__left {
             width:39%;
             line-height:35px;
@@ -188,6 +198,7 @@
         .main-content__days {
           display: flex;
           border:1px solid #F8F8FF;
+          
           &__left {
             width:39%;
             line-height:35px;
@@ -204,6 +215,7 @@
     .item-details-page__price {
       text-align: center;
       margin: 40px 0 0;
+    
       &__price {
         font-size:50px;
         margin:0 16px 0 0;
@@ -311,7 +323,10 @@
     .item-details-page-bottom {
       margin: 16px 0 0;
       display: flex;
+
       .bottom1 {
+        display: flex;
+        
         .bottom-like {
           color: #333;
           border: 1px solid #f5f5f5;
@@ -320,8 +335,8 @@
           line-height: 30px;
           margin-right: 10px;
           text-align: center;
-          display: inline-block;
           padding:1px 16px;
+        
           &-icon-like {
             font-size:14px;
             margin:1px 0 0 8px;
@@ -329,7 +344,6 @@
           }
         }
         .bottom-link {
-          display: inline-block;
           color: #333;
           border: 1px solid #f5f5f5;
           background: #f5f5f5;
@@ -338,6 +352,7 @@
           text-align: center;
           text-decoration: none;
           padding:1px 16px;
+          
           .bottom-link-icon-message {
             font-size:14px;
             margin:1px 0 0 8px;
@@ -347,11 +362,12 @@
       }
       .bottom2 {
         font-size:14px;
-        margin-left: 65px;
-        display: block;
+        margin:0 0 0 auto;
+        
+        
         &-link {
-          color:skyblue;
           display: block;
+          color:skyblue;
           padding-top:10px;
           text-decoration: none;
           .bottom-link-icon-message2 {
@@ -363,15 +379,19 @@
   .product-details-comment-form {
     width:47.5%;
     margin:8px auto;
+    
     &__contents {
       background-color:white;
+      
       .product-details-comment-form__content {
         padding:24px;
+        
         .details-page-form-comment {
           padding: 8px;
           font-size: 14px;
           background: #fff6de;     
         }
+      
         #description {
           display: block;
           width: 96.5%;
@@ -383,6 +403,7 @@
           margin: 8px 0 0;
           height: 100px;
         }
+        
         .details-page-form-btn {
           background: #aaa;
           border: 1px solid #aaa;
