@@ -3,9 +3,6 @@ $(document).on('turbolinks:load', function() {
     $("#itemForm").validate({
       rules : {
 
-        "item[images][]":{
-          required: true
-        },
         "item[name]": {
           required: true,
           maxlength: 40
@@ -40,9 +37,6 @@ $(document).on('turbolinks:load', function() {
       },
       messages: {
 
-        "item[images][]":{
-          required: "商品画像を入力してください"
-        },
         "item[name]": {
           required: "商品名を入力してください",
           maxlength: "40文字以下で入力してください"

@@ -127,3 +127,13 @@ legend {
 *{
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
+/* jQuery ValidationのCSS追加 */
+.error{
+  color: #ea362d;
+  background-color: #ea362d25;
+}
+label.error{
+  font-size: 18px;
+  font-weight: bold;
+
+}
