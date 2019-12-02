@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :items, through: :items_statuses,dependent: :destroy
   accepts_nested_attributes_for :address
 
+  has_many :comments
+
   validates :name, presence: true, length: { maximum: 20 }
 
   validates :first_name_kanji, presence: true, length: { maximum: 20 }, format: { with: /\A[一-龥]+\z/ }
