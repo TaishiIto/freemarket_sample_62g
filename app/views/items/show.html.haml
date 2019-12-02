@@ -77,14 +77,18 @@
         （税込）
       %span.item-details-page__price__add
         送料込み
-    - if @detail.items_statuses.first.item_status == 2
-      = link_to "売り切れました", "", class: "sold-btn"
-    - else
-      - if user_signed_in? && current_user.id == @detail.users.first.id
-        = link_to "削除する", item_path(@detail.id), method: :delete,class:"destroy-btn"
-        = link_to "編集する", edit_item_path(@detail.id),class:"detail-page-edit-btn"
+    - if user_signed_in?
+      - if @detail.items_statuses.first.item_status == 2
+        = link_to "売り切れました", "", class: "sold-btn"
       - else
-        = link_to "購入画面に進む",purchase_item_path(@detail.id), class:"purchace-page-link"
+        - if user_signed_in? && current_user.id == @detail.users.first.id
+          = link_to "削除する", item_path(@detail.id), method: :delete,class:"destroy-btn"
+          = link_to "編集する", edit_item_path(@detail.id),class:"detail-page-edit-btn"
+        - else
+          = link_to "購入画面に進む",purchase_item_path(@detail.id), class:"purchace-page-link"
+    - else
+      = link_to "新規登録画面に進む", new_user_registration_path,class:"logout-user-registration"
+      = link_to "ログイン画面に進む", new_user_session_path,class:"logout-user-login"
     .item-details-page-description
       = @detail.description
     .item-details-page-bottom
