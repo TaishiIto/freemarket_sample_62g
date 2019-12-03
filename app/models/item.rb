@@ -8,7 +8,8 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :delivery
 
   has_many :comments
-
+  
+  validate :images_presence
   validates :name, :description, presence: true
   validates :price,       presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
   validates :condition,   numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 6}
@@ -19,4 +20,14 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :size
   belongs_to_active_hash :category
+
+  def images_presence
+    if images.attached?
+      if !images.content_type.in?(%('image/jpeg image/png'))
+        errors.add(:images, 'にはjpegまたはpngファイルを添付してください')
+      end
+    else
+      errors.add(:images, 'ファイルを添付してください')
+    end
+  end
 end

@@ -1,0 +1,64 @@
+/* jQuery ValidationのCSS追加 */
+.error{
+  color: #ea362d;
+  background-color: #ea362d25;
+}
+label.error{
+  font-size: 16px;
+  font-weight: bold;
+  padding: 3px;
+}
+.step1-kannji{
+  position: relative;
+
+  #user_family_name_kanji-error{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    font-size: 14px;
+  } 
+  #user_first_name_kanji-error{
+      position: absolute;
+      top: 60px;
+      right: 25px;
+      font-size: 14px;
+  }
+}
+.step1-kana{
+  position: relative;
+
+  #user_family_name_kana-error{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    font-size: 14px;
+  } 
+  #user_first_name_kana-error{
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    font-size: 14px;
+  }
+}
+.step1-birthday{
+  position: relative;
+
+  #birthday_birthday_1i-error{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    font-size: 16px;
+  }
+  #birthday_birthday_2i-error{
+    position: absolute;
+    top: 60px;
+    left: 90px;
+    font-size: 16px;
+  }
+  #birthday_birthday_3i-error{
+    position: absolute;
+    top: 60px;
+    left: 180px;
+    font-size: 16px;
+  }
+}
