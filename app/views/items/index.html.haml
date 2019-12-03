@@ -1,16 +1,14 @@
 = render "shared/header"
 .item-main
   .contents
-    .images
-      = image_tag "dog_tree_full.jpg",height: "390", width: "100%"
-      .back
-        %i.fas.fa-chevron-left
-      .next
-        %i.fas.fa-chevron-right
-      .image-points
-        .image-points__pointer
-          %span.fas.fa-circle
-          %span.fas.fa-circle.fa-circle--active
+    .slider
+      %div
+        = image_tag 'dog_tree_full.jpg', height: "550", width: "100%", class: "down"
+      %div
+        = image_tag 'cat1.jpg', height: "550", width: "100%"
+      %div
+        = image_tag 'cat2.jpg', height: "550", width: "100%", class: "down"
+
     .category-pickup
       %h2.category-pickup__title
         人気のカテゴリー
@@ -29,10 +27,10 @@
       .popular-items.popular-items--most
         .items-header
           %h3.items-header__title
-            レディース新着アイテム
-          = link_to ready_users_path do
-            もっと見る
-            %i.fas.fa-chevron-right.fa-fw
+            商品(新規投稿順)
+          -# = link_to ready_users_path do
+          -#   もっと見る
+          -#   %i.fas.fa-chevron-right.fa-fw
         .items-newer
           .newer-container
             %ul.item-list
