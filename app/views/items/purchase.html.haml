@@ -40,7 +40,7 @@
             住所
             -# 仮置き
           %p.user-input-address-space
-          = link_to "#", class:"user-input-address-change" do
+          = link_to ready_user_path(current_user.id), class:"user-input-address-change" do
             %span.user-input-address-change__link
               変更する
             %i.fas.fa-chevron-right
@@ -54,7 +54,7 @@
           .method-of-payment__main__card__img
             カードのimg
             -# 仮置き
-          = link_to "#", class:"user-input-address-change" do
+          = link_to ready_user_path(current_user.id), class:"user-input-address-change" do
             %span.user-input-address-change__link
               変更する
             %i.fas.fa-chevron-right

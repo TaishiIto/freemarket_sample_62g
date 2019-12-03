@@ -24,6 +24,9 @@ Rails.application.routes.draw do
       get 'profile'
       patch 'profile_update'
     end
+    collection do
+      get 'ready'
+    end
   end
   resources :signup, only: :create do
     collection do

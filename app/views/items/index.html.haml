@@ -17,20 +17,20 @@
       .pickup-popular
         %ul.pickup-popular__list
           %li.pickup-popular__list__body
-            = link_to "レディース"
+            = link_to "レディース",ready_users_path
           %li.pickup-popular__list__body
-            = link_to "メンズ"
+            = link_to "メンズ",ready_users_path
           %li.pickup-popular__list__body
-            = link_to "家電・スマホ・カメラ"
+            = link_to "家電・スマホ・カメラ",ready_users_path
           %li.pickup-popular__list__body
-            = link_to "おもちゃ・ホビー・グッズ"
+            = link_to "おもちゃ・ホビー・グッズ",ready_users_path
 
     .category-popular
       .popular-items.popular-items--most
         .items-header
           %h3.items-header__title
             レディース新着アイテム
-          = link_to "#" do
+          = link_to ready_users_path do
             もっと見る
             %i.fas.fa-chevron-right.fa-fw
         .items-newer
@@ -42,7 +42,7 @@
         .items-header
           %h3.items-header__title
             メンズ新着アイテム
-          = link_to "#" do
+          = link_to ready_users_path do
             もっと見る
             %i.fas.fa-chevron-right.fa-fw
         .items-newer
@@ -54,7 +54,7 @@
         .items-header
           %h3.items-header__title
             家電・スマホ・カメラ新着アイテム
-          = link_to "#" do
+          = link_to ready_users_path do
             もっと見る
             %i.fas.fa-chevron-right.fa-fw
         .items-newer
@@ -66,7 +66,7 @@
         .items-header
           %h3.items-header__title
             おもちゃ・ホビー・グッズ新着アイテム
-          = link_to "#" do
+          = link_to ready_users_path do
             もっと見る
             %i.fas.fa-chevron-right.fa-fw
         .items-newer
@@ -80,20 +80,20 @@
       .pickup-popular
         %ul.pickup-popular__list
           %li.pickup-popular__list__body
-            = link_to "シャネル"
+            = link_to "シャネル",ready_users_path
           %li.pickup-popular__list__body
-            = link_to "ルイヴィトン"
+            = link_to "ルイヴィトン",ready_users_path
           %li.pickup-popular__list__body
-            = link_to "シュプリーム"
+            = link_to "シュプリーム",ready_users_path
           %li.pickup-popular__list__body
-            = link_to "ナイキ"
+            = link_to "ナイキ",ready_users_path
 
     .category-popular
       .popular-items.popular-items--most
         .items-header
           %h3.items-header__title
             シャネル新着アイテム
-          = link_to "#" do
+          = link_to ready_users_path do
             もっと見る
             %i.fas.fa-chevron-right.fa-fw
         .items-newer
@@ -105,7 +105,7 @@
         .items-header
           %h3.items-header__title
             ルイヴィトン新着アイテム
-          = link_to "#" do
+          = link_to ready_users_path do
             もっと見る
             %i.fas.fa-chevron-right.fa-fw
         .items-newer
@@ -117,7 +117,7 @@
         .items-header
           %h3.items-header__title
             シュプリーム新着アイテム
-          = link_to "#" do
+          = link_to ready_users_path do
             もっと見る
             %i.fas.fa-chevron-right.fa-fw
         .items-newer
@@ -129,7 +129,7 @@
         .items-header
           %h3.items-header__title
             ナイキ新着アイテム
-          = link_to "#" do
+          = link_to ready_users_path do
             もっと見る
             %i.fas.fa-chevron-right.fa-fw
         .items-newer
