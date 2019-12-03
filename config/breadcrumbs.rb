@@ -6,6 +6,25 @@ crumb :mypage do
   link "マイページ", user_path(current_user.id)
 end
 
+crumb :profile do
+  link "プロフィール", profile_user_path
+  parent :mypage
+end
+
+crumb :card do
+  link "支払い方法", card_path
+  parent :mypage
+end
+
+crumb :identification do
+  link "本人情報の登録", edit_user_path
+  parent :mypage
+end
+
+crumb :logout do
+  link "ログアウト", user_path
+  parent :mypage
+end
 # crumb :projects do
 #   link "Projects", projects_path
 # end
