@@ -46,7 +46,15 @@
                 %span.form-caution
                   必須
               = f.collection_select :category_id, Category.all, :id, :name
+              %h3.item-details__form__category__name
+                サイズ
+                %span.form-caution
+                  必須
               = f.collection_select :size_id, Size.all, :id, :name
+              %h3.item-details__form__category__name
+                ブランド
+                %span.form-caution
+                  必須
               = f.text_field :brand,  placeholder: "例）シャネル"
             .item-details__form__status
               %h3.item-details__form__status__name

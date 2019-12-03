@@ -17,125 +17,27 @@
       .pickup-popular
         %ul.pickup-popular__list
           %li.pickup-popular__list__body
-            = link_to "レディース"
+            = link_to "レディース",ready_users_path
           %li.pickup-popular__list__body
-            = link_to "メンズ"
+            = link_to "メンズ",ready_users_path
           %li.pickup-popular__list__body
-            = link_to "家電・スマホ・カメラ"
+            = link_to "家電・スマホ・カメラ",ready_users_path
           %li.pickup-popular__list__body
-            = link_to "おもちゃ・ホビー・グッズ"
+            = link_to "おもちゃ・ホビー・グッズ",ready_users_path
 
     .category-popular
       .popular-items.popular-items--most
         .items-header
           %h3.items-header__title
             レディース新着アイテム
-          = link_to "#" do
+          = link_to ready_users_path do
             もっと見る
             %i.fas.fa-chevron-right.fa-fw
         .items-newer
           .newer-container
             %ul.item-list
               = render partial:"shared/item", collection: @items
-
-      .popular-items
-        .items-header
-          %h3.items-header__title
-            メンズ新着アイテム
-          = link_to "#" do
-            もっと見る
-            %i.fas.fa-chevron-right.fa-fw
-        .items-newer
-          .newer-container
-            %ul.item-list
-              = render partial:"shared/item", collection: @items
-
-      .popular-items
-        .items-header
-          %h3.items-header__title
-            家電・スマホ・カメラ新着アイテム
-          = link_to "#" do
-            もっと見る
-            %i.fas.fa-chevron-right.fa-fw
-        .items-newer
-          .newer-container
-            %ul.item-list
-              = render partial:"shared/item", collection: @items
-
-      .popular-items
-        .items-header
-          %h3.items-header__title
-            おもちゃ・ホビー・グッズ新着アイテム
-          = link_to "#" do
-            もっと見る
-            %i.fas.fa-chevron-right.fa-fw
-        .items-newer
-          .newer-container
-            %ul.item-list
-              = render partial:"shared/item", collection: @items
-
-    .category-pickup
-      %h2.category-pickup__title
-        人気のブランド
-      .pickup-popular
-        %ul.pickup-popular__list
-          %li.pickup-popular__list__body
-            = link_to "シャネル"
-          %li.pickup-popular__list__body
-            = link_to "ルイヴィトン"
-          %li.pickup-popular__list__body
-            = link_to "シュプリーム"
-          %li.pickup-popular__list__body
-            = link_to "ナイキ"
-
-    .category-popular
-      .popular-items.popular-items--most
-        .items-header
-          %h3.items-header__title
-            シャネル新着アイテム
-          = link_to "#" do
-            もっと見る
-            %i.fas.fa-chevron-right.fa-fw
-        .items-newer
-          .newer-container
-            %ul.item-list
-              = render partial:"shared/item", collection: @items
-
-      .popular-items
-        .items-header
-          %h3.items-header__title
-            ルイヴィトン新着アイテム
-          = link_to "#" do
-            もっと見る
-            %i.fas.fa-chevron-right.fa-fw
-        .items-newer
-          .newer-container
-            %ul.item-list
-              = render partial:"shared/item", collection: @items
-
-      .popular-items
-        .items-header
-          %h3.items-header__title
-            シュプリーム新着アイテム
-          = link_to "#" do
-            もっと見る
-            %i.fas.fa-chevron-right.fa-fw
-        .items-newer
-          .newer-container
-            %ul.item-list
-              = render partial:"shared/item", collection: @items
-
-      .popular-items
-        .items-header
-          %h3.items-header__title
-            ナイキ新着アイテム
-          = link_to "#" do
-            もっと見る
-            %i.fas.fa-chevron-right.fa-fw
-        .items-newer
-          .newer-container
-            %ul.item-list
-              = render partial:"shared/item", collection: @items
+        = paginate(@items)
 
 = render "shared/footer"
 = render "shared/item-creater"

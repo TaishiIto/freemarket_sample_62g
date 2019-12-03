@@ -1,12 +1,53 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:destroy, :buy]
+  before_action :set_detail, only: [:show, :edit, :update, :purchase, :comment]
 
   def index
-    @items = Item.includes(:items_statuses).limit(10).order("created_at DESC")
+    @items = Item.includes(:items_statuses).limit(10).order("created_at DESC").page(params[:page]).per(20)
   end
 
   def show
-    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
+    case @detail.condition
+      when 1 then
+        @condition = "新品、未使用"
+
+      when 2 then
+        @condition = "未使用に近い"
+
+      when 3 then
+        @condition = "目立った傷や汚れなし"
+
+      when 4 then
+        @condition = "やや傷や汚れあり"
+
+      when 5 then
+        @condition = "傷や汚れあり"
+
+      when 6 then
+        @condition = "全体的に状態が悪い"
+      
+    end
+
+    case @detail.delivery.delivery_cost
+      when 1 then
+        @delivery_cost = "送料込み(出品者負担)"
+
+      when 2 then
+        @delivery_cost = "着払い(購入者負担)'"
+      
+    end
+
+    case @detail.delivery.delivery_days
+      when 1 then
+        @delivery_days = "1〜2日で発送"
+
+      when 2 then
+        @delivery_days = "3〜4日で発送"
+
+      when 3 then
+        @delivery_days = "4〜7日で発送"
+
+    end
   end
 
   def new
@@ -23,11 +64,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
+
   end
 
   def update
-    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
     if @detail.update(item_params)
       redirect_to root_path
     else
@@ -44,7 +84,16 @@ class ItemsController < ApplicationController
   end
 
   def purchase
-    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
+
+  end
+
+  def comment
+    @comments = Comment.new(comment: comment_params[:comment], item_id: comment_params[:id], user_id: current_user.id)
+    if @comments.save
+      redirect_to item_path
+    else
+      redirect_to item_path
+    end
   end
 
   def buy #クレジット購入
@@ -80,6 +129,14 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_detail
+    @detail = Item.includes(:users,:items_statuses,:delivery,:comments).find(params[:id])
+  end
+
+  def comment_params
+    params.permit(:comment, :id)
   end
 
 end

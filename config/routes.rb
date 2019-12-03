@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get "purchase"
       post 'buy'
       get "done"
+      post 'comment'
     end
   end
   resources :cards, only: [:new, :show] do
@@ -22,6 +23,9 @@ Rails.application.routes.draw do
     member do
       get 'profile'
       patch 'profile_update'
+    end
+    collection do
+      get 'ready'
     end
   end
   resources :signup, only: :create do

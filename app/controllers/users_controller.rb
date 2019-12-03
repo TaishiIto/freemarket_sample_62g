@@ -34,6 +34,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def ready
+  
+  end
+
 private
 
   def address_params
