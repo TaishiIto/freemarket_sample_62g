@@ -90,7 +90,7 @@
   width: 74.3%;
   margin: 0 auto;
   padding-top: 42px;
-  padding-bottom: 100px;
+  padding-bottom: 80px;
   .popular-items{
     margin-top: 60px;
 
@@ -220,5 +220,17 @@
         }
       }
     }
+  }
+}
+
+.pagination {
+  margin-top: 30px;
+  font-size: 25px;
+  color: #2d4092;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: #0095ee;
+    padding: 5px;
   }
 }
