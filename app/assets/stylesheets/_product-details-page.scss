@@ -370,8 +370,6 @@
           color:skyblue;
           padding-top:10px;
           text-decoration: none;
-          .bottom-link-icon-message2 {
-          }
         }
       }
     }
@@ -382,7 +380,25 @@
     
     &__contents {
       background-color:white;
-      
+      .product-details-comment-form__comment {
+        padding:24px;
+        .one-block {
+          margin-top: 10px;
+          .comment-user-name {
+            padding-left: 10px;
+          }
+          .item-comment {
+            box-sizing: border-box;
+            margin: 0 auto;
+            width: calc(100% - 60px);
+            padding: 16px;
+            background: #eef0f4;
+            border-radius: 15px;
+            line-height: 1.5;
+            word-break: break-all;
+          }
+        }
+      }
       .product-details-comment-form__content {
         padding:24px;
         
@@ -391,8 +407,7 @@
           font-size: 14px;
           background: #fff6de;     
         }
-      
-        #description {
+        #comment {
           display: block;
           width: 96.5%;
           padding: 10px;

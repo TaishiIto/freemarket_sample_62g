@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:destroy, :buy]
-  before_action :set_detail, only: [:show, :edit, :update, :purchase]
+  before_action :set_detail, only: [:show, :edit, :update, :purchase, :comment]
 
   def index
     @items = Item.includes(:items_statuses).limit(10).order("created_at DESC")
@@ -87,6 +87,15 @@ class ItemsController < ApplicationController
 
   end
 
+  def comment
+    @comments = Comment.new(comment: comment_params[:comment], item_id: comment_params[:id], user_id: current_user.id)
+    if @comments.save
+      redirect_to item_path
+    else
+      redirect_to item_path
+    end
+  end
+
   def buy #クレジット購入
     card = Card.find_by(user_id: current_user.id)
     if card.blank?
@@ -123,7 +132,11 @@ class ItemsController < ApplicationController
   end
 
   def set_detail
-    @detail = Item.includes(:users,:items_statuses,:delivery).find(params[:id])
+    @detail = Item.includes(:users,:items_statuses,:delivery,:comments).find(params[:id])
+  end
+
+  def comment_params
+    params.permit(:comment, :id)
   end
 
 end

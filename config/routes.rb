@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get "purchase"
       post 'buy'
       get "done"
+      post 'comment'
     end
   end
   resources :cards, only: [:new, :show] do
