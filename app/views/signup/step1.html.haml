@@ -57,7 +57,7 @@
         
         .step1-form-bottom
           .step1-recaptcha
-            - Rails.env == "development"
+            - if Rails.env == "development"
               = recaptcha_tags
           .form-group
             %p.text-center
