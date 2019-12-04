@@ -5,7 +5,7 @@ class CreateItemsStatuses < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       t.integer    :buyer_id
       t.integer    :item_status, default: 1
-      t.integer    :rate, null: false, default: 3
+      t.integer    :rate, null: false, default: 0
       t.text       :review
       t.timestamps
     end

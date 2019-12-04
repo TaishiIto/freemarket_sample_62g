@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_054807) do
     t.bigint "user_id"
     t.integer "buyer_id"
     t.integer "item_status", default: 1
-    t.integer "rate", default: 3, null: false
+    t.integer "rate", default: 0, null: false
     t.text "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
