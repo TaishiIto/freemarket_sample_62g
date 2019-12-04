@@ -54,7 +54,7 @@
           .method-of-payment__main__card__img
             カードのimg
             -# 仮置き
-          = link_to ready_user_path(current_user.id), class:"user-input-address-change" do
+          = link_to ready_users_path(current_user.id), class:"user-input-address-change" do
             %span.user-input-address-change__link
               変更する
             %i.fas.fa-chevron-right
