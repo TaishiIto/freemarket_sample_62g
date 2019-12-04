@@ -1,7 +1,7 @@
 .left__side__list
   %ul.list__contents
     %li.contents__list
-      = link_to user_path,class:"list__item--active" do
+      = link_to user_path(current_user.id),class:"list__item--active" do
         マイページ
         %i.fas.fa-chevron-right
     %li.contents__list
