@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_detail, only: [:show, :edit, :update, :purchase, :comment]
 
   def index
-    @items = Item.includes(:items_statuses).limit(10).order("created_at DESC").page(params[:page]).per(20)
+    @items = Item.includes(:items_statuses).page(params[:page]).per(20).order("created_at DESC")
   end
 
   def show
