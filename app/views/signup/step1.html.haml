@@ -57,7 +57,8 @@
         
         .step1-form-bottom
           .step1-recaptcha
-            = recaptcha_tags
+            - Rails.env == "development"
+              = recaptcha_tags
           .form-group
             %p.text-center
               「次へ進む」のボタンを押すことにより、

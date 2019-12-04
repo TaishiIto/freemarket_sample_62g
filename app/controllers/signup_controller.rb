@@ -18,7 +18,7 @@ class SignupController < ApplicationController
     session[:birthday] = Date.new(birthday_params["birthday(1i)"]&.to_i, birthday_params["birthday(2i)"]&.to_i, birthday_params["birthday(3i)"]&.to_i)
     @user = User.new
     @user.build_address
-    unless verify_recaptcha && Rails.env == "development"
+    unless verify_recaptcha 
       render 'step1'
     end
   end
