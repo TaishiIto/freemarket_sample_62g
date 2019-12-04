@@ -7,9 +7,9 @@
         %div.details__body__info
           = tag.span "￥#{number_with_delimiter item.price}", class: "details__body__info__price"
           - if item.images.attached?
-            = image_tag "Noimage_image.png",class: "details__body__info__image",height: "188", width: "188"
-          - else 
             = image_tag item.images[0],class: "details__body__info__image",height: "188", width: "188"
+          - else 
+            = image_tag "Noimage_image.png",class: "details__body__info__image",height: "188", width: "188"
           - if item.items_statuses.first.item_status == 2
             .sold-label
               SOLD
