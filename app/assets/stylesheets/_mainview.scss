@@ -123,6 +123,8 @@
 }
 
 .items-newer{
+  min-height: 1130px;
+  
   .newer-container{
 
     .item-list{
@@ -148,6 +150,7 @@
               display: flex;
               flex-direction: column-reverse;
               margin: 0;
+              overflow: hidden; 
 
               figcaption{
                 height: 64px;
