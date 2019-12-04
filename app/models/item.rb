@@ -23,10 +23,6 @@ class Item < ApplicationRecord
 
   def images_presence
     if images.attached?
-      if !images.content_type.in?(%('image/jpeg image/png'))
-        errors.add(:images, 'にはjpegまたはpngファイルを添付してください')
-      end
-    else
       errors.add(:images, 'ファイルを添付してください')
     end
   end
