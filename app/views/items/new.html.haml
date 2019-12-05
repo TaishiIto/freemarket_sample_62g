@@ -4,7 +4,7 @@
     .exhibit__page__main__contents
       %h3.exhibit__page__main__contents__message
         商品の情報を入力
-      = form_with model:@item,class: "form-content", id: "itemForm", url: items_path, method: :post do |f|
+      = form_with model:@detail,class: "form-content", id: "itemForm", url: items_path, method: :post do |f|
         .img-form
           %h3.img__upload__text
             出品画像

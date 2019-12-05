@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_detail, only: [:show, :edit, :update, :purchase, :comment]
 
   def index
-    @items = Item.includes(:items_statuses).page(params[:page]).per(20).order("created_at DESC")
+    @items = Item.with_attached_images.includes(:items_statuses).page(params[:page]).per(20).order("created_at DESC")
   end
 
   def show
@@ -51,14 +51,14 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
-    @item.build_delivery
+    @detail = Item.new
+    @detail.build_delivery
   end
   
   def create
-    @item = Item.new(item_params)
-    @item.users << current_user
-    if @item.save
+    @detail = Item.new(item_params)
+    @detail.users << current_user
+    if @detail.save
       redirect_to root_path
     else 
       render :new
@@ -70,6 +70,7 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @detail.images.detach
     if @detail.update(item_params)
       redirect_to root_path
     else
@@ -121,24 +122,42 @@ class ItemsController < ApplicationController
   def done
   
   end
+  
+  def upload_image
+    @image_blob = create_blob(params[:image])
+    respond_to do |format|
+      format.json { @image_blob }
+    end
+  end
 
   private
   
   def item_params
-    params.require(:item).permit(:name, :description, :category_id, :size_id, :condition, :price, :brand, images: [], 
-                                  delivery_attributes:[:id, :delivery_cost, :delivery_days, :delivery_ways])
+    params.require(:item).permit(:name, :description, :category_id, :size_id, :condition, :price, :brand, 
+                                  delivery_attributes:[:id, :delivery_cost, :delivery_days, :delivery_ways]).
+                                  marge(images: uploaded_images)
   end
 
   def set_item
-    @item = Item.find(params[:id])
+    @item = Item.with_attached_images.find(params[:id])
   end
 
   def set_detail
-    @detail = Item.includes(:users,:items_statuses,:delivery,:comments).find(params[:id])
+    @detail = Item.with_attached_images.includes(:users,:items_statuses,:delivery,:comments).find(params[:id])
   end
 
   def comment_params
     params.permit(:comment, :id)
   end
 
+  def uploaded_images
+    params[:item][:images].map{|id| ActiveStorage::Blob.find(id)} if params[:item][:images]
+  end
+
+  def create_blob(uploading_file)
+    ActiveStorage::Blob.create_after_upload! \
+      io: uploading_file.open,
+      filename: uploading_file.original_filename,
+      content_type: uploading_file.content_type
+  end
 end
