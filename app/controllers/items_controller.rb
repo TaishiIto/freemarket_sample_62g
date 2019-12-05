@@ -60,6 +60,8 @@ class ItemsController < ApplicationController
     @item.users << current_user
     if @item.save
       redirect_to root_path
+    else 
+      render :new
     end
   end
 
