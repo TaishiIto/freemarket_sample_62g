@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       get "done"
       post 'comment'
     end
+    collection do
+      post 'upload_image'
+    end
   end
   resources :cards, only: [:new, :show] do
     collection do
