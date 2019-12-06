@@ -70,6 +70,13 @@ class ItemsController < ApplicationController
   end
 
   def update
+    unless params[:delete_ids] == [""]
+      params[:delete_ids].each do |image|
+        attachments = ActiveStorage::Attachment.find_by(record_id: params[:id], blob_id: image)
+        binding.pry
+        attachments.purge
+      end
+    end
     if @detail.update(item_params)
       redirect_to root_path
     else
@@ -125,7 +132,7 @@ class ItemsController < ApplicationController
   private
   
   def item_params
-    params.require(:item).permit(:name, :description, :category_id, :size_id, :condition, :price, :brand, images: [], 
+    params.require(:item).permit(:name, :description, :category_id, :size_id, :condition, :price, :brand, images: [],
                                   delivery_attributes:[:id, :delivery_cost, :delivery_days, :delivery_ways])
   end
 
