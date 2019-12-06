@@ -71,11 +71,9 @@ class ItemsController < ApplicationController
 
   def update
     unless params[:delete_ids] == [""]
-      params[:delete_ids].each do |image|
-        attachments = ActiveStorage::Attachment.find_by(record_id: params[:id], blob_id: image)
-        binding.pry
-        attachments.purge
-      end
+      deleteImages = params[:delete_ids].first.split(',')
+      attachments = ActiveStorage::Attachment.where(record_id: params[:id], blob_id: deleteImages)
+      attachments.map(&:purge)
     end
     if @detail.update(item_params)
       redirect_to root_path
