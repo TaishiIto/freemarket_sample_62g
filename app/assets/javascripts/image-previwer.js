@@ -86,13 +86,13 @@ $(function(){
 
   $('.item-image-list').on('click', '.item-uploaded__delete', function(e){
     e.preventDefault();
-    dNums = $(this).data("delete");
     $(this).parent().hide();
-    $(`input[data-nums="${dNums}"]`).remove();
     if ($(this).data("uploaded")){
       deleteImages.push($(this).data("uploaded"));
       $("#delete-uploaded-img").val(deleteImages);
-      console.log($("#delete-uploaded-img").val());
+    }else{
+      dNums = $(this).data("delete");
+      $(`input[data-nums="${dNums}"]`).remove();
     }
     afterImages = $('.item-uploaded:visible').length;
     if (afterImages < 10){
