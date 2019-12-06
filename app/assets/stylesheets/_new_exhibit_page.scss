@@ -32,33 +32,6 @@
       .form-content {
         border-top: 1px solid #EEEEEE;
 
-        .edit-img-form {
-          padding:40px;
-          border-bottom: 1px solid #EEEEEE;
-          
-          .edit-img__upload__text {
-            font-size:16px;
-            color:#333;
-            font-weight: bold;
-
-          }
-          .uploaded-images{
-            display:flex;
-            flex-wrap:wrap;
-            width: 615px;
-            margin-top: 20px;
-
-            img{
-              width:114px;
-              height:114px;
-              object-fit: contain;
-              border: 1px solid #dddddd;
-              border-radius: 4px;
-              margin-left: 4px;
-              
-            }
-          }
-        }
         .img-form {
           padding:40px;
           border-bottom: 1px solid #EEEEEE;

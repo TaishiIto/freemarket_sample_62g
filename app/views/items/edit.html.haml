@@ -7,29 +7,29 @@
       %h3.exhibit__page__main__contents__message
         商品の情報を入力
       = form_with model:@detail,class: "form-content", url: item_path(@detail.id), method: :patch do |f|
-        .edit-img-form
-          %h3.edit-img__upload__text
-            出品中の画像
-          .uploaded-images
-            - @detail.images.each do |image|
-              = image_tag image
         .img-form
           %h3.img__upload__text
-            出品画像(出品中の画像に追加されます)
+            出品画像
             %span.form-caution
               必須
           %p.img__upload__comment
-            最大10枚までアップロードできます(現状、出品中の画像は変更できません)
+            最大10枚までアップロードできます
 
           .preview-area
             %ul.item-image-list#item-image-list
+              - if @detail.images.attached?
+                - @detail.images.each_with_index do |image, i|
+                  %li#item-uploaded.item-uploaded
+                    = image_tag image, class: "item-uploaded__img"
+                    %a.item-uploaded__delete{"data-uploaded": "#{image.blob_id}", href: ""} 削除
               .upload-area
                 .upload-area__dropbox
                   %p 
                     ドラッグアンドドロップ
                     %br
                     またはクリックしてファイルをアップロード
-                  = f.file_field :images,class:"img-upload__field",name:"item[images][]","data-nums": "0"
+                  %input{ name: "delete_ids[]", id: "delete-uploaded-img"}
+                  = f.file_field :images,class:"img-upload__field",name:"item[images][]","data-nums": "#{@detail.images.length}"
         .sell-content
           .sell-content__name
             %h3.sell-content__name__name

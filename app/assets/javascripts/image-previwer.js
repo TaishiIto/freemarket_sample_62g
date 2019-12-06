@@ -1,6 +1,7 @@
 $(function(){
   let nums = 0
   let dNums = 0 
+  let deleteImages = []
 
   function previewImage(imageUrl){
     let previewHtml = 
@@ -88,6 +89,11 @@ $(function(){
     dNums = $(this).data("delete");
     $(this).parent().hide();
     $(`input[data-nums="${dNums}"]`).remove();
+    if ($(this).data("uploaded")){
+      deleteImages.push($(this).data("uploaded"));
+      $("#delete-uploaded-img").val(deleteImages);
+      console.log($("#delete-uploaded-img").val());
+    }
     afterImages = $('.item-uploaded:visible').length;
     if (afterImages < 10){
       $('.upload-area').show();
